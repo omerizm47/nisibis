@@ -1,16 +1,23 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Redirect, Tabs } from 'expo-router';
 import { useTranslation } from 'react-i18next';
+import { StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useOnboarding } from '@/hooks/useOnboarding';
 import { colors, fontFamily } from '@/theme';
 import { withAlpha } from '@/utils/color';
+import { hapticSelection } from '@/utils/haptics';
 import type { MciName } from '@/utils/icons';
 
 function tabIcon(name: MciName) {
-  return ({ color, size }: { color: string; size: number }) => (
-    <MaterialCommunityIcons name={name} color={color} size={size} />
+  const TabBarIcon = ({ color, size, focused }: { color: string; size: number; focused: boolean }) => (
+    <View style={styles.tabIcon}>
+      <MaterialCommunityIcons name={name} color={color} size={size} />
+      <View style={[styles.tabDot, focused && styles.tabDotActive]} />
+    </View>
   );
+  TabBarIcon.displayName = 'TabBarIcon';
+  return TabBarIcon;
 }
 
 export default function TabsLayout() {
@@ -27,6 +34,7 @@ export default function TabsLayout() {
 
   return (
     <Tabs
+      screenListeners={{ tabPress: () => hapticSelection() }}
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: colors.primary,
@@ -68,3 +76,20 @@ export default function TabsLayout() {
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  tabIcon: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  tabDot: {
+    width: 5,
+    height: 5,
+    borderRadius: 2.5,
+    marginTop: 3,
+    backgroundColor: 'transparent',
+  },
+  tabDotActive: {
+    backgroundColor: colors.primary,
+  },
+});

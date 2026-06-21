@@ -1,10 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import {
   FlatList,
   Pressable,
+  RefreshControl,
   ScrollView,
   StyleSheet,
   Text,
@@ -14,12 +15,16 @@ import {
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { EmptyState, PlaceCard, StoryCard } from '@/components';
-import { usePlaces, useProgress } from '@/hooks';
+import { EmptyState, OrnamentDivider, PlaceCard, StoneLattice, StoryCard } from '@/components';
+import { useLocation, usePlaces, useProgress } from '@/hooks';
 import { PLACE_CATEGORIES, type PlaceCategory } from '@/types';
-import { colors, radius, spacing, typography } from '@/theme';
+import { colors, radius, shadow, spacing, typography } from '@/theme';
+import { formatDistance, haversineDistance } from '@/utils/distance';
+import { hapticSelection } from '@/utils/haptics';
+import { getDisplayCoordinate } from '@/utils/map';
 
 type Filter = PlaceCategory | 'all';
+type Sort = 'featured' | 'nearest';
 
 export default function ExploreScreen() {
   const { t } = useTranslation();
@@ -29,8 +34,45 @@ export default function ExploreScreen() {
 
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState<Filter>('all');
+  const [sort, setSort] = useState<Sort>('featured');
+  const [refreshing, setRefreshing] = useState(false);
+  const [focused, setFocused] = useState(false);
 
+  const { location, requestPermission } = useLocation();
   const places = usePlaces({ category: filter, query });
+
+  const lat = location?.latitude ?? null;
+  const lng = location?.longitude ?? null;
+
+  const items = useMemo(() => {
+    const origin = lat != null && lng != null ? { latitude: lat, longitude: lng } : null;
+    const withDist = places.map((p) => {
+      const c = getDisplayCoordinate(p);
+      return { place: p, meters: origin && c ? haversineDistance(origin, c) : null };
+    });
+    if (sort === 'nearest' && origin) {
+      return [...withDist].sort((a, b) => (a.meters ?? Infinity) - (b.meters ?? Infinity));
+    }
+    return [
+      ...withDist.filter((x) => x.place.isFeatured),
+      ...withDist.filter((x) => !x.place.isFeatured),
+    ];
+  }, [places, lat, lng, sort]);
+
+  const selectSort = useCallback(
+    (next: Sort) => {
+      hapticSelection();
+      if (next === 'nearest' && lat == null) void requestPermission();
+      setSort(next);
+    },
+    [lat, requestPermission],
+  );
+
+  const onRefresh = useCallback(async () => {
+    setRefreshing(true);
+    await requestPermission();
+    setRefreshing(false);
+  }, [requestPermission]);
 
   const filters = useMemo<{ key: Filter; label: string }[]>(
     () => [
@@ -42,13 +84,20 @@ export default function ExploreScreen() {
 
   return (
     <View style={[styles.container, { paddingTop: insets.top + spacing.sm }]}>
-      <Text style={styles.title}>{t('explore.title')}</Text>
+      <StoneLattice patternId="explore-bg" color={colors.clay} opacity={0.05} tile={40} />
+      <View style={styles.headerWrap}>
+        <Text style={styles.title}>{t('explore.title')}</Text>
+        <Text style={styles.subtitle}>{t('explore.subtitle')}</Text>
+        <OrnamentDivider style={styles.headerDivider} />
+      </View>
 
-      <View style={styles.searchBox}>
-        <MaterialCommunityIcons name="magnify" size={20} color={colors.subtleText} />
+      <View style={[styles.searchBox, focused && styles.searchBoxFocused]}>
+        <MaterialCommunityIcons name="magnify" size={20} color={focused ? colors.primary : colors.subtleText} />
         <TextInput
           value={query}
           onChangeText={setQuery}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
           placeholder={t('explore.searchPlaceholder')}
           placeholderTextColor={colors.subtleText}
           style={styles.searchInput}
@@ -77,7 +126,10 @@ export default function ExploreScreen() {
             return (
               <Pressable
                 key={f.key}
-                onPress={() => setFilter(f.key)}
+                onPress={() => {
+                  hapticSelection();
+                  setFilter(f.key);
+                }}
                 style={[styles.chip, active && styles.chipActive]}
               >
                 <Text style={[styles.chipText, active && styles.chipTextActive]}>{f.label}</Text>
@@ -87,13 +139,52 @@ export default function ExploreScreen() {
         </ScrollView>
       </View>
 
+      <View style={styles.toolbar}>
+        <Text style={styles.resultCount}>{t('explore.results', { count: items.length })}</Text>
+        <View style={styles.sortRow}>
+          <Pressable
+            onPress={() => selectSort('featured')}
+            style={[styles.sortPill, sort === 'featured' && styles.sortPillActive]}
+            accessibilityRole="button"
+            accessibilityState={{ selected: sort === 'featured' }}
+          >
+            <Text style={[styles.sortText, sort === 'featured' && styles.sortTextActive]}>
+              {t('explore.sortFeatured')}
+            </Text>
+          </Pressable>
+          <Pressable
+            onPress={() => selectSort('nearest')}
+            style={[styles.sortPill, sort === 'nearest' && styles.sortPillActive]}
+            accessibilityRole="button"
+            accessibilityState={{ selected: sort === 'nearest' }}
+          >
+            <MaterialCommunityIcons
+              name="map-marker-distance"
+              size={14}
+              color={sort === 'nearest' ? colors.onPrimary : colors.mutedText}
+            />
+            <Text style={[styles.sortText, sort === 'nearest' && styles.sortTextActive]}>
+              {t('explore.sortNearest')}
+            </Text>
+          </Pressable>
+        </View>
+      </View>
+
       <FlatList
-        data={places}
-        keyExtractor={(item) => item.id}
+        data={items}
+        keyExtractor={(item) => item.place.id}
         contentContainerStyle={styles.list}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            tintColor={colors.primary}
+            colors={[colors.primary]}
+          />
+        }
         ListHeaderComponent={
           !query && filter === 'all' ? (
             <StoryCard onPress={() => router.push('/story')} style={styles.storyHeader} />
@@ -103,9 +194,10 @@ export default function ExploreScreen() {
         renderItem={({ item, index }) => (
           <Animated.View entering={FadeInDown.duration(280).delay(Math.min(index, 10) * 40)}>
             <PlaceCard
-              place={item}
-              completed={isPlaceCompleted(item.id)}
-              onPress={() => router.push(`/place/${item.id}`)}
+              place={item.place}
+              completed={isPlaceCompleted(item.place.id)}
+              distanceLabel={item.meters != null ? formatDistance(item.meters) : undefined}
+              onPress={() => router.push(`/place/${item.place.id}`)}
             />
           </Animated.View>
         )}
@@ -126,11 +218,21 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background,
   },
+  headerWrap: {
+    paddingHorizontal: spacing.lg,
+    marginBottom: spacing.sm,
+    gap: spacing.xs,
+  },
   title: {
     ...typography.h1,
     color: colors.text,
-    paddingHorizontal: spacing.lg,
-    marginBottom: spacing.sm,
+  },
+  subtitle: {
+    ...typography.body,
+    color: colors.mutedText,
+  },
+  headerDivider: {
+    marginTop: spacing.xs,
   },
   searchBox: {
     flexDirection: 'row',
@@ -143,6 +245,10 @@ const styles = StyleSheet.create({
     borderRadius: radius.lg,
     borderWidth: 1,
     borderColor: colors.border,
+  },
+  searchBoxFocused: {
+    borderColor: colors.primary,
+    ...shadow.sm,
   },
   searchInput: {
     flex: 1,
@@ -174,6 +280,44 @@ const styles = StyleSheet.create({
     color: colors.mutedText,
   },
   chipTextActive: {
+    color: colors.onPrimary,
+  },
+  toolbar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: spacing.lg,
+    marginTop: spacing.md,
+    gap: spacing.sm,
+  },
+  resultCount: {
+    ...typography.caption,
+    color: colors.subtleText,
+  },
+  sortRow: {
+    flexDirection: 'row',
+    gap: spacing.xs,
+  },
+  sortPill: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    paddingHorizontal: spacing.md,
+    paddingVertical: 6,
+    borderRadius: radius.pill,
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  sortPillActive: {
+    backgroundColor: colors.primary,
+    borderColor: colors.primary,
+  },
+  sortText: {
+    ...typography.label,
+    color: colors.mutedText,
+  },
+  sortTextActive: {
     color: colors.onPrimary,
   },
   list: {

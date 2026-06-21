@@ -12,6 +12,7 @@
     "close": "إغلاق",
     "back": "رجوع",
     "clear": "مسح",
+    "share": "مشاركة",
     "minutes": "{{count}} د",
     "approxLocation": "موقع تقريبي",
     "needsReview": "بانتظار التحقق",
@@ -69,17 +70,22 @@
     "estimatedVisit": "مدة الزيارة",
     "showOnMap": "إظهار على الخريطة",
     "navigate": "خذني إلى هناك",
+    "directions": "الاتجاهات",
     "markComplete": "وضع علامة مكتمل",
     "markedComplete": "مكتمل",
     "details": "عرض التفاصيل",
     "featured": "مميز",
     "nearby": "بالقرب",
+    "shareMessage": "{{name}} · اكتشف نصيبين مع نيسيبيس\n{{url}}",
     "notFound": "لم يُعثر على المكان"
   },
   "explore": {
     "title": "اكتشف",
+    "subtitle": "اكتشف محطات نصيبين",
     "searchPlaceholder": "ابحث: قهوة، كنيسة، جامع، سوق، صورة…",
     "all": "الكل",
+    "sortFeatured": "مميز",
+    "sortNearest": "الأقرب",
     "emptyTitle": "لا نتائج",
     "emptyBody": "حاول تغيير البحث أو التصفية.",
     "results": "{{count}} مكان"
@@ -87,6 +93,8 @@
   "routes": {
     "title": "المسارات",
     "subtitle": "استكشف المدينة عبر مسارات جاهزة",
+    "emptyTitle": "لا مسارات",
+    "emptyBody": "ستُضاف مسارات جديدة قريباً.",
     "start": "ابدأ المسار",
     "stops": "{{count}} محطة",
     "duration": "المدة",
@@ -98,6 +106,7 @@
     "difficulty_kolay": "سهل",
     "difficulty_orta": "متوسط",
     "difficulty_zor": "صعب",
+    "shareMessage": "{{title}} · مسار نصيبين ({{duration}})\nاكتشف مع نيسيبيس",
     "notFound": "لم يُعثر على المسار"
   },
   "checklist": {
@@ -124,6 +133,7 @@
   },
   "settings": {
     "title": "الإعدادات",
+    "subtitle": "التفضيلات ومعلومات التطبيق",
     "language": "اللغة",
     "languageTr": "Türkçe",
     "languageEn": "English",

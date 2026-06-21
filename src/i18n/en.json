@@ -12,6 +12,7 @@
     "close": "Close",
     "back": "Back",
     "clear": "Clear",
+    "share": "Share",
     "minutes": "{{count}} min",
     "approxLocation": "Approximate location",
     "needsReview": "To be verified",
@@ -69,17 +70,22 @@
     "estimatedVisit": "Estimated visit",
     "showOnMap": "Show on map",
     "navigate": "Take me there",
+    "directions": "Get directions",
     "markComplete": "Mark as completed",
     "markedComplete": "Completed",
     "details": "View details",
     "featured": "Featured",
     "nearby": "Nearby",
+    "shareMessage": "{{name}} · Discover Nusaybin with Nisibis\n{{url}}",
     "notFound": "Place not found"
   },
   "explore": {
     "title": "Explore",
+    "subtitle": "Discover Nusaybin's stops",
     "searchPlaceholder": "Search: coffee, church, mosque, bazaar, photo…",
     "all": "All",
+    "sortFeatured": "Featured",
+    "sortNearest": "Nearest",
     "emptyTitle": "No results",
     "emptyBody": "Try changing your search or filter.",
     "results": "{{count}} places"
@@ -87,6 +93,8 @@
   "routes": {
     "title": "Routes",
     "subtitle": "Explore the city with ready-made routes",
+    "emptyTitle": "No routes",
+    "emptyBody": "New routes are coming soon.",
     "start": "Start route",
     "stops": "{{count}} stops",
     "duration": "Duration",
@@ -98,6 +106,7 @@
     "difficulty_kolay": "Easy",
     "difficulty_orta": "Moderate",
     "difficulty_zor": "Hard",
+    "shareMessage": "{{title}} · Nusaybin route ({{duration}})\nExplore with Nisibis",
     "notFound": "Route not found"
   },
   "checklist": {
@@ -124,6 +133,7 @@
   },
   "settings": {
     "title": "Settings",
+    "subtitle": "Preferences and app info",
     "language": "Language",
     "languageTr": "Türkçe",
     "languageEn": "English",

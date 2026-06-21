@@ -20,7 +20,7 @@ interface BottomPlaceSheetProps {
   completed: boolean;
   onClose: () => void;
   onDetails: (place: Place) => void;
-  onNavigate: (place: Place) => void;
+  onDirections: (place: Place) => void;
   onToggleComplete: (place: Place) => void;
 }
 
@@ -29,7 +29,7 @@ export function BottomPlaceSheet({
   completed,
   onClose,
   onDetails,
-  onNavigate,
+  onDirections,
   onToggleComplete,
 }: BottomPlaceSheetProps) {
   const { t } = useTranslation();
@@ -98,10 +98,10 @@ export function BottomPlaceSheet({
 
             <View style={styles.actionsRow}>
               <PrimaryButton
-                label={t('place.navigate')}
-                icon="navigation-variant-outline"
+                label={t('place.directions')}
+                icon="directions"
                 variant="secondary"
-                onPress={() => onNavigate(place)}
+                onPress={() => onDirections(place)}
                 style={styles.flexBtn}
               />
               <PrimaryButton

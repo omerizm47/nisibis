@@ -4,7 +4,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { OrnamentDivider, RouteCard } from '@/components';
+import { EmptyState, OrnamentDivider, RouteCard, StoneLattice } from '@/components';
 import { useProgress, useRoutes } from '@/hooks';
 import { colors, spacing, typography } from '@/theme';
 
@@ -17,6 +17,7 @@ export default function RoutesScreen() {
 
   return (
     <View style={[styles.container, { paddingTop: insets.top + spacing.sm }]}>
+      <StoneLattice patternId="routes-bg" color={colors.clay} opacity={0.05} tile={40} />
       <FlatList
         data={routes}
         keyExtractor={(item) => item.id}
@@ -29,6 +30,13 @@ export default function RoutesScreen() {
             <Text style={styles.subtitle}>{t('routes.subtitle')}</Text>
             <OrnamentDivider style={styles.headerDivider} />
           </View>
+        }
+        ListEmptyComponent={
+          <EmptyState
+            icon="map-marker-path"
+            title={t('routes.emptyTitle')}
+            message={t('routes.emptyBody')}
+          />
         }
         renderItem={({ item, index }) => {
           const completedStops = item.poiIds.filter((id) => isPlaceCompleted(id)).length;

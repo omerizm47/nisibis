@@ -13,7 +13,9 @@ import { getNearbyPlaces, getPlaceById, useProgress } from '@/hooks';
 import { colors, getCategoryMeta, gradients, radius, spacing, typography } from '@/theme';
 import { withAlpha } from '@/utils/color';
 import { formatDistance } from '@/utils/distance';
-import { placeHasMapLocation } from '@/utils/map';
+import { hapticLight } from '@/utils/haptics';
+import { mapsUrl, openDirections, shareContent } from '@/utils/links';
+import { getDisplayCoordinate, placeHasMapLocation } from '@/utils/map';
 import { isRtl } from '@/utils/rtl';
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
@@ -78,6 +80,20 @@ export default function PlaceDetailScreen() {
   const completed = isPlaceCompleted(place.id);
   const showApprox = !place.coordinatesVerified && placeHasMapLocation(place);
   const nearby = getNearbyPlaces(place.id);
+  const coord = getDisplayCoordinate(place);
+
+  const handleDirections = () => {
+    if (!coord) return;
+    hapticLight();
+    void openDirections(coord);
+  };
+
+  const handleShare = () => {
+    hapticLight();
+    void shareContent(
+      t('place.shareMessage', { name: place.name, url: coord ? mapsUrl(coord) : '' }).trim(),
+    );
+  };
 
   return (
     <View style={styles.container}>
@@ -137,6 +153,31 @@ export default function PlaceDetailScreen() {
                 <Text style={styles.metaText}>{t('common.approxLocation')}</Text>
               </View>
             ) : null}
+          </View>
+
+          <View style={styles.quickActions}>
+            {coord ? (
+              <Pressable
+                onPress={handleDirections}
+                accessibilityRole="button"
+                accessibilityLabel={t('place.directions')}
+                style={styles.quickBtn}
+                hitSlop={6}
+              >
+                <MaterialCommunityIcons name="directions" size={18} color={colors.primary} />
+                <Text style={styles.quickText}>{t('place.directions')}</Text>
+              </Pressable>
+            ) : null}
+            <Pressable
+              onPress={handleShare}
+              accessibilityRole="button"
+              accessibilityLabel={t('common.share')}
+              style={styles.quickBtn}
+              hitSlop={6}
+            >
+              <MaterialCommunityIcons name="share-variant" size={18} color={colors.primary} />
+              <Text style={styles.quickText}>{t('common.share')}</Text>
+            </Pressable>
           </View>
 
           <Text style={styles.lead}>{place.shortDescription}</Text>
@@ -258,6 +299,27 @@ const styles = StyleSheet.create({
   },
   center: {
     justifyContent: 'center',
+  },
+  quickActions: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: spacing.sm,
+    marginTop: spacing.sm,
+  },
+  quickBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+    borderRadius: radius.pill,
+    borderWidth: 1,
+    borderColor: withAlpha(colors.primary, 0.4),
+    backgroundColor: withAlpha(colors.primary, 0.08),
+  },
+  quickText: {
+    ...typography.label,
+    color: colors.primary,
   },
   hero: {
     height: 300,

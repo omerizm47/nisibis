@@ -6,12 +6,14 @@ import * as Location from 'expo-location';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { setAppLanguage } from '@/i18n';
 import { OrnamentDivider } from '@/components';
 import { type AppLanguage, SUPPORTED_LANGUAGES } from '@/utils/constants';
 import { colors, radius, spacing, typography } from '@/theme';
+import { hapticSelection } from '@/utils/haptics';
 import type { MciName } from '@/utils/icons';
 import { upperLocale } from '@/utils/text';
 import { isRtl } from '@/utils/rtl';
@@ -24,13 +26,13 @@ const SOURCES: { title: string; url: string }[] = [
   { title: 'Wikimedia Commons — Nusaybin', url: 'https://commons.wikimedia.org/wiki/Category:Nusaybin' },
 ];
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({ title, children, index = 0 }: { title: string; children: React.ReactNode; index?: number }) {
   const { i18n } = useTranslation();
   return (
-    <View style={styles.section}>
+    <Animated.View entering={FadeInDown.duration(320).delay(Math.min(index, 6) * 70)} style={styles.section}>
       <Text style={styles.sectionTitle}>{upperLocale(title, i18n.language)}</Text>
       <View style={styles.sectionBody}>{children}</View>
-    </View>
+    </Animated.View>
   );
 }
 
@@ -101,19 +103,23 @@ export default function SettingsScreen() {
       contentContainerStyle={[styles.content, { paddingTop: insets.top + spacing.sm }]}
       showsVerticalScrollIndicator={false}
     >
-      <View style={styles.titleWrap}>
+      <Animated.View entering={FadeInDown.duration(300)} style={styles.titleWrap}>
         <Text style={styles.title}>{t('settings.title')}</Text>
+        <Text style={styles.subtitle}>{t('settings.subtitle')}</Text>
         <OrnamentDivider style={styles.headerDivider} />
-      </View>
+      </Animated.View>
 
-      <Section title={t('settings.language')}>
+      <Section title={t('settings.language')} index={1}>
         <View style={styles.langRow}>
           {SUPPORTED_LANGUAGES.map((code) => {
             const active = current === code;
             return (
               <Pressable
                 key={code}
-                onPress={() => void setAppLanguage(code)}
+                onPress={() => {
+                  hapticSelection();
+                  void setAppLanguage(code);
+                }}
                 style={[styles.langChip, active && styles.langChipActive]}
               >
                 <Text style={[styles.langText, active && styles.langTextActive]}>
@@ -125,7 +131,7 @@ export default function SettingsScreen() {
         </View>
       </Section>
 
-      <Section title={t('settings.locationStatus')}>
+      <Section title={t('settings.locationStatus')} index={2}>
         <Row icon="map-marker-outline" label={t('settings.locationStatus')} value={locationStatus} />
         {perm !== 'granted' ? (
           <Pressable onPress={() => void requestLocation()} style={styles.inlineBtn}>
@@ -134,7 +140,7 @@ export default function SettingsScreen() {
         ) : null}
       </Section>
 
-      <Section title={t('settings.privacy')}>
+      <Section title={t('settings.privacy')} index={3}>
         <Row
           icon="shield-check-outline"
           label={t('settings.privacy')}
@@ -142,14 +148,14 @@ export default function SettingsScreen() {
         />
       </Section>
 
-      <Section title={t('settings.sources')}>
+      <Section title={t('settings.sources')} index={4}>
         <Text style={styles.sourcesIntro}>{t('settings.sourcesIntro')}</Text>
         {SOURCES.map((s) => (
           <Row key={s.url} icon="link-variant" label={s.title} onPress={() => void Linking.openURL(s.url)} />
         ))}
       </Section>
 
-      <Section title={t('settings.about')}>
+      <Section title={t('settings.about')} index={5}>
         <View style={styles.aboutCard}>
           <Text style={styles.aboutBrand}>{t('app.name')}</Text>
           <Text style={styles.aboutTagline}>{t('app.tagline')}</Text>
@@ -176,6 +182,10 @@ const styles = StyleSheet.create({
   title: {
     ...typography.h1,
     color: colors.text,
+  },
+  subtitle: {
+    ...typography.body,
+    color: colors.mutedText,
   },
   titleWrap: {
     gap: spacing.sm,

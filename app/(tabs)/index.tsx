@@ -6,17 +6,20 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import MapView, { Marker, Polyline, PROVIDER_DEFAULT, UrlTile } from '@/components/PlatformMap';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { BottomPlaceSheet, ProgressRing } from '@/components';
+import { BottomPlaceSheet, LoadingState, ProgressRing } from '@/components';
 import { getMarkerImageSource } from '@/components/MapMarker';
-import { getAllPlaces, getPlaceById, useLocation, useProgress } from '@/hooks';
-import type { Place } from '@/types';
+import { getAllPlaces, getPlaceById, getRouteById, getRoutePlaces, useLocation, useProgress } from '@/hooks';
+import type { Place, TourRoute } from '@/types';
 import { colors, radius, shadow, spacing, typography } from '@/theme';
 import { DEFAULT_REGION, MAP_ATTRIBUTION, MAP_STYLE, MAP_TILE_URL } from '@/utils/constants';
 import { withAlpha } from '@/utils/color';
+import { hapticLight } from '@/utils/haptics';
+import { openDirections } from '@/utils/links';
 import type { MciName } from '@/utils/icons';
 import {
   getDisplayCoordinate,
   regionForCoordinate,
+  regionForPlaces,
 } from '@/utils/map';
 
 function MapPill({ icon, label, onPress }: { icon: MciName; label: string; onPress: () => void }) {
@@ -52,7 +55,23 @@ export default function MapScreen() {
   const { location, permission, requestPermission } = useLocation();
   const { percent, isPlaceCompleted, togglePlaceVisited } = useProgress();
   const [selected, setSelected] = useState<Place | null>(null);
-  const params = useLocalSearchParams<{ focus?: string }>();
+  const [mapReady, setMapReady] = useState(false);
+  const [routeId, setRouteId] = useState<string | null>(null);
+  const params = useLocalSearchParams<{ focus?: string; route?: string }>();
+
+  const activeRoute = useMemo<TourRoute | null>(
+    () => (routeId ? getRouteById(routeId) ?? null : null),
+    [routeId],
+  );
+  const routeCoords = useMemo(
+    () =>
+      activeRoute
+        ? getRoutePlaces(activeRoute)
+            .map((p) => getDisplayCoordinate(p))
+            .filter((c): c is { latitude: number; longitude: number } => c != null)
+        : [],
+    [activeRoute],
+  );
 
   const focus = (coord: { latitude: number; longitude: number }, delta = 0.02) => {
     mapRef.current?.animateToRegion(regionForCoordinate(coord, delta), 600);
@@ -69,16 +88,38 @@ export default function MapScreen() {
     }
   }, [params.focus]);
 
+  useEffect(() => {
+    if (!params.route) return;
+    const r = getRouteById(params.route);
+    if (!r) return;
+    setRouteId(params.route);
+    setSelected(null);
+    mapRef.current?.animateToRegion(regionForPlaces(getRoutePlaces(r)), 700);
+  }, [params.route]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setMapReady(true), 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleMarkerPress = (place: Place) => {
     setSelected(place);
     const coord = getDisplayCoordinate(place);
     if (coord) focus(coord, 0.02);
   };
 
-  const handleNavigate = (place: Place) => {
+  const handleDirections = (place: Place) => {
     const coord = getDisplayCoordinate(place);
-    if (coord) focus(coord, 0.006);
-    setSelected(null);
+    if (!coord) return;
+    hapticLight();
+    void openDirections(coord);
+  };
+
+  const clearRoute = () => {
+    hapticLight();
+    setRouteId(null);
+    router.setParams({ route: '' });
+    mapRef.current?.animateToRegion(initialRegion, 500);
   };
 
   const handleDetails = (place: Place) => {
@@ -105,6 +146,14 @@ export default function MapScreen() {
   };
 
   const handleMapReady = () => {
+    setMapReady(true);
+    if (params.route) {
+      const r = getRouteById(params.route);
+      if (r) {
+        mapRef.current?.animateToRegion(regionForPlaces(getRoutePlaces(r)), 0);
+        return;
+      }
+    }
     if (!params.focus) {
       mapRef.current?.animateToRegion(initialRegion, 0);
     }
@@ -126,13 +175,31 @@ export default function MapScreen() {
         showsCompass={false}
       >
         <UrlTile urlTemplate={MAP_TILE_URL} maximumZ={19} flipY={false} zIndex={-1} />
-        {mosaicLink ? (
+        {!activeRoute && mosaicLink ? (
           <Polyline
             coordinates={mosaicLink}
             strokeColor={colors.primary}
             strokeWidth={2}
             lineDashPattern={[6, 6]}
           />
+        ) : null}
+        {routeCoords.length >= 2 ? (
+          <>
+            <Polyline
+              coordinates={routeCoords}
+              strokeColor={withAlpha(colors.primary, 0.22)}
+              strokeWidth={12}
+              lineCap="round"
+              lineJoin="round"
+            />
+            <Polyline
+              coordinates={routeCoords}
+              strokeColor={colors.primary}
+              strokeWidth={4}
+              lineCap="round"
+              lineJoin="round"
+            />
+          </>
         ) : null}
         {places.map((place) => {
           const coord = getDisplayCoordinate(place);
@@ -178,6 +245,35 @@ export default function MapScreen() {
           </Pressable>
         </View>
 
+        {activeRoute ? (
+          <Pressable
+            onPress={() => router.push(`/route/${activeRoute.id}`)}
+            accessibilityRole="button"
+            style={[styles.routeBanner, shadow.md]}
+          >
+            <View style={styles.routeBannerIcon}>
+              <MaterialCommunityIcons name="map-marker-path" size={18} color={colors.onPrimary} />
+            </View>
+            <View style={styles.routeBannerTexts}>
+              <Text style={styles.routeBannerTitle} numberOfLines={1}>
+                {activeRoute.title}
+              </Text>
+              <Text style={styles.routeBannerMeta}>
+                {t('routes.stops', { count: activeRoute.poiIds.length })}
+              </Text>
+            </View>
+            <Pressable
+              onPress={clearRoute}
+              hitSlop={10}
+              accessibilityRole="button"
+              accessibilityLabel={t('common.close')}
+              style={styles.routeBannerClose}
+            >
+              <MaterialCommunityIcons name="close" size={18} color={colors.mutedText} />
+            </Pressable>
+          </Pressable>
+        ) : null}
+
         <View style={{ flex: 1 }} />
 
         <View style={[styles.bottomBar, { marginBottom: spacing.lg }]}>
@@ -212,12 +308,18 @@ export default function MapScreen() {
         </View>
       </View>
 
+      {!mapReady ? (
+        <View style={styles.loadingOverlay} pointerEvents="none">
+          <LoadingState label={t('map.loadingMap')} />
+        </View>
+      ) : null}
+
       <BottomPlaceSheet
         place={selected}
         completed={selected ? isPlaceCompleted(selected.id) : false}
         onClose={() => setSelected(null)}
         onDetails={handleDetails}
-        onNavigate={handleNavigate}
+        onDirections={handleDirections}
         onToggleComplete={(place) => togglePlaceVisited(place.id)}
       />
     </View>
@@ -228,6 +330,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.mapBackground,
+  },
+  loadingOverlay: {
+    ...StyleSheet.absoluteFillObject,
   },
   topBar: {
     flexDirection: 'row',
@@ -281,6 +386,46 @@ const styles = StyleSheet.create({
   progressChipText: {
     ...typography.overline,
     color: colors.text,
+  },
+  routeBanner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+    marginHorizontal: spacing.lg,
+    marginTop: spacing.sm,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+    backgroundColor: colors.card,
+    borderRadius: radius.lg,
+    borderWidth: 1,
+    borderColor: withAlpha(colors.primary, 0.35),
+  },
+  routeBannerIcon: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.primary,
+  },
+  routeBannerTexts: {
+    flex: 1,
+  },
+  routeBannerTitle: {
+    ...typography.subtitle,
+    color: colors.text,
+  },
+  routeBannerMeta: {
+    ...typography.caption,
+    color: colors.mutedText,
+  },
+  routeBannerClose: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.cardAlt,
   },
   bottomBar: {
     paddingHorizontal: spacing.lg,

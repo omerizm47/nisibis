@@ -12,6 +12,7 @@
     "close": "Kapat",
     "back": "Geri",
     "clear": "Temizle",
+    "share": "Paylaş",
     "minutes": "{{count}} dk",
     "approxLocation": "Konum yaklaşık",
     "needsReview": "Doğrulanacak",
@@ -69,17 +70,22 @@
     "estimatedVisit": "Tahmini ziyaret",
     "showOnMap": "Haritada göster",
     "navigate": "Buraya git",
+    "directions": "Yol tarifi",
     "markComplete": "Tamamlandı olarak işaretle",
     "markedComplete": "Tamamlandı",
     "details": "Detayları gör",
     "featured": "Öne çıkan",
     "nearby": "Hemen yakında",
+    "shareMessage": "{{name}} · Nusaybin'i Nisibis ile keşfet\n{{url}}",
     "notFound": "Mekan bulunamadı"
   },
   "explore": {
     "title": "Keşfet",
+    "subtitle": "Nusaybin'in duraklarını keşfet",
     "searchPlaceholder": "Ara: kahve, kilise, cami, çarşı, fotoğraf…",
     "all": "Tümü",
+    "sortFeatured": "Öne çıkan",
+    "sortNearest": "En yakın",
     "emptyTitle": "Sonuç yok",
     "emptyBody": "Aramanı veya filtreni değiştirmeyi dene.",
     "results": "{{count}} yer"
@@ -87,6 +93,8 @@
   "routes": {
     "title": "Rotalar",
     "subtitle": "Hazır rotalarla şehri keşfet",
+    "emptyTitle": "Rota yok",
+    "emptyBody": "Yakında yeni rotalar eklenecek.",
     "start": "Rotayı başlat",
     "stops": "{{count}} durak",
     "duration": "Süre",
@@ -98,6 +106,7 @@
     "difficulty_kolay": "Kolay",
     "difficulty_orta": "Orta",
     "difficulty_zor": "Zor",
+    "shareMessage": "{{title}} · Nusaybin rotası ({{duration}})\nNisibis ile keşfet",
     "notFound": "Rota bulunamadı"
   },
   "checklist": {
@@ -124,6 +133,7 @@
   },
   "settings": {
     "title": "Ayarlar",
+    "subtitle": "Tercihler ve uygulama bilgileri",
     "language": "Dil",
     "languageTr": "Türkçe",
     "languageEn": "English",
@@ -153,7 +163,7 @@
     "shortcut": "Hikâye",
     "cardTitle": "Uygarlıkların buluştuğu şehir",
     "cardBody": "Bir kilise ile bir caminin yan yana yükseldiği, binlerce yıllık bir mozaik.",
-    "intro": "Nusaybin — antik adıyla Nisibis — Mezopotamya'nın bereketli topraklarında, İpek Yolu üzerinde binlerce yıldır yaşayan bir şehirdir.",
+    "intro": "Nusaybin — antik adıyla Nisibis — Mezopotamya'nın bereketli topraklarında, İpek Yolu üzerinde binlerce yıldır yaşayan bir şehirdir.",
     "layersTitle": "Uygarlıkların kavşağı",
     "layersBody": "Asur'dan Roma'ya, Pers'ten Süryani'ye, İslam'dan günümüze; her uygarlık bu topraklara bir katman, bir hikâye bıraktı.",
     "mosaicTitle": "Yan yana bir kilise ve bir cami",

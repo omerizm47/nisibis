@@ -11,7 +11,9 @@ import { EmptyState, PlaceCard, PrimaryButton, SafetyNotice } from '@/components
 import { getRouteById, getRoutePlaces, useProgress } from '@/hooks';
 import { colors, gradients, radius, spacing, typography } from '@/theme';
 import { withAlpha } from '@/utils/color';
+import { hapticLight } from '@/utils/haptics';
 import type { MciName } from '@/utils/icons';
+import { shareContent } from '@/utils/links';
 import { isRtl } from '@/utils/rtl';
 
 function MetaChip({ icon, text }: { icon: MciName; text: string }) {
@@ -26,7 +28,11 @@ function MetaChip({ icon, text }: { icon: MciName; text: string }) {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <View style={styles.section}>
-      <Text style={styles.sectionTitle}>{title}</Text>
+      <View style={styles.sectionHeader}>
+        <View style={styles.sectionDiamond} />
+        <Text style={styles.sectionTitle}>{title}</Text>
+        <View style={styles.sectionRule} />
+      </View>
       {children}
     </View>
   );
@@ -57,7 +63,13 @@ export default function RouteDetailScreen() {
   const places = getRoutePlaces(route);
   const total = route.poiIds.length;
   const completedStops = route.poiIds.filter((pid) => isPlaceCompleted(pid)).length;
-  const firstPoi = route.poiIds[0];
+
+  const handleShare = () => {
+    hapticLight();
+    void shareContent(
+      t('routes.shareMessage', { title: route.title, duration: route.estimatedDuration }).trim(),
+    );
+  };
 
   return (
     <View style={styles.container}>
@@ -75,6 +87,15 @@ export default function RouteDetailScreen() {
             hitSlop={10}
           >
             <MaterialCommunityIcons name={rtl ? 'chevron-right' : 'chevron-left'} size={26} color={colors.text} />
+          </Pressable>
+          <Pressable
+            onPress={handleShare}
+            accessibilityRole="button"
+            accessibilityLabel={t('common.share')}
+            style={[styles.shareBtn, { top: insets.top + spacing.sm }, rtl ? { right: undefined, left: spacing.lg } : null]}
+            hitSlop={10}
+          >
+            <MaterialCommunityIcons name="share-variant" size={22} color={colors.text} />
           </Pressable>
           <View style={[styles.heroContent, { paddingTop: insets.top + spacing.x3l }]}>
             <Text style={styles.title}>{route.title}</Text>
@@ -140,11 +161,7 @@ export default function RouteDetailScreen() {
         <PrimaryButton
           label={t('routes.start')}
           icon="play"
-          onPress={() =>
-            firstPoi
-              ? router.push({ pathname: '/', params: { focus: firstPoi } })
-              : router.push('/')
-          }
+          onPress={() => router.push({ pathname: '/', params: { route: route.id } })}
         />
       </View>
     </View>
@@ -165,6 +182,17 @@ const styles = StyleSheet.create({
   backBtn: {
     position: 'absolute',
     left: spacing.lg,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: withAlpha(colors.background, 0.55),
+    zIndex: 2,
+  },
+  shareBtn: {
+    position: 'absolute',
+    right: spacing.lg,
     width: 40,
     height: 40,
     borderRadius: 20,
@@ -231,9 +259,26 @@ const styles = StyleSheet.create({
   section: {
     gap: spacing.sm,
   },
+  sectionHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+  },
+  sectionDiamond: {
+    width: 10,
+    height: 10,
+    backgroundColor: colors.primary,
+    transform: [{ rotate: '45deg' }],
+    borderRadius: 1.5,
+  },
   sectionTitle: {
     ...typography.title,
     color: colors.text,
+  },
+  sectionRule: {
+    flex: 1,
+    height: 1,
+    backgroundColor: colors.border,
   },
   bullets: {
     gap: spacing.sm,
