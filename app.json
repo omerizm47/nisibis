@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "Nisibis",
+    "slug": "nisibis",
+    "scheme": "nisibis",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0F172A",
+    "newArchEnabled": false,
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nisibis.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Nisibis, yakınındaki durakları haritada göstermek için yalnızca uygulama açıkken konumunu kullanır. Konum verisi cihazından çıkmaz."
+      }
+    },
+    "android": {
+      "package": "com.nisibis.app",
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-localization",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Nisibis, yakınındaki durakları haritada göstermek için yalnızca uygulama açıkken konumunu kullanır. Konum verisi cihazından çıkmaz."
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0F172A",
+          "resizeMode": "contain"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": false
+    }
+  }
+}

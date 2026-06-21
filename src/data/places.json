@@ -1,0 +1,333 @@
+[
+  {
+    "id": "mor-yakup-kilisesi",
+    "name": "Mor Yakup Kilisesi",
+    "slug": "mor-yakup-kilisesi",
+    "category": "inanc-kultur",
+    "shortDescription": "Antik Nisibis'in simgesi; hemen yanı başındaki Zeynel Abidin Camii ile yan yana yükselen, erken dönem Süryani kilisesi ve Nusaybin Okulu'nun mirası.",
+    "longDescription": "Nusaybin'in kalbinde yer alan Mor Yakup Kilisesi, kentin antik adı Nisibis döneminden günümüze ulaşan en önemli yapılardandır. Mezopotamya'nın erken Hristiyanlık ve Süryani kültürü açısından taşıdığı önemle bilinir; taş işçiliği, kemerleri ve yarım kubbeleriyle dönemin mimarisini yansıtır. Belki de en etkileyici yanı, yalnızca yüz metre ötesinde Zeynel Abidin Camii ve Türbesi'nin yükselmesidir: bir kilise ile bir cami, yüzyıllardır yan yana durarak Nusaybin'in inançlar ve kültürler mozaiğini gözler önüne serer. İki yapı 2014'te UNESCO Dünya Mirası Geçici Listesi'ne birlikte alınmıştır.",
+    "history": "Yapı, Nusaybin (Nisibis) Piskoposu Mor Yakup tarafından 313–320 yılları arasında inşa edilmiştir ve Yukarı Mezopotamya'nın en eski kiliselerinden biridir. Arkeolojik kazılar, 4. yüzyıl yapısının aslında günümüze ulaşmayan bir katedralin vaftizhanesi olduğunu ortaya koymuştur; orta friz üzerindeki Antik Yunanca bir kitabe, vaftizhanenin 359/360 yılında metropolit Volagesus döneminde rahip Akepsima'nın katkısıyla yapıldığını belirtir. Doğudaki kare odanın altındaki mahzende, Mor Yakup'a ait olduğuna inanılan bir lahit bulunur. Kilise ve bitişiğindeki Zeynel Abidin Camii Külliyesi 2014'te UNESCO Dünya Mirası Geçici Listesi'ne alınmıştır.",
+    "activities": [
+      "Erken dönem Süryani taş işçiliğini incele",
+      "Nusaybin Okulu'nun (İlimlerin beşiği) tarihini öğren",
+      "Yan yandaki Zeynel Abidin Camii ile oluşan inanç mozaiğine tanık ol",
+      "Avlu ve kazı alanını saygılı şekilde gez"
+    ],
+    "tips": [
+      "Sabah saatleri hem ışık hem serinlik için idealdir.",
+      "Ziyaret saatlerini önceden yerel kültür birimlerinden teyit edin."
+    ],
+    "photoTips": [
+      "Kemerleri ve taş dokuyu yan ışıkta çek.",
+      "Avlu için geniş açılı bir kompozisyon dene."
+    ],
+    "safetyNotes": [
+      "Bir ibadet ve kazı alanıdır; sessiz ve saygılı olun.",
+      "İnsanları fotoğraflarken önce izin isteyin."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Outside%20view%20over%20the%20Church%20of%20Saint%20Jacob%20of%20Nisibis%20archeological%20site.jpg?width=1200",
+    "imageCredit": "Wikimedia Commons katkıcıları",
+    "imageLicense": "Lisans, dosya sayfasında belirtilmiştir (TODO: atıf/lisans doğrulanmalı).",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Outside_view_over_the_Church_of_Saint_Jacob_of_Nisibis_archeological_site.jpg",
+    "latitude": 37.06694,
+    "longitude": 41.21528,
+    "approxLatitude": 37.06694,
+    "approxLongitude": 41.21528,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 45,
+    "tags": ["kilise", "süryani", "tarih", "nisibis", "kültür", "inanç", "mor yakup", "mozaik", "hoşgörü", "unesco"],
+    "isFeatured": true,
+    "sources": [
+      { "title": "UNESCO Dünya Mirası Geçici Listesi — Zeynel Abidin Camii ve Mor Yakup Kilisesi", "url": "https://whc.unesco.org/en/tentativelists/5901/" },
+      { "title": "T.C. Kültür Varlıkları ve Müzeler Genel Müdürlüğü", "url": "https://kvmgm.ktb.gov.tr/TR-93771/zeynel-abidin-camii-ve-mor-yakup-kilisesi-mardin-2014.html" },
+      { "title": "Wikipedia — Church of Saint Jacob of Nisibis", "url": "https://en.wikipedia.org/wiki/Church_of_Saint_Jacob_of_Nisibis" },
+      { "title": "TDV İslam Ansiklopedisi — Nusaybin", "url": "https://islamansiklopedisi.org.tr/nusaybin" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "zeynel-abidin-camii",
+    "name": "Zeynel Abidin Camii ve Türbesi",
+    "slug": "zeynel-abidin-camii-ve-turbesi",
+    "category": "inanc-kultur",
+    "shortDescription": "Zeynel Abidin ile kız kardeşi Zeyneb'e atfedilen türbelerin bulunduğu, hemen yanındaki Mor Yakup Kilisesi ile yan yana yükselen kentin en önemli camisi.",
+    "longDescription": "Zeynel Abidin Camii ve Türbesi, Nusaybin merkezindeki en önemli ibadet ve ziyaret mekânlarından biridir. Cami avlusunda Zeynel Abidin ile kız kardeşi Zeyneb'e atfedilen türbeler bulunur; görkemli minaresi ve avlusuyla kentin manevi merkezlerindendir. Hemen yakınında, yüz metre ötede yükselen Mor Yakup Kilisesi ile birlikte cami ve kilisenin yan yana durduğu bu eşsiz nokta, Nusaybin'in çok inançlı geçmişinin canlı bir simgesidir ve iki yapı 2014'te UNESCO Dünya Mirası Geçici Listesi'ne birlikte alınmıştır.",
+    "history": "Bir kitabeye göre külliye, 1159 yılında Zengî döneminde, Nisibisli aziz Febronia'ya adanan kilisenin yerine inşa edilmiştir. Cami, medrese ve Zeynel Abidin ile kız kardeşi Sitti Zeynep'e ait türbelerden oluşur; kaynaklarda bu kişilerin Hz. Muhammed'in soyundan geldiği belirtilir. Türbeler caminin güneydoğusunda yer alır. Külliye, yakınındaki Mor Yakup Kilisesi ile birlikte 2014'te UNESCO Dünya Mirası Geçici Listesi'ne alınmıştır.",
+    "activities": [
+      "Avlu ve türbe bölümünü saygıyla ziyaret et",
+      "Geleneksel cami mimarisini ve minareyi incele"
+    ],
+    "tips": [
+      "Namaz vakitleri dışında ziyaret daha sakindir.",
+      "Avluda gölge ve dinlenme alanları bulunur."
+    ],
+    "photoTips": [
+      "Minareyi alt açıdan, gökyüzüyle çerçevele.",
+      "Avlu detaylarını mahremiyete dikkat ederek çek."
+    ],
+    "safetyNotes": [
+      "Aktif bir camidir; namaz vakitlerinde ziyaretten kaçının.",
+      "Mütevazı kıyafet tercih edin ve girişte ayakkabınızı çıkarın.",
+      "Türbe bölümünde sessizliğe özen gösterin."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Zeynel%20Abidin%20Mosque%20Nusaybin.jpg?width=1200",
+    "imageCredit": "Wikimedia Commons katkıcıları",
+    "imageLicense": "Lisans, dosya sayfasında belirtilmiştir (TODO: atıf/lisans doğrulanmalı).",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Zeynel_Abidin_Mosque_Nusaybin.jpg",
+    "latitude": 37.06722,
+    "longitude": 41.21417,
+    "approxLatitude": 37.06722,
+    "approxLongitude": 41.21417,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 40,
+    "tags": ["cami", "türbe", "inanç", "tarih", "zeynel abidin", "ziyaret", "mozaik", "hoşgörü", "unesco"],
+    "isFeatured": true,
+    "sources": [
+      { "title": "UNESCO Dünya Mirası Geçici Listesi — Zeynel Abidin Camii ve Mor Yakup Kilisesi", "url": "https://whc.unesco.org/en/tentativelists/5901/" },
+      { "title": "T.C. Kültür Varlıkları ve Müzeler Genel Müdürlüğü", "url": "https://kvmgm.ktb.gov.tr/TR-93771/zeynel-abidin-camii-ve-mor-yakup-kilisesi-mardin-2014.html" },
+      { "title": "Wikipedia — Zeynel Abidin Mosque Complex", "url": "https://en.wikipedia.org/wiki/Zeynel_Abidin_Mosque_Complex" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "barsi-parki",
+    "name": "Barış Parkı",
+    "slug": "baris-parki",
+    "category": "park",
+    "shortDescription": "Kent merkezinde ailelerin vakit geçirdiği yeşil ve ferah şehir parkı.",
+    "longDescription": "Barış Parkı, kent merkezinde yürüyüş, dinlenme ve aileyle vakit geçirmek için sevilen bir yeşil alandır. Ağaçlık yolları ve oturma alanlarıyla sıcak günlerde serinlemek ve mola vermek için uygundur.",
+    "history": "Kent sakinlerinin günlük yaşamının parçası olan modern bir rekreasyon alanıdır.",
+    "activities": [
+      "Ağaçlık yollarda kısa bir yürüyüş yap",
+      "Bir bankta mola verip kent ritmini izle"
+    ],
+    "tips": [
+      "Yaz aylarında sabah ya da akşam saatleri daha serindir.",
+      "Yanına su al; bölge yazın oldukça sıcak olabilir."
+    ],
+    "photoTips": [
+      "Ağaç gölgeleri ve ışık huzmeleriyle doğal kareler yakala."
+    ],
+    "safetyNotes": [
+      "Aile dostu bir alandır; çöplerinizi kutulara atın.",
+      "Öğlen sıcağından kaçınmak için sabah/akşam tercih edin."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bars%C4%B1%20Park%C4%B1%20in%20Nusaybin%2C%20Turkey.jpg?width=1200",
+    "imageCredit": "Wikimedia Commons katkıcıları",
+    "imageLicense": "Lisans, dosya sayfasında belirtilmiştir (TODO: atıf/lisans doğrulanmalı).",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Bars%C4%B1_Park%C4%B1_in_Nusaybin,_Turkey.jpg",
+    "latitude": 37.06972,
+    "longitude": 41.21478,
+    "approxLatitude": 37.06972,
+    "approxLongitude": 41.21478,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 60,
+    "tags": ["park", "aile", "dinlenme", "yeşil", "yürüyüş"],
+    "isFeatured": false,
+    "sources": [
+      { "title": "Wikimedia Commons — Nusaybin", "url": "https://commons.wikimedia.org/wiki/Category:Nusaybin" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "cagcag-deresi",
+    "name": "Çağ Çağ Deresi Kıyısı",
+    "slug": "cagcag-deresi-kiyisi",
+    "category": "fotograf",
+    "shortDescription": "Kentin içinden geçen tarihî Çağ Çağ (Mygdonius) deresi kıyısı; yürüyüş ve fotoğraf için keyifli bir nokta.",
+    "longDescription": "Antik dönemde Mygdonius adıyla bilinen Çağ Çağ Deresi, hem Nusaybin'in hem de tarihinin içinden akar. Dere kıyısındaki düzenlenmiş yürüyüş alanları, özellikle gün batımında fotoğraf için güzel kompozisyonlar sunar.",
+    "history": "Çağ Çağ (antik adıyla Mygdonius), antik Nisibis'in su kaynağı olmuş ve kentin kuşatmalar tarihinde adı geçen akarsudur.",
+    "activities": [
+      "Dere kıyısında kısa bir yürüyüş yap",
+      "Gün batımında fotoğraf çek"
+    ],
+    "tips": [
+      "Altın saat (gün doğumu/batımı) en güzel ışığı verir."
+    ],
+    "photoTips": [
+      "Suyun yansımasını kompozisyona kat.",
+      "Köprü ve kıyı çizgisini öncül plan olarak kullan."
+    ],
+    "safetyNotes": [
+      "Su kenarında adımlarınıza dikkat edin.",
+      "Çevreyi temiz bırakın."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%87a%C4%9F%20%C3%87a%C4%9F%20deresi%2C%20Nusaybin%2C%20Musa%20Anter%20Park%C4%B1.jpg?width=1200",
+    "imageCredit": "Wikimedia Commons katkıcıları",
+    "imageLicense": "Lisans, dosya sayfasında belirtilmiştir (TODO: atıf/lisans doğrulanmalı).",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%C3%87a%C4%9F_%C3%87a%C4%9F_deresi,_Nusaybin,_Musa_Anter_Park%C4%B1.jpg",
+    "latitude": 37.0788,
+    "longitude": 41.2188,
+    "approxLatitude": 37.0788,
+    "approxLongitude": 41.2188,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 30,
+    "tags": ["fotoğraf", "dere", "doğa", "yürüyüş", "mygdonius", "manzara"],
+    "isFeatured": false,
+    "sources": [
+      { "title": "Vikipedi — Nusaybin", "url": "https://tr.wikipedia.org/wiki/Nusaybin" },
+      { "title": "Wikimedia Commons — Nusaybin", "url": "https://commons.wikimedia.org/wiki/Category:Nusaybin" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "kultur-inanc-parki",
+    "name": "Kültür İnanç Parkı",
+    "slug": "kultur-inanc-parki",
+    "category": "park",
+    "shortDescription": "Zeynel Abidin Camii'nin hemen yanında, kültür ve inanç temalı halka açık bir dinlenme ve gezi alanı.",
+    "longDescription": "Kültür İnanç Parkı, Zeynel Abidin Camii ve Mor Yakup Kilisesi'nin hemen yanında yer alan, kültür ve inanç temalı halka açık bir dinlenme ve gezi alanıdır. Tarihî mekânları gezdikten sonra gölgeli yollarında sakin bir mola ve yürüyüş için idealdir.",
+    "history": "",
+    "activities": [
+      "Park alanında rahat bir yürüyüş yap",
+      "Aileyle dinlenmek için mola ver"
+    ],
+    "tips": [
+      "Sabah ve akşam saatleri yürüyüş için daha serin ve keyiflidir."
+    ],
+    "photoTips": [
+      "Yeşil alan ve düzenlemeleri geniş açıyla çek."
+    ],
+    "safetyNotes": [
+      "Halka açık bir dinlenme alanıdır; çevreye saygılı olun."
+    ],
+    "image": "",
+    "imageCredit": "Sinan Doğan",
+    "imageLicense": "",
+    "imageSourceUrl": "",
+    "latitude": null,
+    "longitude": null,
+    "approxLatitude": 37.0668,
+    "approxLongitude": 41.215,
+    "coordinatesVerified": false,
+    "estimatedVisitMinutes": 45,
+    "tags": ["park", "kültür", "inanç", "aile", "dinlenme"],
+    "isFeatured": false,
+    "sources": [],
+    "verificationStatus": "needs_review"
+  },
+  {
+    "id": "kacakcilar-carsisi",
+    "name": "Kaçakçılar Çarşısı",
+    "slug": "kacakcilar-carsisi",
+    "category": "carsi",
+    "shortDescription": "Nusaybin'in yerel adıyla anılan, esnaf ve alışveriş kültürünü yansıtan canlı çarşı.",
+    "longDescription": "Kaçakçılar Çarşısı, kentte halk arasında bu adla bilinen, yerel esnafın ve gündelik alışverişin nabzını tutabileceğiniz bir çarşıdır. Yöresel ürünler, baharatlar ve günlük ihtiyaçlar için esnafla sohbet ederek gezmeye değer.",
+    "history": "Çarşı, sınır kentinin köklü ticaret geleneğinin gündelik bir yansımasıdır.",
+    "activities": [
+      "Yöresel ürünlere ve baharatlara göz at",
+      "Esnafla sohbet ederek pazarlık kültürünü deneyimle",
+      "Hediyelik ve yerel lezzetler için önerileri sor"
+    ],
+    "tips": [
+      "Yöresel lezzetler ve hediyelikler için esnafa danışın.",
+      "Sabah saatleri çarşının en canlı zamanlarındandır."
+    ],
+    "photoTips": [
+      "Tezgah renklerini ve dokuları yakın planda çek.",
+      "Esnafı fotoğraflarken önce izin iste."
+    ],
+    "safetyNotes": [
+      "Yerel esnafa selam verin; pazarlık kültürün bir parçasıdır.",
+      "Yoğun saatlerde eşyalarınıza dikkat edin."
+    ],
+    "image": "",
+    "imageCredit": "",
+    "imageLicense": "",
+    "imageSourceUrl": "",
+    "latitude": 37.0688137,
+    "longitude": 41.2154301,
+    "approxLatitude": 37.0688137,
+    "approxLongitude": 41.2154301,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 60,
+    "tags": ["çarşı", "alışveriş", "esnaf", "hediyelik", "yerel", "pazar"],
+    "isFeatured": false,
+    "sources": [],
+    "verificationStatus": "needs_review"
+  },
+  {
+    "id": "beyazsu",
+    "name": "Beyazsu",
+    "slug": "beyazsu",
+    "category": "park",
+    "shortDescription": "Nusaybin-Midyat yolundaki Beyazsu; berrak suyu ve yeşil vadisiyle sevilen doğa ve mesire alanı.",
+    "longDescription": "Beyazsu, kaynağından çıkan berrak suyu ve yeşil vadisiyle bölgenin gözde doğa ve piknik alanlarından biridir. Son yıllardaki düzenlemelerle dinlenme alanına dönüşmüştür; şehir merkezinin dışında olduğundan yarım günlük bir kaçamak için idealdir.",
+    "history": "Beyazsu, Nusaybin ovasını besleyen su kaynaklarındandır ve resmî turizm kaynaklarında Mardin'in gezilecek doğal yerleri arasında anılır.",
+    "activities": [
+      "Vadi ve su kıyısında doğa yürüyüşü yap",
+      "Piknik ve dinlenme için mola ver",
+      "Doğa fotoğrafçılığı yap"
+    ],
+    "tips": [
+      "Şehir dışındadır; ulaşımı ve dönüşü önceden planlayın.",
+      "Yanınıza su ve atıştırmalık alın."
+    ],
+    "photoTips": [
+      "Berrak suyu ve yeşil vadiyi geniş açıyla çerçevele."
+    ],
+    "safetyNotes": [
+      "Doğa alanıdır; ateş ve çöp konusunda duyarlı olun.",
+      "Su kenarında dikkatli olun ve yerel yönlendirmeleri izleyin."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beyaz%20Su%20-%20Vadi.jpg?width=1200",
+    "imageCredit": "Wikimedia Commons katkıcıları",
+    "imageLicense": "Lisans, dosya sayfasında belirtilmiştir (TODO: atıf/lisans doğrulanmalı).",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Beyaz_Su_-_Vadi.jpg",
+    "latitude": 37.11213,
+    "longitude": 41.22907,
+    "approxLatitude": 37.11213,
+    "approxLongitude": 41.22907,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 120,
+    "tags": ["doğa", "mesire", "piknik", "vadi", "su", "şehir dışı", "aile"],
+    "isFeatured": true,
+    "sources": [
+      { "title": "Türkiye Kültür Portalı — Beyazsu (Mardin)", "url": "https://www.kulturportali.gov.tr/turkiye/mardin/gezilecekyer/beyazsu" },
+      { "title": "Vikipedi — Nusaybin (Coğrafya)", "url": "https://tr.wikipedia.org/wiki/Nusaybin" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "guzel-ticaret",
+    "name": "Güzel Züccaciye",
+    "slug": "guzel-zuccaciye",
+    "category": "carsi",
+    "shortDescription": "Nusaybin'in en köklü esnaflarından; her türlü züccaciye ve özenle seçilmiş hediyeliğin güvenilir adresi.",
+    "longDescription": "Güzel Züccaciye, Nusaybin çarşısının 40 yılı aşkın süredir hizmet veren en eski, en sadık ve güvenilir esnaflarından biridir. Sofranıza ve mutfağınıza şıklık katacak züccaciye ürünlerinden, sevdiklerinize alacağınız zarif hediyeliklere kadar aradığınız her şey burada. Paşabahçe, Korkmaz ve Güral gibi tanınmış markaların cam, çelik ve porselen ürünleri; çay ve kahve takımları, bardaklar, tabaklar, dekoratif parçalar ve mutfak gereçleriyle geniş bir çeşit sunar. Onlarca yıllık bu birikim yalnızca alışverişle sınırlı değil: Nusaybin'in tarihini ve görülmeye değer yerlerini merak ediyorsanız, gönül rahatlığıyla danışabileceğiniz, size içtenlikle yol gösterecek bir esnaf kalitesi de burada. Güler yüzlü hizmeti ve dürüst alışveriş anlayışıyla, Nusaybin'e yolu düşen herkesin uğraması gereken bir esnaf kapısıdır.",
+    "history": "40 yılı aşkın süredir Nusaybin çarşısında hizmet veren köklü bir esnaftır; kentin esnaf geleneğinin güvenilir bir temsilcisi olarak bilinir.",
+    "activities": [
+      "Çay ve kahve takımlarına, bardak ve tabak çeşitlerine göz at",
+      "Mutfak ve sofra için züccaciye seç",
+      "Sevdiklerin için zarif bir hediyelik bul",
+      "Esnafın samimi önerileriyle doğru ürünü keşfet",
+      "Nusaybin'in tarihi ve gezilecek yerleri için esnafa danış"
+    ],
+    "tips": [
+      "Ne aradığını söyle; esnaf en doğru ürünü birlikte seçmene yardımcı olur.",
+      "Takım ürünlerde çeşit boldur; sofranı tamamlayacak parçaları sorabilirsin.",
+      "Nusaybin'in tarihini ve gezilecek yerlerini esnafa sorabilirsin; 40 yılı aşkın birikimle keyifle yol gösterir."
+    ],
+    "photoTips": [
+      "Rengârenk züccaciye raflarını yakın planda, doğal ışıkta çek."
+    ],
+    "safetyNotes": [
+      "Güler yüzlü ve güvenilir bir esnaftır; gönül rahatlığıyla alışveriş edebilirsin.",
+      "Kırılabilir ürünlerde güvenli paketleme için esnaftan destek iste."
+    ],
+    "image": "",
+    "imageCredit": "",
+    "imageLicense": "",
+    "imageSourceUrl": "",
+    "latitude": 37.0705397,
+    "longitude": 41.2166232,
+    "approxLatitude": 37.0705397,
+    "approxLongitude": 41.2166232,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 30,
+    "tags": ["züccaciye", "hediyelik", "alışveriş", "esnaf", "çarşı", "mutfak", "sofra", "yerel", "güvenilir"],
+    "isFeatured": true,
+    "sources": [],
+    "verificationStatus": "verified"
+  }
+]

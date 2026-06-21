@@ -1,0 +1,101 @@
+[
+  {
+    "id": "gorev-mor-yakup-oku",
+    "title": "Mor Yakup Kilisesi'ni keşfet",
+    "description": "Antik Nisibis'in simgesi Mor Yakup Kilisesi hakkında bilgi oku ve Nusaybin Okulu'nun mirasını öğren.",
+    "relatedPoiId": "mor-yakup-kilisesi",
+    "points": 10,
+    "category": "inanc-kultur",
+    "icon": "book-open-variant"
+  },
+  {
+    "id": "gorev-zeynel-abidin-ziyaret",
+    "title": "Zeynel Abidin Camii ve Türbesi'ni ziyaret et",
+    "description": "Kentin en önemli camisini ve türbe bölümünü saygıyla ziyaret et.",
+    "relatedPoiId": "zeynel-abidin-camii",
+    "points": 15,
+    "category": "inanc-kultur",
+    "icon": "mosque"
+  },
+  {
+    "id": "gorev-kultur-inanc-parki",
+    "title": "Kültür İnanç Parkı rotasını tamamla",
+    "description": "Kültür İnanç Parkı'nda kısa bir yürüyüş yap ve dinlen.",
+    "relatedPoiId": "kultur-inanc-parki",
+    "points": 10,
+    "category": "park",
+    "icon": "tree"
+  },
+  {
+    "id": "gorev-kacakcilar-carsisi",
+    "title": "Kaçakçılar Çarşısı'nı gez",
+    "description": "Yerel esnafla sohbet et, yöresel ürünlere ve baharatlara göz at.",
+    "relatedPoiId": "kacakcilar-carsisi",
+    "points": 10,
+    "category": "carsi",
+    "icon": "storefront"
+  },
+  {
+    "id": "gorev-guzel-zuccaciye-ziyaret",
+    "title": "Güzel Züccaciye'yi ziyaret et",
+    "description": "Çarşının köklü esnaflarından Güzel Züccaciye'ye uğra; bir bardak çay eşliğinde züccaciye tezgâhına göz at ve esnafa Nusaybin'in tarihini sor.",
+    "relatedPoiId": "guzel-ticaret",
+    "points": 10,
+    "category": "carsi",
+    "icon": "store"
+  },
+  {
+    "id": "gorev-mirra-kahve",
+    "title": "Yerel kahve (mırra) dene",
+    "description": "Yörenin geleneksel acı kahvesi mırrayı bir esnaf önerisiyle tat.",
+    "relatedPoiId": null,
+    "points": 10,
+    "category": "yemek-icecek",
+    "icon": "coffee"
+  },
+  {
+    "id": "gorev-badem-sekeri",
+    "title": "Badem şekeri veya yerel tatlı önerisini incele",
+    "description": "Yörenin tatlı mirası badem şekerini keşfet ve bir öneri not al.",
+    "relatedPoiId": null,
+    "points": 10,
+    "category": "yerel-deneyim",
+    "icon": "candy"
+  },
+  {
+    "id": "gorev-fotograf-noktasi",
+    "title": "Bir fotoğraf noktasında güzel bir kare yakala",
+    "description": "Çağ Çağ Deresi kıyısı gibi fotojenik bir noktada altın saatte fotoğraf çek.",
+    "relatedPoiId": "cagcag-deresi",
+    "points": 10,
+    "category": "fotograf",
+    "icon": "camera"
+  },
+  {
+    "id": "gorev-merkez-yuruyus",
+    "title": "Şehir merkezinde kısa yürüyüş rotasını tamamla",
+    "description": "Barış Parkı ve çevresinde ferah bir yürüyüş yap.",
+    "relatedPoiId": "barsi-parki",
+    "points": 10,
+    "category": "park",
+    "icon": "walk"
+  },
+  {
+    "id": "gorev-beyazsu-mola",
+    "title": "Beyazsu'da doğa molası ver",
+    "description": "Şehir dışındaki Beyazsu'da yeşil vadiyi ve berrak suyu keşfet.",
+    "relatedPoiId": "beyazsu",
+    "points": 15,
+    "category": "park",
+    "icon": "pine-tree"
+  },
+  {
+    "id": "gorev-nisibis-tarih",
+    "title": "Antik Nisibis'in tarihini keşfet",
+    "description": "Nusaybin'in antik adı Nisibis'in çok katmanlı tarihini uygulamadan oku.",
+    "relatedPoiId": null,
+    "points": 10,
+    "category": "tarihi",
+    "icon": "book"
+  }
+]

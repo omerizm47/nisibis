@@ -1,0 +1,113 @@
+[
+  {
+    "id": "merkez-ultimate-rotasi",
+    "title": "Şehir Merkezi Tam Keşif Rotası",
+    "description": "Nusaybin merkezini tek bir yürüyüşte baştan sona keşfetmek isteyenler için kapsamlı rota. Antik Nisibis'in simgesi Mor Yakup Kilisesi ile Zeynel Abidin Camii ve Türbesi'nden başlar; Kültür İnanç Parkı ve Barış Parkı'nın yeşilinde dinlenir; Kaçakçılar Çarşısı'nın canlı esnaf kültürüne dalar ve rota Güzel Züccaciye'de bir bardak çay eşliğinde Nusaybin sohbetiyle taçlanır.",
+    "estimatedDuration": "≈ 4-5 saat",
+    "poiIds": ["mor-yakup-kilisesi", "zeynel-abidin-camii", "kultur-inanc-parki", "barsi-parki", "kacakcilar-carsisi", "guzel-ticaret"],
+    "difficulty": "orta",
+    "recommendedTime": "Sabah başlangıç",
+    "highlights": [
+      "Antik Nisibis'in simgesi Mor Yakup Kilisesi ve Nusaybin Okulu mirası",
+      "Zeynel Abidin Camii ve Türbesi'nde manevi atmosfer",
+      "Kültür İnanç Parkı ve Barış Parkı'nda yeşil molalar",
+      "Kaçakçılar Çarşısı'nda yöresel ürünler ve mırra",
+      "Güzel Züccaciye'de çay eşliğinde alışveriş ve Nusaybin sohbeti"
+    ],
+    "safetyNotes": [
+      "Yaz aylarında öğlen sıcağından kaçının; yanınıza bol su ve şapka alın.",
+      "İbadet mekânlarında mütevazı kıyafet tercih edin ve sessiz olun.",
+      "Çarşıda yoğun saatlerde eşyalarınıza dikkat edin."
+    ]
+  },
+  {
+    "id": "hizli-tur-2-saat",
+    "title": "2 Saatlik Hızlı Nusaybin Turu",
+    "description": "Az vaktiniz varsa kentin öne çıkan üç durağını kısa sürede gezdiren kompakt rota.",
+    "estimatedDuration": "≈ 2 saat",
+    "poiIds": ["mor-yakup-kilisesi", "zeynel-abidin-camii", "kacakcilar-carsisi"],
+    "difficulty": "kolay",
+    "recommendedTime": "Sabah",
+    "highlights": [
+      "Antik Nisibis'in simgesi Mor Yakup Kilisesi",
+      "Zeynel Abidin Camii ve Türbesi",
+      "Kaçakçılar Çarşısı'nda yerel esnaf deneyimi"
+    ],
+    "safetyNotes": [
+      "Yaz aylarında öğlen sıcağından kaçının ve bol su için.",
+      "İbadet mekânlarında mütevazı kıyafet tercih edin."
+    ]
+  },
+  {
+    "id": "kultur-inanc-rotasi",
+    "title": "Kültür ve İnanç Rotası",
+    "description": "Yan yana yükselen Mor Yakup Kilisesi ile Zeynel Abidin Camii'nin tanıklığında, Nusaybin'in çok katmanlı inanç ve kültür mozaiğini adım adım keşfedin.",
+    "estimatedDuration": "≈ 3 saat",
+    "poiIds": ["mor-yakup-kilisesi", "zeynel-abidin-camii", "kultur-inanc-parki"],
+    "difficulty": "kolay",
+    "recommendedTime": "Sabah",
+    "highlights": [
+      "Erken dönem Süryani kültürü ve Nusaybin Okulu",
+      "Zeynel Abidin Türbesi'nde manevi atmosfer",
+      "Kültür İnanç Parkı'nda dinlenme"
+    ],
+    "safetyNotes": [
+      "İbadet mekânlarında sessiz ve saygılı olun.",
+      "İnsanları fotoğraflarken önce izin isteyin."
+    ]
+  },
+  {
+    "id": "carsi-lezzet-rotasi",
+    "title": "Çarşı ve Merkez Rotası",
+    "description": "Kent merkezini yürüyerek keşfedin: önce Kaçakçılar Çarşısı'nda esnafla sohbet, ardından Çağ Çağ Deresi kıyısı ve Barış Parkı'nda ferah bir mola.",
+    "estimatedDuration": "≈ 2-3 saat",
+    "poiIds": ["kacakcilar-carsisi", "cagcag-deresi", "barsi-parki"],
+    "difficulty": "kolay",
+    "recommendedTime": "Sabah",
+    "highlights": [
+      "Kaçakçılar Çarşısı'nda yöresel ürünler ve mırra molası",
+      "Çağ Çağ Deresi kıyısında keyifli bir yürüyüş",
+      "Barış Parkı'nda yeşil bir dinlenme molası"
+    ],
+    "safetyNotes": [
+      "Çarşıda yoğun saatlerde eşyalarınıza dikkat edin.",
+      "Su kenarında adımlarınıza dikkat edin."
+    ]
+  },
+  {
+    "id": "fotograf-rotasi",
+    "title": "Doğa ve Fotoğraf Rotası",
+    "description": "Suyun, yeşilin ve manzaranın peşinde; altın saat ışığında doğa ve fotoğraf odaklı bir rota. Beyazsu şehir dışındadır, ulaşımı planlayın.",
+    "estimatedDuration": "≈ 4 saat",
+    "poiIds": ["cagcag-deresi", "barsi-parki", "beyazsu"],
+    "difficulty": "orta",
+    "recommendedTime": "Sabah veya akşam",
+    "highlights": [
+      "Çağ Çağ Deresi kıyısında gün batımı",
+      "Barış Parkı'nda yeşil ve doğal kareler",
+      "Beyazsu'nun berrak suyu ve vadisi"
+    ],
+    "safetyNotes": [
+      "Su kenarında adımlarınıza dikkat edin.",
+      "Beyazsu şehir dışıdır; ulaşımı önceden planlayın."
+    ]
+  },
+  {
+    "id": "yarim-gun-kesif",
+    "title": "Yarım Günlük Nusaybin Keşfi",
+    "description": "Tarih, inanç, çarşı ve doğayı bir araya getiren kapsamlı yarım günlük rota. Beyazsu şehir dışında olduğundan ulaşımı önceden planlayın.",
+    "estimatedDuration": "≈ 4-5 saat",
+    "poiIds": ["zeynel-abidin-camii", "mor-yakup-kilisesi", "kacakcilar-carsisi", "beyazsu"],
+    "difficulty": "orta",
+    "recommendedTime": "Sabah başlangıç",
+    "highlights": [
+      "Kent merkezinin tarihî ve manevi durakları",
+      "Çarşıda yerel lezzetler",
+      "Beyazsu'da doğa molası"
+    ],
+    "safetyNotes": [
+      "Beyazsu şehir dışındadır; ulaşımı ve dönüşü önceden planlayın.",
+      "Gün boyu için yanınıza su ve şapka alın."
+    ]
+  }
+]
