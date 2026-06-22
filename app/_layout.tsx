@@ -20,7 +20,7 @@ import { I18nextProvider } from 'react-i18next';
 
 import i18n, { loadStoredLanguage } from '@/i18n';
 import { ProgressProvider } from '@/hooks';
-import { CelebrationProvider } from '@/components';
+import { CelebrationProvider, ErrorBoundary } from '@/components';
 import { OnboardingProvider } from '@/hooks/useOnboarding';
 import { colors } from '@/theme';
 
@@ -75,6 +75,7 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={styles.root}>
       <SafeAreaProvider>
+        <ErrorBoundary>
         <I18nextProvider i18n={i18n}>
           <OnboardingProvider>
             <ProgressProvider>
@@ -100,6 +101,7 @@ export default function RootLayout() {
             </ProgressProvider>
           </OnboardingProvider>
         </I18nextProvider>
+        </ErrorBoundary>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );

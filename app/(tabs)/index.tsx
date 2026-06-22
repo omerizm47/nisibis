@@ -7,7 +7,7 @@ import MapView, { Marker, Polyline, PROVIDER_DEFAULT, UrlTile } from '@/componen
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { BottomPlaceSheet, LoadingState, ProgressRing } from '@/components';
-import { getMarkerImageSource } from '@/components/MapMarker';
+import { getMarkerImageSource, userMarkerImage } from '@/components/MapMarker';
 import { getAllPlaces, getPlaceById, getRouteById, getRoutePlaces, useLocation, useProgress } from '@/hooks';
 import type { Place, TourRoute } from '@/types';
 import { colors, radius, shadow, spacing, typography } from '@/theme';
@@ -218,12 +218,8 @@ export default function MapScreen() {
             coordinate={{ latitude: location.latitude, longitude: location.longitude }}
             anchor={{ x: 0.5, y: 0.5 }}
             flat
-            tracksViewChanges={false}
-          >
-            <View style={styles.userDot}>
-              <View style={styles.userDotCore} />
-            </View>
-          </Marker>
+            image={userMarkerImage}
+          />
         ) : null}
       </MapView>
 
@@ -345,22 +341,7 @@ const styles = StyleSheet.create({
   loadingOverlay: {
     ...StyleSheet.absoluteFillObject,
   },
-  userDot: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    backgroundColor: withAlpha(colors.indigo, 0.22),
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  userDotCore: {
-    width: 13,
-    height: 13,
-    borderRadius: 6.5,
-    backgroundColor: colors.indigo,
-    borderWidth: 2,
-    borderColor: colors.onPrimary,
-  },
+
   topBar: {
     flexDirection: 'row',
     alignItems: 'center',

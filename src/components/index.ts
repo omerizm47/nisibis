@@ -11,6 +11,7 @@ export { ProgressCard } from './ProgressCard';
 export { ProgressRing } from './ProgressRing';
 export { SafetyNotice } from './SafetyNotice';
 export { EmptyState } from './EmptyState';
+export { ErrorBoundary } from './ErrorBoundary';
 export { LoadingState } from './LoadingState';
 export { RemoteImage } from './RemoteImage';
 export { OrnamentDivider, PatternBackdrop } from './Ornament';

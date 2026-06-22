@@ -41,6 +41,11 @@ export function RemoteImage({ source, style, imageStyle, resizeMode = 'cover' }:
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Kaynak değişince hata durumunu sıfırla (liste geri dönüşümünde takılı kalmasın).
+  useEffect(() => {
+    setErrored(false);
+  }, [source]);
+
   return (
     <Animated.View style={[styles.container, style]}>
       <LinearGradient colors={gradients.nightStone} style={StyleSheet.absoluteFill} />

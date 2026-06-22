@@ -14,6 +14,9 @@ const markerImages: Record<PlaceCategory, ImageRequireSource> = {
 
 const completedImage: ImageRequireSource = require('../../assets/images/markers/completed.png');
 
+/** Kullanıcı konumu ("buradasın") nokta marker'ı — PNG, custom View kullanmaz. */
+export const userMarkerImage: ImageRequireSource = require('../../assets/images/markers/user.png');
+
 export function getMarkerImageSource(category: PlaceCategory, completed = false): ImageRequireSource {
   return completed ? completedImage : (markerImages[category] ?? markerImages.tarihi);
 }

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { Linking } from 'react-native';
 import * as Location from 'expo-location';
 
 export type LocationPermission = 'granted' | 'denied' | 'undetermined';
@@ -57,6 +58,10 @@ export function useLocation(autoStart = true): UseLocationResult {
       if (status === 'granted') {
         await startWatching();
         return true;
+      }
+      // Kalıcı olarak reddedildiyse (tekrar sorulamıyorsa) sistem ayarlarına yönlendir.
+      if (request && status === 'denied' && !perm.canAskAgain) {
+        void Linking.openSettings();
       }
       return false;
     },
