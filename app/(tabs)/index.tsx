@@ -169,7 +169,6 @@ export default function MapScreen() {
         onMapReady={handleMapReady}
         customMapStyle={MAP_STYLE}
         showsPointsOfInterest={false}
-        showsUserLocation={permission === 'granted'}
         showsMyLocationButton={false}
         toolbarEnabled={false}
         showsCompass={false}
@@ -214,6 +213,18 @@ export default function MapScreen() {
             />
           );
         })}
+        {location ? (
+          <Marker
+            coordinate={{ latitude: location.latitude, longitude: location.longitude }}
+            anchor={{ x: 0.5, y: 0.5 }}
+            flat
+            tracksViewChanges={false}
+          >
+            <View style={styles.userDot}>
+              <View style={styles.userDotCore} />
+            </View>
+          </Marker>
+        ) : null}
       </MapView>
 
       <View style={[StyleSheet.absoluteFill, { pointerEvents: 'box-none' }]}>
@@ -333,6 +344,22 @@ const styles = StyleSheet.create({
   },
   loadingOverlay: {
     ...StyleSheet.absoluteFillObject,
+  },
+  userDot: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: withAlpha(colors.indigo, 0.22),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  userDotCore: {
+    width: 13,
+    height: 13,
+    borderRadius: 6.5,
+    backgroundColor: colors.indigo,
+    borderWidth: 2,
+    borderColor: colors.onPrimary,
   },
   topBar: {
     flexDirection: 'row',
