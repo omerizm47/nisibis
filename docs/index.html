@@ -3,291 +3,405 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nisibis — Nusaybin Keşif Rehberi</title>
+<title>Nisibis · Nusaybin Keşif Rehberi</title>
 <meta name="description" content="Nisibis, Nusaybin'in kültürel ve tarihî mirasını tanıtan ücretsiz mobil rehber. Harita, hazır rotalar, keşif görevleri; Türkçe, İngilizce ve Arapça." />
 <meta name="theme-color" content="#C0682B" />
 <link rel="icon" href="img/icon.png" />
-
-<!-- Rich link previews (WhatsApp / e-posta / sosyal medya) -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Nisibis — Nusaybin Keşif Rehberi" />
+<meta property="og:title" content="Nisibis · Nusaybin Keşif Rehberi" />
 <meta property="og:description" content="Yan yana bir kilise ve cami, binlerce yıllık Nisibis, haritalı rotalar ve keşif görevleri. Ücretsiz; Türkçe · English · العربية." />
 <meta property="og:url" content="https://omerizm47.github.io/nisibis/" />
 <meta property="og:image" content="https://omerizm47.github.io/nisibis/img/icon.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Nisibis — Nusaybin Keşif Rehberi" />
-<meta name="twitter:description" content="Nusaybin'in dijital keşif rehberi. Ücretsiz; Türkçe · English · العربية." />
 <meta name="twitter:image" content="https://omerizm47.github.io/nisibis/img/icon.png" />
-
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #ECE0CD; --card: #FBF6EC; --card-alt: #F1E7D4;
-    --primary: #C0682B; --primary-dark: #8A491E; --copper: #A8632A; --clay: #B0532A;
-    --indigo: #2E4374; --turquoise: #2C8A82;
-    --text: #3B2A18; --muted: #6E5942; --cream: #FFF7EB;
-    --border: #E0D0B6; --border-strong: #C7AE8C;
+    --bg:#ECE0CD; --bg2:#F3E7D0; --card:#FBF6EC; --card-alt:#F1E7D4; --limestone:#E7D7C3;
+    --primary:#C0682B; --primary-dark:#8A491E; --copper:#A8632A; --clay:#B0532A;
+    --indigo:#2E4374; --turquoise:#2C8A82; --sand:#CDA063; --pomegranate:#9E2B25;
+    --text:#3B2A18; --muted:#6E5942; --cream:#FFF7EB; --border:#E0D0B6; --border-strong:#C7AE8C;
+    --kilim:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24'%3E%3Cpath d='M0 12 12 0 24 12 12 24Z' fill='%23A8632A'/%3E%3Cpath d='M24 12 36 0 48 12 36 24Z' fill='%232C8A82'/%3E%3Cpath d='M12 12 18 6 24 12 18 18Z' fill='%23F3E7D0'/%3E%3Cpath d='M36 12 42 6 48 12 42 18Z' fill='%23F3E7D0'/%3E%3C/svg%3E");
+    --lattice:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='%23A8632A' fill-opacity='0.05'%3E%3Crect x='26' y='26' width='12' height='12' rx='2'/%3E%3Crect x='26' y='26' width='12' height='12' rx='2' transform='rotate(45 32 32)'/%3E%3C/g%3E%3C/svg%3E");
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
   body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    color: var(--text); background: var(--bg); line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-    background-image: radial-gradient(1200px 500px at 100% -10%, #F3E7D0 0%, transparent 60%);
+    font-family:'Inter', system-ui, -apple-system, sans-serif; color:var(--text);
+    background-color:var(--bg); background-image:var(--lattice), radial-gradient(1200px 520px at 100% -10%, var(--bg2) 0%, transparent 60%);
+    line-height:1.6; -webkit-font-smoothing:antialiased;
   }
-  h1, h2, h3, .display { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; }
-  a { color: inherit; }
+  html[dir="rtl"] body { font-family:'Amiri', 'Inter', system-ui, serif; line-height:1.9; }
+  h1,h2,h3,.display { font-family:'Fraunces', Georgia, serif; }
+  html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] .display { font-family:'Amiri', serif; }
+  a { color:inherit; }
+  .kilim { height:16px; background:var(--kilim) repeat-x; background-size:auto 16px; }
 
-  /* ---------- STICKY NAV ---------- */
-  .nav {
-    position: sticky; top: 0; z-index: 50;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 12px 22px; background: rgba(251,246,236,0.82);
-    backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);
+  /* NAV */
+  .nav { position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:11px 22px; background:rgba(251,246,236,0.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
+  .nav-brand { display:flex; align-items:center; gap:11px; font-family:'Fraunces', serif; font-weight:700; font-size:19px; color:var(--primary); }
+  .nav-brand img { width:34px; height:34px; border-radius:9px; }
+  .nav-right { display:flex; align-items:center; gap:14px; }
+  .langs { display:flex; gap:2px; background:var(--card-alt); border:1px solid var(--border); border-radius:999px; padding:3px; }
+  .langs button { border:none; background:transparent; cursor:pointer; font:inherit; font-size:12.5px; font-weight:600; color:var(--muted);
+    padding:5px 11px; border-radius:999px; transition:all .15s ease; }
+  .langs button.on { background:var(--primary); color:var(--cream); }
+  .nav-cta { display:inline-flex; align-items:center; gap:8px; text-decoration:none; background:var(--text); color:var(--cream);
+    padding:9px 16px; border-radius:11px; font-size:13px; font-weight:600; transition:transform .18s, background .18s; white-space:nowrap; }
+  .nav-cta:hover { transform:translateY(-2px); background:var(--primary-dark); }
+
+  .wrap { max-width:940px; margin:0 auto; }
+
+  /* HERO */
+  .hero { position:relative; overflow:hidden; color:var(--cream); max-width:940px; margin:22px auto 0; border-radius:30px;
+    padding:60px 46px 20px; background:linear-gradient(140deg,#C0682B 0%,#9A501F 55%,#7A3E1D 100%);
+    box-shadow:0 30px 70px rgba(43,30,18,0.28); }
+  .hero .stars { position:absolute; inset:0; opacity:0.16; animation:drift 44s linear infinite; }
+  @keyframes drift { from{background-position:0 0} to{background-position:280px 280px} }
+  .arch { position:absolute; top:26px; right:-40px; width:260px; height:300px; opacity:0.18; z-index:0; }
+  html[dir="rtl"] .arch { right:auto; left:-40px; transform:scaleX(-1); }
+  .hero-top { display:flex; align-items:center; gap:22px; position:relative; z-index:1; }
+  .logo-arch { position:relative; width:118px; height:118px; flex:none; }
+  .logo-arch svg { position:absolute; inset:0; width:100%; height:100%; }
+  .logo { position:absolute; width:96px; height:96px; left:11px; top:15px; border-radius:20px;
+    box-shadow:0 12px 26px rgba(43,30,18,0.4); }
+  .brand-name { font-size:52px; font-weight:700; line-height:1; letter-spacing:-0.5px; }
+  .brand-tag { font-size:15px; font-weight:600; letter-spacing:3px; text-transform:uppercase; opacity:0.92; margin-top:9px; }
+  html[dir="rtl"] .brand-tag { letter-spacing:0; }
+  .hero-lede { position:relative; z-index:1; margin-top:28px; font-size:21px; line-height:1.55; max-width:660px;
+    font-family:'Fraunces', Georgia, serif; font-weight:500; }
+  html[dir="rtl"] .hero-lede { font-family:'Amiri', serif; }
+  .hero-badges { position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+  .pill { display:inline-flex; align-items:center; gap:7px; background:rgba(255,247,235,0.16); border:1px solid rgba(255,247,235,0.32);
+    padding:8px 15px; border-radius:999px; font-size:13px; font-weight:600; }
+  .hero-actions { position:relative; z-index:1; margin-top:26px; display:flex; gap:12px; flex-wrap:wrap; }
+  .btn { display:inline-flex; align-items:center; gap:9px; text-decoration:none; padding:13px 22px; border-radius:13px;
+    font-size:15px; font-weight:600; transition:transform .18s, box-shadow .18s; }
+  .btn-primary { background:var(--cream); color:var(--primary-dark); box-shadow:0 10px 24px rgba(43,30,18,0.25); }
+  .btn-primary:hover { transform:translateY(-3px); box-shadow:0 16px 32px rgba(43,30,18,0.32); }
+  .btn-ghost { border:1.5px solid rgba(255,247,235,0.5); color:var(--cream); }
+  .btn-ghost:hover { transform:translateY(-3px); background:rgba(255,247,235,0.12); }
+  .hero-kilim { margin:34px -46px 0; height:18px; background:var(--kilim) repeat-x; background-size:auto 18px; opacity:0.9; }
+
+  /* SECTIONS */
+  .section { padding:44px 46px; }
+  .eyebrow { display:inline-flex; align-items:center; gap:9px; font-size:12px; font-weight:700; letter-spacing:2.5px;
+    text-transform:uppercase; color:var(--primary); }
+  html[dir="rtl"] .eyebrow { letter-spacing:0; }
+  .star { width:15px; height:15px; flex:none; }
+  .h2 { font-size:29px; font-weight:700; letter-spacing:-0.3px; margin:11px 0 12px; color:var(--text); }
+  .lead { font-size:16.5px; color:var(--muted); max-width:730px; }
+
+  /* SCREENSHOTS */
+  .shots { display:flex; gap:20px; overflow-x:auto; padding:8px 2px 12px; scroll-snap-type:x mandatory; }
+  .shot { flex:none; width:200px; text-align:center; scroll-snap-align:center; }
+  .phone { width:200px; height:422px; border-radius:32px; background:#241608; padding:8px; position:relative;
+    box-shadow:0 18px 38px rgba(43,30,18,0.3); transition:transform .25s, box-shadow .25s; }
+  .shot:hover .phone { transform:translateY(-8px) rotate(-1deg); box-shadow:0 26px 48px rgba(43,30,18,0.36); }
+  .phone::before { content:""; position:absolute; top:15px; left:50%; transform:translateX(-50%); width:54px; height:5px;
+    border-radius:3px; background:rgba(255,255,255,0.35); z-index:2; }
+  .phone img { width:100%; height:100%; object-fit:cover; border-radius:25px; display:block; }
+  .shot-title { font-family:'Fraunces', serif; font-weight:600; font-size:15.5px; margin-top:15px; color:var(--text); }
+  html[dir="rtl"] .shot-title { font-family:'Amiri', serif; }
+  .shot-desc { font-size:12.5px; color:var(--muted); margin-top:3px; line-height:1.5; }
+
+  /* FEATURES */
+  .features { display:grid; grid-template-columns:repeat(2,1fr); gap:13px; }
+  .feature { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:16px 17px; display:flex; gap:12px;
+    align-items:flex-start; transition:transform .2s, box-shadow .2s, border-color .2s; }
+  .feature:hover { transform:translateY(-4px); box-shadow:0 14px 28px rgba(43,30,18,0.12); border-color:var(--border-strong); }
+  .fstar { flex:none; margin-top:2px; width:20px; height:20px; }
+  .feature b { display:block; font-size:14.5px; color:var(--text); font-weight:600; }
+  .feature span { font-size:13px; color:var(--muted); }
+
+  /* NGO */
+  .ngo { position:relative; overflow:hidden; background:linear-gradient(150deg,#FBF6EC,#F1E3CB); border-radius:26px; margin:0 22px;
+    border:1px solid var(--border-strong); box-shadow:0 18px 40px rgba(43,30,18,0.1); }
+  .ngo ul { list-style:none; margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:12px 30px; }
+  .ngo li { position:relative; padding-inline-start:28px; font-size:15px; color:var(--text); }
+  .ngo li::before { content:""; position:absolute; inset-inline-start:0; top:7px; width:12px; height:12px;
+    background:var(--turquoise); transform:rotate(45deg); border-radius:2px; }
+
+  /* CTA */
+  .cta { display:flex; gap:30px; align-items:center; flex-wrap:wrap; justify-content:space-between; }
+  .cta-text { flex:1; min-width:300px; }
+  .store-line { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .store-badge { display:inline-flex; align-items:center; gap:9px; background:var(--text); color:var(--cream); padding:12px 18px;
+    border-radius:12px; font-size:13.5px; font-weight:600; text-decoration:none; transition:transform .18s; }
+  .store-badge:hover { transform:translateY(-2px); }
+  .store-badge.soft { background:transparent; color:var(--text); border:1.5px solid var(--border-strong); }
+  .qr { text-align:center; }
+  .qr img { width:150px; height:150px; border-radius:14px; border:7px solid var(--cream); background:#fff;
+    box-shadow:0 10px 24px rgba(43,30,18,0.2); }
+  .qr small { display:block; margin-top:9px; font-size:12px; color:var(--muted); }
+  .qr a { color:var(--primary); text-decoration:none; font-weight:600; }
+
+  /* FOOTER */
+  .foot-kilim { height:16px; background:var(--kilim) repeat-x; background-size:auto 16px; margin-top:30px; }
+  .foot { background:#2B1E12; color:#E7D7C3; padding:26px 46px; display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:12px; font-size:13.5px; }
+  .foot b { color:var(--cream); font-family:'Fraunces', serif; }
+  html[dir="rtl"] .foot b { font-family:'Amiri', serif; }
+  .foot a { color:#E7C9A0; text-decoration:none; }
+  .foot a:hover { color:var(--cream); }
+
+  /* REVEAL */
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity:1; transform:none; }
+
+  @media (max-width:720px){
+    .features,.ngo ul { grid-template-columns:1fr; }
+    .section,.hero,.foot { padding-left:24px; padding-right:24px; }
+    .brand-name { font-size:40px; } .hero { border-radius:0; margin-top:0; } .arch { display:none; }
   }
-  .nav-brand { display: flex; align-items: center; gap: 11px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; color: var(--primary); }
-  .nav-brand img { width: 34px; height: 34px; border-radius: 9px; }
-  .nav-cta {
-    display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
-    background: var(--text); color: var(--cream); padding: 9px 16px; border-radius: 11px;
-    font-size: 13px; font-weight: 600; transition: transform .18s ease, background .18s ease;
-  }
-  .nav-cta:hover { transform: translateY(-2px); background: var(--primary-dark); }
-
-  .wrap { max-width: 940px; margin: 0 auto; }
-
-  /* ---------- HERO ---------- */
-  .hero {
-    position: relative; overflow: hidden; color: var(--cream);
-    background: linear-gradient(140deg, #C0682B 0%, #9A501F 55%, #7A3E1D 100%);
-    padding: 60px 44px 54px; margin: 22px auto 0; max-width: 940px; border-radius: 30px;
-    box-shadow: 0 30px 70px rgba(43,30,18,0.28);
-  }
-  .hero .stars { position: absolute; inset: 0; opacity: 0.15; animation: drift 40s linear infinite; }
-  @keyframes drift { from { background-position: 0 0; } to { background-position: 240px 240px; } }
-  .hero-top { display: flex; align-items: center; gap: 22px; position: relative; z-index: 1; }
-  .logo { width: 104px; height: 104px; border-radius: 24px; flex: none;
-    box-shadow: 0 14px 30px rgba(43,30,18,0.4); border: 2px solid rgba(255,247,235,0.5); }
-  .brand-name { font-size: 52px; font-weight: 700; line-height: 1; letter-spacing: -0.5px; }
-  .brand-tag { font-size: 16px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; opacity: 0.92; margin-top: 9px; }
-  .hero-lede { position: relative; z-index: 1; margin-top: 28px; font-size: 21px; line-height: 1.5; max-width: 660px;
-    font-family: 'Fraunces', Georgia, serif; font-weight: 500; }
-  .hero-badges { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-  .pill { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,247,235,0.16);
-    border: 1px solid rgba(255,247,235,0.32); padding: 8px 15px; border-radius: 999px; font-size: 13px; font-weight: 600; }
-  .hero-actions { position: relative; z-index: 1; margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; padding: 13px 22px; border-radius: 13px;
-    font-size: 15px; font-weight: 600; transition: transform .18s ease, box-shadow .18s ease; }
-  .btn-primary { background: var(--cream); color: var(--primary-dark); box-shadow: 0 10px 24px rgba(43,30,18,0.25); }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 32px rgba(43,30,18,0.32); }
-  .btn-ghost { border: 1.5px solid rgba(255,247,235,0.5); color: var(--cream); }
-  .btn-ghost:hover { transform: translateY(-3px); background: rgba(255,247,235,0.12); }
-
-  /* ---------- SECTIONS ---------- */
-  .section { padding: 44px; }
-  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700;
-    letter-spacing: 2.5px; text-transform: uppercase; color: var(--primary); }
-  .star { width: 15px; height: 15px; display: inline-block; }
-  .h2 { font-size: 29px; font-weight: 700; letter-spacing: -0.3px; margin: 10px 0 12px; color: var(--text); }
-  .lead { font-size: 16.5px; color: var(--muted); max-width: 720px; }
-
-  /* ---------- SCREENSHOTS ---------- */
-  .shots { display: flex; gap: 20px; overflow-x: auto; padding: 8px 2px 12px; scroll-snap-type: x mandatory; }
-  .shot { flex: none; width: 200px; text-align: center; scroll-snap-align: center; }
-  .phone { width: 200px; height: 422px; border-radius: 32px; background: #241608; padding: 8px;
-    box-shadow: 0 18px 38px rgba(43,30,18,0.3); position: relative; transition: transform .25s ease, box-shadow .25s ease; }
-  .shot:hover .phone { transform: translateY(-8px) rotate(-1deg); box-shadow: 0 26px 48px rgba(43,30,18,0.36); }
-  .phone::before { content: ""; position: absolute; top: 15px; left: 50%; transform: translateX(-50%);
-    width: 54px; height: 5px; border-radius: 3px; background: rgba(255,255,255,0.35); z-index: 2; }
-  .phone img { width: 100%; height: 100%; object-fit: cover; border-radius: 25px; display: block; }
-  .shot-title { font-family: 'Fraunces', serif; font-weight: 600; font-size: 15.5px; margin-top: 15px; color: var(--text); }
-  .shot-desc { font-size: 12.5px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
-
-  /* ---------- FEATURES ---------- */
-  .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 13px; }
-  .feature { background: var(--card-alt); border: 1px solid var(--border); border-radius: 16px; padding: 16px 17px;
-    display: flex; gap: 12px; align-items: flex-start; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
-  .feature:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(43,30,18,0.12); border-color: var(--border-strong); }
-  .feature .fstar { flex: none; margin-top: 2px; width: 20px; height: 20px; }
-  .feature b { display: block; font-size: 14.5px; color: var(--text); font-weight: 600; }
-  .feature span { font-size: 13px; color: var(--muted); }
-
-  /* ---------- NGO PANEL ---------- */
-  .ngo { background: linear-gradient(150deg, #FBF6EC, #F1E3CB); border-radius: 26px; margin: 0 22px;
-    border: 1px solid var(--border-strong); box-shadow: 0 18px 40px rgba(43,30,18,0.1); }
-  .ngo ul { list-style: none; margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 28px; }
-  .ngo li { position: relative; padding-left: 27px; font-size: 15px; color: var(--text); }
-  .ngo li::before { content: ""; position: absolute; left: 0; top: 6px; width: 12px; height: 12px;
-    background: var(--primary); transform: rotate(45deg); border-radius: 2px; }
-
-  /* ---------- CTA ---------- */
-  .cta { display: flex; gap: 30px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
-  .cta-text { flex: 1; min-width: 300px; }
-  .store-line { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
-  .store-badge { display: inline-flex; align-items: center; gap: 9px; background: var(--text); color: var(--cream);
-    padding: 12px 18px; border-radius: 12px; font-size: 13.5px; font-weight: 600; text-decoration: none;
-    transition: transform .18s ease; }
-  .store-badge:hover { transform: translateY(-2px); }
-  .store-badge.soft { background: transparent; color: var(--text); border: 1.5px solid var(--border-strong); }
-  .qr { text-align: center; }
-  .qr img { width: 148px; height: 148px; border-radius: 14px; border: 7px solid var(--cream);
-    box-shadow: 0 10px 24px rgba(43,30,18,0.2); background: #fff; }
-  .qr small { display: block; margin-top: 9px; font-size: 12px; color: var(--muted); }
-  .qr a { color: var(--primary); text-decoration: none; font-weight: 600; }
-
-  /* ---------- FOOTER ---------- */
-  .foot { background: #2B1E12; color: #E7D7C3; padding: 26px 44px; margin-top: 30px;
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 13.5px; }
-  .foot b { color: var(--cream); font-family: 'Fraunces', serif; }
-  .foot a { color: #E7C9A0; text-decoration: none; }
-  .foot a:hover { color: var(--cream); }
-
-  /* ---------- SCROLL REVEAL ---------- */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
-  .reveal.in { opacity: 1; transform: none; }
-
-  @media (max-width: 720px) {
-    .features, .ngo ul { grid-template-columns: 1fr; }
-    .section, .hero, .foot { padding-left: 24px; padding-right: 24px; }
-    .brand-name { font-size: 40px; }
-    .hero { border-radius: 0; margin-top: 0; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal { opacity: 1; transform: none; transition: none; }
-    .hero .stars { animation: none; }
-    html { scroll-behavior: auto; }
-  }
-  @media print {
-    .nav, .hero-actions { display: none; }
-    body { background: #fff; }
-    .hero { box-shadow: none; }
-    .reveal { opacity: 1; transform: none; }
-    .shots { overflow: visible; flex-wrap: wrap; justify-content: center; }
-  }
+  @media (prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none;transition:none} .hero .stars{animation:none} html{scroll-behavior:auto} }
+  @media print { .nav,.hero-actions{display:none} body{background:#fff} .hero{box-shadow:none} .reveal{opacity:1;transform:none} .shots{overflow:visible;flex-wrap:wrap;justify-content:center} }
 </style>
 </head>
 <body>
 
-<!-- STICKY NAV -->
 <nav class="nav">
   <span class="nav-brand"><img src="img/icon.png" alt="" /> Nisibis</span>
-  <a class="nav-cta" href="https://apps.apple.com/app/id6785038395">App Store'da İndir</a>
+  <div class="nav-right">
+    <div class="langs" role="group" aria-label="Language">
+      <button data-lang="tr" class="on">TR</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="ar">ع</button>
+    </div>
+    <a class="nav-cta" data-i18n="nav.cta" href="https://apps.apple.com/app/id6785038395">App Store'da İndir</a>
+  </div>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
   <svg class="stars" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <defs><pattern id="p" width="56" height="56" patternUnits="userSpaceOnUse">
       <g fill="#FFF7EB"><rect x="20" y="20" width="16" height="16" rx="2"/><rect x="20" y="20" width="16" height="16" rx="2" transform="rotate(45 28 28)"/></g>
-    </pattern></defs>
-    <rect width="400" height="200" fill="url(#p)"/>
+    </pattern></defs><rect width="400" height="200" fill="url(#p)"/>
+  </svg>
+  <svg class="arch" viewBox="0 0 200 240" fill="none" aria-hidden="true">
+    <path d="M20 240 V96 C20 40 55 12 100 12 C145 12 180 40 180 96 V240" stroke="#FFF7EB" stroke-width="3"/>
+    <path d="M100 12 L108 30 L100 20 L92 30 Z" fill="#FFF7EB"/>
   </svg>
   <div class="hero-top">
-    <img class="logo" src="img/icon.png" alt="Nisibis logo" />
+    <div class="logo-arch">
+      <svg viewBox="0 0 118 118" aria-hidden="true"><path d="M11 118 V52 C11 27 32 11 59 11 C86 11 107 27 107 52 V118" stroke="rgba(255,247,235,0.55)" stroke-width="2.5" fill="none"/></svg>
+      <img class="logo" src="img/icon.png" alt="Nisibis logo" />
+    </div>
     <div>
       <div class="brand-name">Nisibis</div>
-      <div class="brand-tag">Nusaybin Keşif Rehberi</div>
+      <div class="brand-tag" data-i18n="hero.tag">Nusaybin Keşif Rehberi</div>
     </div>
   </div>
-  <p class="hero-lede">Yan yana bir kilise ve bir cami, binlerce yıllık Nisibis, canlı çarşılar ve haritalı rotalar — Nusaybin'i keşfetmenin en güzel yolu, artık cebinizde.</p>
+  <p class="hero-lede" data-i18n="hero.lede">Yan yana bir kilise ve bir cami, binlerce yıllık Nisibis, canlı çarşılar ve haritalı rotalar. Nusaybin'i keşfetmenin en güzel yolu artık cebinizde.</p>
   <div class="hero-badges">
-    <span class="pill">◆ Ücretsiz &amp; reklamsız</span>
+    <span class="pill" data-i18n="hero.b1">◆ Ücretsiz ve reklamsız</span>
     <span class="pill">◆ Türkçe · English · العربية</span>
-    <span class="pill">◆ App Store'da yayında</span>
+    <span class="pill" data-i18n="hero.b3">◆ App Store'da yayında</span>
   </div>
   <div class="hero-actions">
-    <a class="btn btn-primary" href="https://apps.apple.com/app/id6785038395">App Store'da İndir</a>
-    <a class="btn btn-ghost" href="#stk">STK'lar için</a>
+    <a class="btn btn-primary" data-i18n="hero.download" href="https://apps.apple.com/app/id6785038395">App Store'da İndir</a>
+    <a class="btn btn-ghost" data-i18n="hero.forngo" href="#stk">STK'lar için</a>
   </div>
+  <div class="hero-kilim"></div>
 </header>
 
 <main class="wrap">
-
-  <!-- INTRO -->
   <section class="section reveal">
-    <span class="eyebrow"><svg class="star" viewBox="0 0 40 40" fill="#C0682B"><rect x="12" y="12" width="16" height="16" rx="2"/><rect x="12" y="12" width="16" height="16" rx="2" transform="rotate(45 20 20)"/></svg> Nisibis nedir?</span>
-    <h2 class="h2">Nusaybin'in dijital keşif rehberi</h2>
-    <p class="lead">Nisibis; Mor Yakup Kilisesi ve Zeynel Abidin Camii'nden Girnavaz Höyüğü'ne, Mor Evgin Manastırı'ndan tarihî çarşılara kadar Nusaybin'in önemli duraklarını harita üzerinde gösteren, hazır rotalar ve keşif görevleri sunan ücretsiz bir mobil uygulamadır. Tüm içerik güvenilir kaynaklara dayanır ve tamamen Türkçe, İngilizce ve Arapça sunulur.</p>
+    <span class="eyebrow"><svg class="star" viewBox="0 0 40 40" fill="#C0682B"><rect x="12" y="12" width="16" height="16" rx="2"/><rect x="12" y="12" width="16" height="16" rx="2" transform="rotate(45 20 20)"/></svg> <span data-i18n="intro.eyebrow">Nisibis nedir?</span></span>
+    <h2 class="h2" data-i18n="intro.h2">Nusaybin'in dijital keşif rehberi</h2>
+    <p class="lead" data-i18n="intro.lead">Nisibis; Mor Yakup Kilisesi ve Zeynel Abidin Camii'nden Girnavaz Höyüğü'ne, Mor Evgin Manastırı'ndan tarihî çarşılara kadar Nusaybin'in önemli duraklarını harita üzerinde gösteren, hazır rotalar ve keşif görevleri sunan ücretsiz bir mobil uygulamadır. Tüm içerik güvenilir kaynaklara dayanır; tamamen Türkçe, İngilizce ve Arapça sunulur.</p>
   </section>
 
-  <!-- SCREENSHOTS -->
-  <section class="section reveal" style="padding-top:8px;">
-    <span class="eyebrow"><svg class="star" viewBox="0 0 40 40" fill="#C0682B"><rect x="12" y="12" width="16" height="16" rx="2"/><rect x="12" y="12" width="16" height="16" rx="2" transform="rotate(45 20 20)"/></svg> Uygulamadan</span>
+  <section class="section reveal" style="padding-top:6px;">
+    <span class="eyebrow"><svg class="star" viewBox="0 0 40 40" fill="#C0682B"><rect x="12" y="12" width="16" height="16" rx="2"/><rect x="12" y="12" width="16" height="16" rx="2" transform="rotate(45 20 20)"/></svg> <span data-i18n="shots.eyebrow">Uygulamadan</span></span>
     <div class="shots">
-      <div class="shot"><div class="phone"><img src="img/01-kesfet.png" alt="Haritada keşfet" /></div><div class="shot-title">Haritada Keşfet</div><div class="shot-desc">Yakınındaki önemli durakları haritada gör.</div></div>
-      <div class="shot"><div class="phone"><img src="img/02-mekan-detay.png" alt="Mekân detayı" /></div><div class="shot-title">Her Mekânın Hikâyesi</div><div class="shot-desc">Tarih, yapılacaklar, ipuçları ve ziyaret notları.</div></div>
-      <div class="shot"><div class="phone"><img src="img/03-hikaye.png" alt="Nusaybin'in hikâyesi" /></div><div class="shot-title">Nusaybin'in Hikâyesi</div><div class="shot-desc">Çağlara ayrılmış interaktif zaman çizelgesi.</div></div>
-      <div class="shot"><div class="phone"><img src="img/04-rotalar.png" alt="Rotalar" /></div><div class="shot-title">Hazır Rotalar</div><div class="shot-desc">Yarım günden tam güne keşif rotaları.</div></div>
-      <div class="shot"><div class="phone"><img src="img/05-gorevler.png" alt="Görevler" /></div><div class="shot-title">Görevlerle Gez</div><div class="shot-desc">Tamamla, puan topla, ilerlemeni gör.</div></div>
+      <div class="shot"><div class="phone"><img src="img/01-kesfet.png" alt="" /></div><div class="shot-title" data-i18n="s1.t">Haritada Keşfet</div><div class="shot-desc" data-i18n="s1.d">Yakınındaki önemli durakları haritada gör.</div></div>
+      <div class="shot"><div class="phone"><img src="img/02-mekan-detay.png" alt="" /></div><div class="shot-title" data-i18n="s2.t">Her Mekânın Hikâyesi</div><div class="shot-desc" data-i18n="s2.d">Tarih, yapılacaklar, ipuçları ve ziyaret notları.</div></div>
+      <div class="shot"><div class="phone"><img src="img/03-hikaye.png" alt="" /></div><div class="shot-title" data-i18n="s3.t">Nusaybin'in Hikâyesi</div><div class="shot-desc" data-i18n="s3.d">Çağlara ayrılmış interaktif zaman çizelgesi.</div></div>
+      <div class="shot"><div class="phone"><img src="img/04-rotalar.png" alt="" /></div><div class="shot-title" data-i18n="s4.t">Hazır Rotalar</div><div class="shot-desc" data-i18n="s4.d">Yarım günden tam güne keşif rotaları.</div></div>
+      <div class="shot"><div class="phone"><img src="img/05-gorevler.png" alt="" /></div><div class="shot-title" data-i18n="s5.t">Görevlerle Gez</div><div class="shot-desc" data-i18n="s5.d">Tamamla, puan topla, ilerlemeni gör.</div></div>
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="section reveal" style="padding-top:8px;">
-    <span class="eyebrow"><svg class="star" viewBox="0 0 40 40" fill="#C0682B"><rect x="12" y="12" width="16" height="16" rx="2"/><rect x="12" y="12" width="16" height="16" rx="2" transform="rotate(45 20 20)"/></svg> Öne çıkanlar</span>
-    <h2 class="h2">Cepte bir kültür rehberi</h2>
+  <div class="kilim reveal" style="margin:8px 46px;"></div>
+
+  <section class="section reveal" style="padding-top:10px;">
+    <span class="eyebrow"><svg class="star" viewBox="0 0 40 40" fill="#C0682B"><rect x="12" y="12" width="16" height="16" rx="2"/><rect x="12" y="12" width="16" height="16" rx="2" transform="rotate(45 20 20)"/></svg> <span data-i18n="feat.eyebrow">Öne çıkanlar</span></span>
+    <h2 class="h2" data-i18n="feat.h2">Cepte bir kültür rehberi</h2>
     <div class="features">
-      <div class="feature"><svg class="fstar" viewBox="0 0 40 40" fill="#C0682B"><rect x="14" y="14" width="12" height="12" rx="2"/><rect x="14" y="14" width="12" height="12" rx="2" transform="rotate(45 20 20)"/></svg><div><b>Harita ve canlı konum</b><span>Önemli durakları harita üzerinde, yanındakileri tek dokunuşla.</span></div></div>
-      <div class="feature"><svg class="fstar" viewBox="0 0 40 40" fill="#2E4374"><rect x="14" y="14" width="12" height="12" rx="2"/><rect x="14" y="14" width="12" height="12" rx="2" transform="rotate(45 20 20)"/></svg><div><b>Hazır keşif rotaları</b><span>Yarım günlükten tam güne, ilgi alanına göre gezi planları.</span></div></div>
-      <div class="feature"><svg class="fstar" viewBox="0 0 40 40" fill="#2C8A82"><rect x="14" y="14" width="12" height="12" rx="2"/><rect x="14" y="14" width="12" height="12" rx="2" transform="rotate(45 20 20)"/></svg><div><b>Görevler ve ilerleme</b><span>Keşfettikçe tamamla, puan topla; gezi bir maceraya dönüşsün.</span></div></div>
-      <div class="feature"><svg class="fstar" viewBox="0 0 40 40" fill="#B0532A"><rect x="14" y="14" width="12" height="12" rx="2"/><rect x="14" y="14" width="12" height="12" rx="2" transform="rotate(45 20 20)"/></svg><div><b>Üç dilde</b><span>Türkçe, İngilizce ve Arapça — yerli ve yabancı her ziyaretçiye.</span></div></div>
-      <div class="feature"><svg class="fstar" viewBox="0 0 40 40" fill="#C0682B"><rect x="14" y="14" width="12" height="12" rx="2"/><rect x="14" y="14" width="12" height="12" rx="2" transform="rotate(45 20 20)"/></svg><div><b>Nusaybin'in Hikâyesi</b><span>Antik Nisibis'ten bugüne, interaktif bir tarih anlatısı.</span></div></div>
-      <div class="feature"><svg class="fstar" viewBox="0 0 40 40" fill="#2E4374"><rect x="14" y="14" width="12" height="12" rx="2"/><rect x="14" y="14" width="12" height="12" rx="2" transform="rotate(45 20 20)"/></svg><div><b>Gizlilik dostu</b><span>Konumun cihazından çıkmaz; ücretsiz ve reklamsızdır.</span></div></div>
+      <div class="feature"><svg class="fstar" viewBox="0 0 40 40" fill="#C0682B"><rect x="14" y="14" width="12" height="12" rx="2"/><rect x="14" y="14" width="12" height="12" rx="2" transform="rotate(45 20 20)"/></svg><div><b data-i18n="f1.t">Harita ve canlı konum</b><span data-i18n="f1.d">Önemli durakları harita üzerinde, yanındakileri tek dokunuşla.</span></div></div>
+      <div class="feature"><svg class="fstar" viewBox="0 0 40 40" fill="#2E4374"><rect x="14" y="14" width="12" height="12" rx="2"/><rect x="14" y="14" width="12" height="12" rx="2" transform="rotate(45 20 20)"/></svg><div><b data-i18n="f2.t">Hazır keşif rotaları</b><span data-i18n="f2.d">Yarım günlükten tam güne, ilgi alanına göre gezi planları.</span></div></div>
+      <div class="feature"><svg class="fstar" viewBox="0 0 40 40" fill="#2C8A82"><rect x="14" y="14" width="12" height="12" rx="2"/><rect x="14" y="14" width="12" height="12" rx="2" transform="rotate(45 20 20)"/></svg><div><b data-i18n="f3.t">Görevler ve ilerleme</b><span data-i18n="f3.d">Keşfettikçe tamamla, puan topla; gezi bir maceraya dönüşsün.</span></div></div>
+      <div class="feature"><svg class="fstar" viewBox="0 0 40 40" fill="#B0532A"><rect x="14" y="14" width="12" height="12" rx="2"/><rect x="14" y="14" width="12" height="12" rx="2" transform="rotate(45 20 20)"/></svg><div><b data-i18n="f4.t">Üç dilde</b><span data-i18n="f4.d">Türkçe, İngilizce ve Arapça; yerli ve yabancı her ziyaretçiye.</span></div></div>
+      <div class="feature"><svg class="fstar" viewBox="0 0 40 40" fill="#9E2B25"><rect x="14" y="14" width="12" height="12" rx="2"/><rect x="14" y="14" width="12" height="12" rx="2" transform="rotate(45 20 20)"/></svg><div><b data-i18n="f5.t">Nusaybin'in Hikâyesi</b><span data-i18n="f5.d">Antik Nisibis'ten bugüne, interaktif bir tarih anlatısı.</span></div></div>
+      <div class="feature"><svg class="fstar" viewBox="0 0 40 40" fill="#2E4374"><rect x="14" y="14" width="12" height="12" rx="2"/><rect x="14" y="14" width="12" height="12" rx="2" transform="rotate(45 20 20)"/></svg><div><b data-i18n="f6.t">Gizlilik dostu</b><span data-i18n="f6.d">Konumun cihazından çıkmaz; ücretsiz ve reklamsızdır.</span></div></div>
     </div>
   </section>
 
-  <!-- NGO -->
   <section class="section ngo reveal" id="stk">
-    <span class="eyebrow"><svg class="star" viewBox="0 0 40 40" fill="#C0682B"><rect x="12" y="12" width="16" height="16" rx="2"/><rect x="12" y="12" width="16" height="16" rx="2" transform="rotate(45 20 20)"/></svg> Sivil toplum için</span>
-    <h2 class="h2">Nusaybin STK'ları için nasıl faydalı?</h2>
-    <p class="lead">Nisibis'i kurumunuzun çalışmalarında ücretsiz bir tanıtım ve eğitim aracı olarak kullanabilirsiniz:</p>
+    <span class="eyebrow"><svg class="star" viewBox="0 0 40 40" fill="#2C8A82"><rect x="12" y="12" width="16" height="16" rx="2"/><rect x="12" y="12" width="16" height="16" rx="2" transform="rotate(45 20 20)"/></svg> <span data-i18n="ngo.eyebrow">Sivil toplum için</span></span>
+    <h2 class="h2" data-i18n="ngo.h2">Nusaybin STK'ları için nasıl faydalı?</h2>
+    <p class="lead" data-i18n="ngo.lead">Nisibis'i kurumunuzun çalışmalarında ücretsiz bir tanıtım ve eğitim aracı olarak kullanabilirsiniz:</p>
     <ul>
-      <li>Kültürel mirası ve dinî çeşitliliği (yan yana kilise ve cami) tanıtın.</li>
-      <li>Ziyaretçilere, gönüllülere ve misafirlerinize hazır bir rehber sunun.</li>
-      <li>Gençlik ve eğitim programlarında yerel tarih kaynağı olarak kullanın.</li>
-      <li>Etkinlik ve turlarınızı uygulamadaki rotalarla eşleştirin.</li>
-      <li>Sahalarda QR kodlarla ziyaretçiyi doğru mekâna yönlendirin.</li>
-      <li>Nusaybin'e saygılı, sürdürülebilir turizmi birlikte destekleyin.</li>
+      <li data-i18n="ngo.l1">Kültürel mirası ve dinî çeşitliliği (yan yana kilise ve cami) tanıtın.</li>
+      <li data-i18n="ngo.l2">Ziyaretçilere, gönüllülere ve misafirlerinize hazır bir rehber sunun.</li>
+      <li data-i18n="ngo.l3">Gençlik ve eğitim programlarında yerel tarih kaynağı olarak kullanın.</li>
+      <li data-i18n="ngo.l4">Etkinlik ve turlarınızı uygulamadaki rotalarla eşleştirin.</li>
+      <li data-i18n="ngo.l5">Sahalarda QR kodlarla ziyaretçiyi doğru mekâna yönlendirin.</li>
+      <li data-i18n="ngo.l6">Nusaybin'e saygılı, sürdürülebilir turizmi birlikte destekleyin.</li>
     </ul>
   </section>
 
-  <!-- CTA -->
   <section class="section cta reveal">
     <div class="cta-text">
-      <span class="eyebrow"><svg class="star" viewBox="0 0 40 40" fill="#C0682B"><rect x="12" y="12" width="16" height="16" rx="2"/><rect x="12" y="12" width="16" height="16" rx="2" transform="rotate(45 20 20)"/></svg> Hemen deneyin</span>
-      <h2 class="h2">İndirin, birlikte Nusaybin'i tanıtalım</h2>
-      <p class="lead">Nisibis'i deneyin, ekibinizle paylaşın ve geri bildiriminizi bize iletin. İş birliği ve önerilere açığız.</p>
+      <span class="eyebrow"><svg class="star" viewBox="0 0 40 40" fill="#C0682B"><rect x="12" y="12" width="16" height="16" rx="2"/><rect x="12" y="12" width="16" height="16" rx="2" transform="rotate(45 20 20)"/></svg> <span data-i18n="cta.eyebrow">Hemen deneyin</span></span>
+      <h2 class="h2" data-i18n="cta.h2">İndirin, birlikte Nusaybin'i tanıtalım</h2>
+      <p class="lead" data-i18n="cta.lead">Nisibis'i deneyin, ekibinizle paylaşın ve geri bildiriminizi bize iletin. İş birliği ve önerilere açığız.</p>
       <div class="store-line">
-        <a class="store-badge" href="https://apps.apple.com/app/id6785038395">App Store'da İndir</a>
-        <span class="store-badge soft">Google Play'de yakında</span>
-        <a class="store-badge soft" href="mailto:omer.guzzel@outlook.com">E-posta gönder</a>
+        <a class="store-badge" data-i18n="cta.download" href="https://apps.apple.com/app/id6785038395">App Store'da İndir</a>
+        <span class="store-badge soft" data-i18n="cta.soon">Google Play'de yakında</span>
+        <a class="store-badge soft" data-i18n="cta.email" href="mailto:omer.guzzel@outlook.com">E-posta gönder</a>
       </div>
     </div>
     <div class="qr">
       <img src="https://api.qrserver.com/v1/create-qr-code/?size=280x280&margin=0&data=https://apps.apple.com/app/id6785038395" alt="App Store QR" />
-      <small>Kamerayla okutun<br /><a href="https://apps.apple.com/app/id6785038395">App Store</a></small>
+      <small><span data-i18n="qr.scan">Kamerayla okutun</span><br /><a href="https://apps.apple.com/app/id6785038395">App Store</a></small>
     </div>
   </section>
-
 </main>
 
-<!-- FOOTER -->
+<div class="foot-kilim"></div>
 <footer class="foot">
-  <div><b>Nisibis</b> · Nusaybin'in dijital rehberi · © 2026 Ömer Güzel</div>
-  <div><a href="mailto:omer.guzzel@outlook.com">omer.guzzel@outlook.com</a> · <a href="privacy-policy.html">Gizlilik Politikası</a></div>
+  <div><b>Nisibis</b> · <span data-i18n="foot.tag">Nusaybin'in dijital rehberi</span> · © 2026 Ömer Güzel</div>
+  <div><a href="mailto:omer.guzzel@outlook.com">omer.guzzel@outlook.com</a> · <a data-i18n="foot.privacy" href="privacy-policy.html">Gizlilik Politikası</a></div>
 </footer>
 
 <script>
-  (function () {
+  var I18N = {
+    tr: {
+      "nav.cta":"App Store'da İndir","hero.tag":"Nusaybin Keşif Rehberi",
+      "hero.lede":"Yan yana bir kilise ve bir cami, binlerce yıllık Nisibis, canlı çarşılar ve haritalı rotalar. Nusaybin'i keşfetmenin en güzel yolu artık cebinizde.",
+      "hero.b1":"◆ Ücretsiz ve reklamsız","hero.b3":"◆ App Store'da yayında","hero.download":"App Store'da İndir","hero.forngo":"STK'lar için",
+      "intro.eyebrow":"Nisibis nedir?","intro.h2":"Nusaybin'in dijital keşif rehberi",
+      "intro.lead":"Nisibis; Mor Yakup Kilisesi ve Zeynel Abidin Camii'nden Girnavaz Höyüğü'ne, Mor Evgin Manastırı'ndan tarihî çarşılara kadar Nusaybin'in önemli duraklarını harita üzerinde gösteren, hazır rotalar ve keşif görevleri sunan ücretsiz bir mobil uygulamadır. Tüm içerik güvenilir kaynaklara dayanır; tamamen Türkçe, İngilizce ve Arapça sunulur.",
+      "shots.eyebrow":"Uygulamadan",
+      "s1.t":"Haritada Keşfet","s1.d":"Yakınındaki önemli durakları haritada gör.",
+      "s2.t":"Her Mekânın Hikâyesi","s2.d":"Tarih, yapılacaklar, ipuçları ve ziyaret notları.",
+      "s3.t":"Nusaybin'in Hikâyesi","s3.d":"Çağlara ayrılmış interaktif zaman çizelgesi.",
+      "s4.t":"Hazır Rotalar","s4.d":"Yarım günden tam güne keşif rotaları.",
+      "s5.t":"Görevlerle Gez","s5.d":"Tamamla, puan topla, ilerlemeni gör.",
+      "feat.eyebrow":"Öne çıkanlar","feat.h2":"Cepte bir kültür rehberi",
+      "f1.t":"Harita ve canlı konum","f1.d":"Önemli durakları harita üzerinde, yanındakileri tek dokunuşla.",
+      "f2.t":"Hazır keşif rotaları","f2.d":"Yarım günlükten tam güne, ilgi alanına göre gezi planları.",
+      "f3.t":"Görevler ve ilerleme","f3.d":"Keşfettikçe tamamla, puan topla; gezi bir maceraya dönüşsün.",
+      "f4.t":"Üç dilde","f4.d":"Türkçe, İngilizce ve Arapça; yerli ve yabancı her ziyaretçiye.",
+      "f5.t":"Nusaybin'in Hikâyesi","f5.d":"Antik Nisibis'ten bugüne, interaktif bir tarih anlatısı.",
+      "f6.t":"Gizlilik dostu","f6.d":"Konumun cihazından çıkmaz; ücretsiz ve reklamsızdır.",
+      "ngo.eyebrow":"Sivil toplum için","ngo.h2":"Nusaybin STK'ları için nasıl faydalı?",
+      "ngo.lead":"Nisibis'i kurumunuzun çalışmalarında ücretsiz bir tanıtım ve eğitim aracı olarak kullanabilirsiniz:",
+      "ngo.l1":"Kültürel mirası ve dinî çeşitliliği (yan yana kilise ve cami) tanıtın.",
+      "ngo.l2":"Ziyaretçilere, gönüllülere ve misafirlerinize hazır bir rehber sunun.",
+      "ngo.l3":"Gençlik ve eğitim programlarında yerel tarih kaynağı olarak kullanın.",
+      "ngo.l4":"Etkinlik ve turlarınızı uygulamadaki rotalarla eşleştirin.",
+      "ngo.l5":"Sahalarda QR kodlarla ziyaretçiyi doğru mekâna yönlendirin.",
+      "ngo.l6":"Nusaybin'e saygılı, sürdürülebilir turizmi birlikte destekleyin.",
+      "cta.eyebrow":"Hemen deneyin","cta.h2":"İndirin, birlikte Nusaybin'i tanıtalım",
+      "cta.lead":"Nisibis'i deneyin, ekibinizle paylaşın ve geri bildiriminizi bize iletin. İş birliği ve önerilere açığız.",
+      "cta.download":"App Store'da İndir","cta.soon":"Google Play'de yakında","cta.email":"E-posta gönder",
+      "qr.scan":"Kamerayla okutun","foot.tag":"Nusaybin'in dijital rehberi","foot.privacy":"Gizlilik Politikası"
+    },
+    en: {
+      "nav.cta":"Download on the App Store","hero.tag":"Nusaybin Discovery Guide",
+      "hero.lede":"A church and a mosque side by side, millennia-old Nisibis, lively bazaars and mapped routes. The finest way to explore Nusaybin, now in your pocket.",
+      "hero.b1":"◆ Free and ad-free","hero.b3":"◆ Live on the App Store","hero.download":"Download on the App Store","hero.forngo":"For NGOs",
+      "intro.eyebrow":"What is Nisibis?","intro.h2":"The digital discovery guide to Nusaybin",
+      "intro.lead":"Nisibis is a free mobile app that maps Nusaybin's key sites, from the Church of Mor Yakup and the Zeynel Abidin Mosque to Gırnavaz Mound, the Monastery of Mor Evgin and the historic bazaars, and offers ready-made routes and discovery missions. All content is sourced and fully available in Turkish, English and Arabic.",
+      "shots.eyebrow":"From the app",
+      "s1.t":"Explore on the map","s1.d":"See the key stops near you on the map.",
+      "s2.t":"Every place has a story","s2.d":"History, things to do, tips and visit notes.",
+      "s3.t":"The Story of Nusaybin","s3.d":"An interactive timeline grouped by era.",
+      "s4.t":"Ready-made routes","s4.d":"From half-day to full-day discovery routes.",
+      "s5.t":"Explore with missions","s5.d":"Complete stops, earn points, track progress.",
+      "feat.eyebrow":"Highlights","feat.h2":"A culture guide in your pocket",
+      "f1.t":"Map and live location","f1.d":"Key stops on the map, what is nearby in one tap.",
+      "f2.t":"Ready-made routes","f2.d":"From half-day to full-day plans, by interest.",
+      "f3.t":"Missions and progress","f3.d":"Complete stops as you explore; the trip becomes an adventure.",
+      "f4.t":"In three languages","f4.d":"Turkish, English and Arabic, for every visitor.",
+      "f5.t":"The Story of Nusaybin","f5.d":"From ancient Nisibis to today, an interactive history.",
+      "f6.t":"Privacy friendly","f6.d":"Your location never leaves your device; free and ad-free.",
+      "ngo.eyebrow":"For civil society","ngo.h2":"How is it useful for Nusaybin's NGOs?",
+      "ngo.lead":"You can use Nisibis as a free promotion and education tool in your work:",
+      "ngo.l1":"Promote the cultural heritage and religious diversity (a church and a mosque side by side).",
+      "ngo.l2":"Offer a ready guide to visitors, volunteers and guests.",
+      "ngo.l3":"Use it as a local-history resource in youth and education programs.",
+      "ngo.l4":"Pair your events and tours with the app's routes.",
+      "ngo.l5":"Guide visitors to the right site on location with QR codes.",
+      "ngo.l6":"Support respectful, sustainable tourism for Nusaybin together.",
+      "cta.eyebrow":"Try it now","cta.h2":"Download it, let's promote Nusaybin together",
+      "cta.lead":"Try Nisibis, share it with your team and send us your feedback. We are open to collaboration and ideas.",
+      "cta.download":"Download on the App Store","cta.soon":"Coming soon on Google Play","cta.email":"Send an email",
+      "qr.scan":"Scan with your camera","foot.tag":"The digital guide to Nusaybin","foot.privacy":"Privacy Policy"
+    },
+    ar: {
+      "nav.cta":"حمّل من App Store","hero.tag":"دليل استكشاف نصيبين",
+      "hero.lede":"كنيسة وجامع جنباً إلى جنب، ونصيبين العريقة بآلاف السنين، وأسواق نابضة ومسارات على الخريطة. أجمل طريقة لاكتشاف نصيبين، الآن في جيبك.",
+      "hero.b1":"◆ مجاني وبلا إعلانات","hero.b3":"◆ متوفر على App Store","hero.download":"حمّل من App Store","hero.forngo":"للمنظمات",
+      "intro.eyebrow":"ما هو نصيبيس؟","intro.h2":"الدليل الرقمي لاستكشاف نصيبين",
+      "intro.lead":"نصيبيس تطبيق مجاني للهاتف يعرض على الخريطة أهم معالم نصيبين، من كنيسة مار يعقوب وجامع زين العابدين إلى تل غِرنافاز ودير مار أوجين والأسواق التاريخية، ويقدّم مسارات جاهزة ومهام استكشاف. كل المحتوى موثّق ومتوفر بالكامل بالتركية والإنجليزية والعربية.",
+      "shots.eyebrow":"من التطبيق",
+      "s1.t":"اكتشف على الخريطة","s1.d":"شاهد المحطات المهمة القريبة منك على الخريطة.",
+      "s2.t":"لكل مكان حكاية","s2.d":"تاريخ، وما يمكن فعله، ونصائح، وملاحظات زيارة.",
+      "s3.t":"قصة نصيبين","s3.d":"خط زمني تفاعلي مقسّم إلى عصور.",
+      "s4.t":"مسارات جاهزة","s4.d":"مسارات استكشاف من نصف يوم إلى يوم كامل.",
+      "s5.t":"استكشف بالمهام","s5.d":"أكمل المحطات، اجمع النقاط، تابع تقدمك.",
+      "feat.eyebrow":"أبرز الميزات","feat.h2":"دليل ثقافي في جيبك",
+      "f1.t":"خريطة وموقع مباشر","f1.d":"المحطات المهمة على الخريطة، وما حولك بلمسة واحدة.",
+      "f2.t":"مسارات جاهزة","f2.d":"من نصف يوم إلى يوم كامل، حسب اهتمامك.",
+      "f3.t":"مهام وتقدّم","f3.d":"أكمل وأنت تستكشف؛ لتصبح الرحلة مغامرة.",
+      "f4.t":"بثلاث لغات","f4.d":"التركية والإنجليزية والعربية، لكل زائر.",
+      "f5.t":"قصة نصيبين","f5.d":"من نصيبيس القديمة إلى اليوم، تاريخ تفاعلي.",
+      "f6.t":"يحترم الخصوصية","f6.d":"موقعك لا يغادر جهازك؛ مجاني وبلا إعلانات.",
+      "ngo.eyebrow":"للمجتمع المدني","ngo.h2":"كيف يفيد منظمات نصيبين؟",
+      "ngo.lead":"يمكنكم استخدام نصيبيس أداةً مجانية للتعريف والتعليم في أعمالكم:",
+      "ngo.l1":"عرّفوا بالإرث الثقافي والتنوع الديني (كنيسة وجامع جنباً إلى جنب).",
+      "ngo.l2":"قدّموا دليلاً جاهزاً للزوار والمتطوعين والضيوف.",
+      "ngo.l3":"استخدموه مصدراً للتاريخ المحلي في برامج الشباب والتعليم.",
+      "ngo.l4":"اربطوا فعالياتكم وجولاتكم بمسارات التطبيق.",
+      "ngo.l5":"وجّهوا الزائر إلى المكان الصحيح ميدانياً عبر رموز QR.",
+      "ngo.l6":"ادعموا معاً سياحة محترمة ومستدامة لنصيبين.",
+      "cta.eyebrow":"جرّبه الآن","cta.h2":"حمّله، ولنعرّف بنصيبين معاً",
+      "cta.lead":"جرّب نصيبيس، وشاركه مع فريقك، وأرسل لنا ملاحظاتك. نحن منفتحون على التعاون والأفكار.",
+      "cta.download":"حمّل من App Store","cta.soon":"قريباً على Google Play","cta.email":"أرسل بريداً",
+      "qr.scan":"امسح بالكاميرا","foot.tag":"الدليل الرقمي لنصيبين","foot.privacy":"سياسة الخصوصية"
+    }
+  };
+  function applyLang(lang){
+    var dict = I18N[lang] || I18N.tr;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n'); if (dict[k] != null) el.textContent = dict[k];
+    });
+    document.querySelectorAll('.langs button').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-lang') === lang); });
+    try { localStorage.setItem('nisibis_lang', lang); } catch(e){}
+  }
+  (function(){
+    document.querySelectorAll('.langs button').forEach(function(b){
+      b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang')); });
+    });
+    var saved; try { saved = localStorage.getItem('nisibis_lang'); } catch(e){}
+    var nav = (navigator.language || 'tr').slice(0,2);
+    applyLang(saved || (['tr','en','ar'].indexOf(nav) >= 0 ? nav : 'tr'));
+
     var els = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, { threshold: 0.12 });
-    els.forEach(function (e) { io.observe(e); });
+    if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold:0.1 });
+    els.forEach(function(e){ io.observe(e); });
   })();
 </script>
 </body>
