@@ -32,6 +32,11 @@
     "imageCredit": "R Prazeres, Wikimedia Commons",
     "imageLicense": "CC BY-SA 4.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Ulu_Cami_DSCF0534.jpg",
+    "gallery": [
+      { "credit": "R Prazeres, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Ulu_Cami_DSCF9823.jpg" },
+      { "credit": "R Prazeres, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Ulu_Cami_DSCF9877.jpg" },
+      { "credit": "R Prazeres, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Ulu_Cami_DSCF0916.jpg" }
+    ],
     "latitude": 37.31266,
     "longitude": 40.7393,
     "approxLatitude": 37.31266,
@@ -80,6 +85,11 @@
     "imageCredit": "R Prazeres, Wikimedia Commons",
     "imageLicense": "CC BY-SA 4.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Sultan_Isa_Medrese_DSCF9680.jpg",
+    "gallery": [
+      { "credit": "Doron, Wikimedia Commons", "license": "CC BY-SA 3.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:MardinSultanIsaDomes.jpg" },
+      { "credit": "R Prazeres, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sultan_Isa_Medrese_DSCF0877.jpg" },
+      { "credit": "R Prazeres, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sultan_Isa_Medrese_DSCF9754.jpg" }
+    ],
     "latitude": 37.31423,
     "longitude": 40.73988,
     "approxLatitude": 37.31423,
@@ -127,6 +137,11 @@
     "imageCredit": "Nedim Ardoğa, Wikimedia Commons",
     "imageLicense": "CC BY-SA 3.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Kas%C4%B1miye_medrese,_Mardin,_Turkey.JPG",
+    "gallery": [
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Kasim_Pasha_Medresesi_2481.jpg" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Kasim_Pasha_Medresesi_2487.jpg" },
+      { "credit": "Nedim Ardoğa, Wikimedia Commons", "license": "CC BY-SA 3.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elephant_clock_in_Mardin,_Turkey.JPG" }
+    ],
     "latitude": 37.30761,
     "longitude": 40.71981,
     "approxLatitude": 37.30761,
@@ -175,6 +190,11 @@
     "imageCredit": "Dosseman, Wikimedia Commons",
     "imageLicense": "CC BY-SA 4.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Museum_Exterior_in_2025_1055.jpg",
+    "gallery": [
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Museum_Exterior_fragments_in_the_open_air_in_2025_1053.jpg" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Museum_Exterior_fragments_in_the_open_air_in_2025_1049.jpg" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Museum_Exterior_in_2025_1075.jpg" }
+    ],
     "latitude": 37.31349,
     "longitude": 40.73477,
     "approxLatitude": 37.31349,
@@ -222,6 +242,11 @@
     "imageCredit": "Dosseman, Wikimedia Commons",
     "imageLicense": "CC BY-SA 4.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Sak%C4%B1p_Sabanc%C4%B1_Mardin_Kent_M%C3%BCzesi_in_2025_0824.jpg",
+    "gallery": [
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Sak%C4%B1p_Sabanc%C4%B1_Mardin_Kent_M%C3%BCzesi_in_2025_0823.jpg" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Sak%C4%B1p_Sabanc%C4%B1_Mardin_Kent_M%C3%BCzesi_in_2025_0827.jpg" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Sak%C4%B1p_Sabanc%C4%B1_Mardin_Kent_M%C3%BCzesi_in_2025_0830_03.jpg" }
+    ],
     "latitude": null,
     "longitude": null,
     "approxLatitude": 37.31448,
@@ -269,6 +294,10 @@
     "imageCredit": "Necim, Wikimedia Commons",
     "imageLicense": "CC BY-SA 3.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_kalesi_-_panoramio.jpg",
+    "gallery": [
+      { "credit": "Azrailo498, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Kalesi.jpg" },
+      { "credit": "MSinjari, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin,_Turkey.JPG" }
+    ],
     "latitude": null,
     "longitude": null,
     "approxLatitude": 37.31544,
@@ -317,6 +346,11 @@
     "imageCredit": "Immano82, Wikimedia Commons",
     "imageLicense": "CC BY-SA 4.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Forty_martyrs_church.jpg",
+    "gallery": [
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Forty_Martyrs_Church_in_2025_1087.jpg" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Forty_Martyrs_Church_in_2025_1088.jpg" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Forty_Martyrs_Church_in_2025_1091.jpg" }
+    ],
     "latitude": 37.31346,
     "longitude": 40.73282,
     "approxLatitude": 37.31346,
@@ -364,6 +398,11 @@
     "imageCredit": "Dosseman, Wikimedia Commons",
     "imageLicense": "CC BY-SA 4.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Sehidiye_Medresesi_2382.jpg",
+    "gallery": [
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_%C5%9Eehidiye_Mosque_Courtyard_in_2025_0847.jpg" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_%C5%9Eehidiye_Mosque_Courtyard_in_2025_0849.jpg" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_%C5%9Eehidiye_Mosque_Courtyard_from_above_in_2025_0878.jpg" }
+    ],
     "latitude": 37.31383,
     "longitude": 40.74334,
     "approxLatitude": 37.31383,
@@ -407,6 +446,11 @@
     "imageCredit": "Dosseman, Wikimedia Commons",
     "imageLicense": "CC BY-SA 4.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Latifiye_Mosque_Outside_in_2025_1029.jpg",
+    "gallery": [
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Latifiye_Mosque_Outer_gate_in_2025_1030.jpg" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Latifiye_Mosque_Courtyard_in_2025_1044.jpg" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Latifiye_Mosque_Minaret_in_2025_9025.jpg" }
+    ],
     "latitude": 37.31257,
     "longitude": 40.73445,
     "approxLatitude": 37.31257,
@@ -454,6 +498,11 @@
     "imageCredit": "Dosseman, Wikimedia Commons",
     "imageLicense": "CC BY-SA 4.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_-_Bazaar_2327.jpg",
+    "gallery": [
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_-_Bazaar_2328.jpg" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_-_Bazaar_2348.jpg" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Bazaar_area_in_2025_9024.jpg" }
+    ],
     "latitude": 37.31334,
     "longitude": 40.74107,
     "approxLatitude": 37.31334,
@@ -502,6 +551,11 @@
     "imageCredit": "Nevit Dilmen, Wikimedia Commons",
     "imageLicense": "CC BY-SA 3.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_P1050415_20080426130657.JPG",
+    "gallery": [
+      { "credit": "Nevit Dilmen, Wikimedia Commons", "license": "CC BY-SA 3.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_P1050335_20080426124357.JPG" },
+      { "credit": "Nevit Dilmen, Wikimedia Commons", "license": "CC BY-SA 3.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_P1050340_20080426124546.JPG" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Edge_of_and_part_of_Abbara_in_2025_8957.jpg" }
+    ],
     "latitude": null,
     "longitude": null,
     "approxLatitude": 37.31334,
@@ -549,6 +603,10 @@
     "imageCredit": "Nevit Dilmen, Wikimedia Commons",
     "imageLicense": "CC BY-SA 3.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:P1040528_Mardin_pano.JPG",
+    "gallery": [
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_country_outside_town_in_2000-2001_109.jpg" },
+      { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_country_outside_town_in_2000-2001_112.jpg" }
+    ],
     "latitude": 37.31335,
     "longitude": 40.7347,
     "approxLatitude": 37.31335,
@@ -598,6 +656,11 @@
     "imageCredit": "Nevit Dilmen, Wikimedia Commons",
     "imageLicense": "CC BY-SA 3.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Deyrulzaferan_P1040048_20080501123142.JPG",
+    "gallery": [
+      { "credit": "Izabela Miszczak, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mor_Hananyo_Monastery_1.jpg" },
+      { "credit": "Izabela Miszczak, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mor_Hananyo_Monastery_2.jpg" },
+      { "credit": "Izabela Miszczak, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mor_Hananyo_Monastery_3.jpg" }
+    ],
     "latitude": 37.29944,
     "longitude": 40.79283,
     "approxLatitude": 37.29944,
@@ -646,6 +709,9 @@
     "imageCredit": "Nevit Dilmen, Wikimedia Commons",
     "imageLicense": "CC BY-SA 3.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Dara_pano_P1030891-cr.jpg",
+    "gallery": [
+      { "credit": "Sedefdavutoglu, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dara_Antik_Kenti.jpg" }
+    ],
     "latitude": 37.17899,
     "longitude": 40.94576,
     "approxLatitude": 37.17899,

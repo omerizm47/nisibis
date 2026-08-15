@@ -6,6 +6,13 @@ export interface PlaceSource {
   url?: string;
 }
 
+/** Galerideki ek bir görselin künyesi. Sırası, şehrin images.ts dizisiyle eşleşir. */
+export interface PlaceImage {
+  credit: string;
+  license: string;
+  sourceUrl: string;
+}
+
 /**
  * Turistik bir nokta (POI).
  *
@@ -34,6 +41,8 @@ export interface Place {
   imageCredit: string;
   imageLicense: string;
   imageSourceUrl: string;
+  /** Ana görselden sonra gelen ek görseller. Boş ya da tanımsız olabilir. */
+  gallery?: PlaceImage[];
   latitude: number | null;
   longitude: number | null;
   approxLatitude: number | null;

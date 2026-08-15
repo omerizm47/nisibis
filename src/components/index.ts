@@ -1,4 +1,5 @@
 export { PlaceCard } from './PlaceCard';
+export { PlaceGallery } from './PlaceGallery';
 export { RouteCard } from './RouteCard';
 export { StoryCard } from './StoryCard';
 export { CityChip } from './CityChip';

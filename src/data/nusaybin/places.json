@@ -29,6 +29,11 @@
     "imageCredit": "Wikimedia Commons katkıcıları",
     "imageLicense": "Lisans, dosya sayfasında belirtilmiştir (TODO: atıf/lisans doğrulanmalı).",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Outside_view_over_the_Church_of_Saint_Jacob_of_Nisibis_archeological_site.jpg",
+    "gallery": [
+      { "credit": "Oystercard, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dome_of_the_Church_of_Saint_Jacob_of_Nisibis.jpg" },
+      { "credit": "Oystercard, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alter_of_the_Church_of_Saint_Jacob_of_Nisibis.jpg" },
+      { "credit": "User:Garzo, Wikimedia Commons", "license": "CC BY-SA 3.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Horseshoe_arch_in_Nisibis_Church.jpg" }
+    ],
     "latitude": 37.06694,
     "longitude": 41.21528,
     "approxLatitude": 37.06694,
@@ -116,6 +121,10 @@
     "imageCredit": "Wikimedia Commons katkıcıları",
     "imageLicense": "Lisans, dosya sayfasında belirtilmiştir (TODO: atıf/lisans doğrulanmalı).",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Bars%C4%B1_Park%C4%B1_in_Nusaybin,_Turkey.jpg",
+    "gallery": [
+      { "credit": "Oystercard, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bars%C4%B1_Park%C4%B1_in_Nusaybin,_Turkey_2.jpg" },
+      { "credit": "Oystercard, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bars%C4%B1_Park%C4%B1_in_Nusaybin,_Turkey_3.jpg" }
+    ],
     "latitude": 37.06972,
     "longitude": 41.21478,
     "approxLatitude": 37.06972,
@@ -274,6 +283,9 @@
     "imageCredit": "Wikimedia Commons katkıcıları",
     "imageLicense": "Lisans, dosya sayfasında belirtilmiştir (TODO: atıf/lisans doğrulanmalı).",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Beyaz_Su_-_Vadi.jpg",
+    "gallery": [
+      { "credit": "Beyaz Su - Vadi, Wikimedia Commons", "license": "Public domain", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beyaz_Su_-_Vadi.jpg" }
+    ],
     "latitude": 37.11213,
     "longitude": 41.22907,
     "approxLatitude": 37.11213,

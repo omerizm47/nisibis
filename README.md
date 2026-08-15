@@ -164,10 +164,13 @@ ile uyumlu olmalı). Her mekanın `images.ts` içinde bir kaydı olmalıdır, yo
   "tips": [],
   "photoTips": [],
   "safetyNotes": [],                    // nazik "Ziyaret Notları" (güvenlik içeriği değil)
-  "image": "https://…",                 // boş bırakma — gerçek bir görsel kullan
-  "imageCredit": "Wikimedia Commons katkıcıları",
-  "imageLicense": "TODO: lisans doğrulanmalı",
+  "image": "https://…",                 // ana görselin Commons adresi
+  "imageCredit": "Fotoğrafçı, Wikimedia Commons",
+  "imageLicense": "CC BY-SA 4.0",
   "imageSourceUrl": "https://…",
+  "gallery": [                          // isteğe bağlı ek görseller, sıra images.ts ile aynı
+    { "credit": "Fotoğrafçı, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://…" }
+  ],
   "latitude": null,                     // doğrulanmadıkça null
   "longitude": null,
   "approxLatitude": 37.07,              // MVP haritası için yaklaşık
@@ -182,6 +185,17 @@ ile uyumlu olmalı). Her mekanın `images.ts` içinde bir kaydı olmalıdır, yo
 ```
 
 İkon/renk eşlemesi için: `src/theme/categories.ts`.
+
+### Görseller ve galeri
+
+Her mekanın görselleri `src/data/<sehir>/images.ts` içinde bir **dizi** olarak durur. Dizinin ilk
+elemanlı ana görseldir ve künyesi mekanın `imageCredit` / `imageLicense` / `imageSourceUrl`
+alanlarından gelir; kalan elemanlar `gallery` dizisiyle **sırayla** eşleşir. Mekan detay
+sayfasındaki galeri yatay kaydırılır ve alttaki künye satırı o an görünen görseli izler.
+
+`node scripts/validate-data.mjs` paketlenmiş görsel sayısı ile künye sayısının eşit olmasını ve
+her galeri kaydında `credit`, `license`, `sourceUrl` bulunmasını zorunlu tutar, böylece yanlış
+atıf yapılamaz.
 
 ## ➕ Yeni rota nasıl eklenir
 

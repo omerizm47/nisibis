@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -7,8 +8,8 @@ import { Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 import Animated, { useAnimatedScrollHandler, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { ArchFrame, CategoryBadge, CategoryIcon, EmptyState, KilimBand, PrimaryButton, RemoteImage, SafetyNotice, StoneLattice, useCelebration } from '@/components';
-import { getPlaceImageSource } from '@/data/placeImages';
+import { ArchFrame, CategoryBadge, CategoryIcon, EmptyState, KilimBand, PlaceGallery, PrimaryButton, SafetyNotice, StoneLattice, useCelebration } from '@/components';
+import { getPlaceImages } from '@/data/placeImages';
 import { getNearbyPlaces, getPlaceById, useCity, useProgress } from '@/hooks';
 import { colors, getCategoryMeta, gradients, radius, spacing, typography } from '@/theme';
 import { withAlpha } from '@/utils/color';
@@ -54,6 +55,7 @@ export default function PlaceDetailScreen() {
   const { isPlaceCompleted, togglePlaceVisited } = useProgress();
   const { city } = useCity();
   const { celebrate } = useCelebration();
+  const [imageIndex, setImageIndex] = useState(0);
   const scrollY = useSharedValue(0);
   const onScroll = useAnimatedScrollHandler((e) => {
     scrollY.value = e.contentOffset.y;
@@ -82,6 +84,8 @@ export default function PlaceDetailScreen() {
   const showApprox = !place.coordinatesVerified && placeHasMapLocation(place);
   const nearby = getNearbyPlaces(place.id);
   const coord = getDisplayCoordinate(place);
+  const images = getPlaceImages(place);
+  const shownImage = images[imageIndex] ?? images[0];
 
   const handleDirections = () => {
     if (!coord) return;
@@ -110,11 +114,17 @@ export default function PlaceDetailScreen() {
       >
         <View style={styles.hero}>
           <Animated.View style={[StyleSheet.absoluteFill, heroImageStyle]}>
-            <RemoteImage source={getPlaceImageSource(place)} style={StyleSheet.absoluteFill} />
-            <LinearGradient colors={gradients.imageScrim} style={StyleSheet.absoluteFill} />
+            <PlaceGallery place={place} onIndexChange={setImageIndex} />
+            <LinearGradient
+              colors={gradients.imageScrim}
+              style={StyleSheet.absoluteFill}
+              pointerEvents="none"
+            />
           </Animated.View>
-          <StoneLattice patternId="place-hero-lattice" color={colors.limestone} opacity={0.16} tile={36} />
-          <ArchFrame archColor={colors.background} archHeight={52} style={StyleSheet.absoluteFill} />
+          <View pointerEvents="none" style={StyleSheet.absoluteFill}>
+            <StoneLattice patternId="place-hero-lattice" color={colors.limestone} opacity={0.16} tile={36} />
+            <ArchFrame archColor={colors.background} archHeight={52} style={StyleSheet.absoluteFill} />
+          </View>
           <Pressable
             onPress={() => router.back()}
             accessibilityRole="button"
@@ -266,8 +276,13 @@ export default function PlaceDetailScreen() {
             </Section>
           ) : null}
 
-          {place.imageCredit ? (
-            <Text style={styles.credit}>Görsel: {place.imageCredit}</Text>
+          {shownImage ? (
+            <Text style={styles.credit}>
+              {t('place.imageCredit', {
+                credit: shownImage.credit,
+                license: shownImage.license,
+              })}
+            </Text>
           ) : null}
         </View>
       </Animated.ScrollView>

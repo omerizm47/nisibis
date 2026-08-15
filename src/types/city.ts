@@ -26,7 +26,8 @@ export interface City {
   places: Place[];
   routes: TourRoute[];
   tasks: TourTask[];
-  images: Record<string, ImageSourcePropType>;
+  /** Mekan id'sinden paketlenmiş görsellere. İlk eleman ana görsel, kalanlar galeri. */
+  images: Record<string, ImageSourcePropType[]>;
   sources: PlaceSource[];
   /** Haritada kesikli çizgiyle bağlanan iki simge yapı. */
   signatureLink: [string, string] | null;

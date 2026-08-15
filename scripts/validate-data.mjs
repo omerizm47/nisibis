@@ -24,6 +24,7 @@ for (const city of CITIES) {
 
   const ids = new Set(places.map((p) => p.id));
   const fail = (msg) => errors.push(`[${city}] ${msg}`);
+  let images = 0;
 
   // Referential integrity
   for (const r of routes) {
@@ -50,16 +51,41 @@ for (const city of CITIES) {
       (p.approxLatitude != null && p.approxLongitude != null);
     if (!hasCoord) fail(`place "${p.id}" has no usable coordinate (verified or approx)`);
 
-    // Every place needs a bundled image, and that file has to exist on disk.
-    const entry = imagesSrc.match(new RegExp(`['"]?${p.id}['"]?\\s*:\\s*require\\('([^']+)'\\)`));
-    if (!entry) {
+    // Her mekanin en az bir paketlenmis gorseli olmali ve dosyalar diskte bulunmali.
+    const block = imagesSrc.match(
+      new RegExp(`['"]?${p.id}['"]?\\s*:\\s*\\[([\\s\\S]*?)\\]`),
+    );
+    if (!block) {
       fail(`place "${p.id}" has no entry in ${city}/images.ts`);
-    } else if (!existsSync(join(cityDir, entry[1]))) {
-      fail(`place "${p.id}" -> bundled image not found: ${entry[1]}`);
+    } else {
+      const files = [...block[1].matchAll(/require\('([^']+)'\)/g)].map((m) => m[1]);
+      if (files.length === 0) fail(`place "${p.id}" -> images.ts entry is empty`);
+      for (const f of files) {
+        if (!existsSync(join(cityDir, f))) {
+          fail(`place "${p.id}" -> bundled image not found: ${f}`);
+        }
+      }
+      // Galeri kunyeleri gorsel sayisiyla birebir olmali, yoksa yanlis atif cikar.
+      const expected = 1 + (p.gallery?.length ?? 0);
+      if (files.length !== expected) {
+        fail(
+          `place "${p.id}" -> ${files.length} bundled image(s) but ${expected} credit record(s) ` +
+            `(image + gallery). Bunlar esit olmali.`,
+        );
+      }
+      for (const g of p.gallery ?? []) {
+        if (!g.credit || !g.license || !g.sourceUrl) {
+          fail(`place "${p.id}" -> a gallery entry is missing credit/license/sourceUrl`);
+        }
+      }
+      images += files.length;
     }
   }
 
-  summary.push(`${city}: ${places.length} places, ${routes.length} routes, ${tasks.length} tasks`);
+  summary.push(
+    `${city}: ${places.length} places, ${routes.length} routes, ${tasks.length} tasks, ` +
+      `${images} images`,
+  );
 }
 
 if (errors.length) {

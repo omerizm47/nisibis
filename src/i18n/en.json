@@ -89,6 +89,7 @@
     "details": "View details",
     "featured": "Featured",
     "nearby": "Nearby",
+    "imageCredit": "Photo: {{credit}} · {{license}}",
     "shareMessage": "{{name}} · Discover {{city}} with Nisibis\n{{url}}",
     "notFound": "Place not found"
   },
