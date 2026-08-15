@@ -130,6 +130,7 @@
     "tourProgress": "جولة {{city}}",
     "percent": "%{{percent}} مكتمل",
     "points": "{{points}} نقطة",
+    "goToPlace": "افتح {{place}}",
     "completedCount": "{{completed}}/{{total}} مهمة",
     "reset": "إعادة ضبط التقدم",
     "resetConfirmTitle": "إعادة ضبط التقدم؟",

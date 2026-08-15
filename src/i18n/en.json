@@ -103,7 +103,9 @@
     "sortNearest": "Nearest",
     "emptyTitle": "No results",
     "emptyBody": "Try changing your search or filter.",
-    "results": "{{count}} places"
+    "results": "{{count}} places",
+    "results_one": "{{count}} place",
+    "results_other": "{{count}} places"
   },
   "routes": {
     "title": "Routes",
@@ -112,6 +114,8 @@
     "emptyBody": "New routes are coming soon.",
     "start": "Start route",
     "stops": "{{count}} stops",
+    "stops_one": "{{count}} stop",
+    "stops_other": "{{count}} stops",
     "duration": "Duration",
     "difficulty": "Difficulty",
     "recommendedTime": "Recommended time",
@@ -130,6 +134,7 @@
     "tourProgress": "{{city}} Tour",
     "percent": "{{percent}}% complete",
     "points": "{{points}} points",
+    "goToPlace": "Open {{place}}",
     "completedCount": "{{completed}}/{{total}} missions",
     "reset": "Reset progress",
     "resetConfirmTitle": "Reset progress?",

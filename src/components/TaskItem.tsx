@@ -1,7 +1,9 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
+import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { Pressable, StyleSheet, Text, View, type StyleProp, type ViewStyle } from 'react-native';
+import { getPlaceById } from '@/hooks';
 import type { TourTask } from '@/types';
 import { colors, radius, spacing, typography } from '@/theme';
 import { withAlpha } from '@/utils/color';
@@ -18,7 +20,13 @@ interface TaskItemProps {
 
 export function TaskItem({ task, completed, onToggle, style }: TaskItemProps) {
   const { t } = useTranslation();
+  const router = useRouter();
   const { celebrate } = useCelebration();
+  const relatedPlace = task.relatedPoiId ? getPlaceById(task.relatedPoiId) : undefined;
+  const mekanaGit = relatedPlace ? () => router.push(`/place/${relatedPlace.id}`) : undefined;
+  const mekanEtiketi = relatedPlace
+    ? t('checklist.goToPlace', { place: relatedPlace.name })
+    : undefined;
 
   const handle = () => {
     if (!onToggle()) return;
@@ -34,6 +42,17 @@ export function TaskItem({ task, completed, onToggle, style }: TaskItemProps) {
       onPress={handle}
       accessibilityRole="checkbox"
       accessibilityState={{ checked: completed }}
+      // Kart tek bir erisilebilirlik ogesi oldugu icin ic baglantiya ekran okuyucu
+      // ile dokunulamiyor; mekan ayri bir eylem olarak sunuluyor. Yeni mimaride iOS
+      // eylemin label'ini degil name'ini okudugu icin ikisi de ayni metin.
+      accessibilityActions={mekanEtiketi ? [{ name: mekanEtiketi, label: mekanEtiketi }] : undefined}
+      onAccessibilityAction={
+        mekanaGit
+          ? (e) => {
+              if (e.nativeEvent.actionName === mekanEtiketi) mekanaGit();
+            }
+          : undefined
+      }
       style={({ pressed }) => [styles.row, completed && styles.rowDone, pressed && styles.pressed, style]}
     >
       <View style={[styles.iconWrap, completed && styles.iconWrapDone]}>
@@ -50,7 +69,22 @@ export function TaskItem({ task, completed, onToggle, style }: TaskItemProps) {
         <Text style={styles.desc} numberOfLines={3}>
           {task.description}
         </Text>
-        <Text style={styles.points}>{t('checklist.points', { points: task.points })}</Text>
+        <View style={styles.metaRow}>
+          <Text style={styles.points}>{t('checklist.points', { points: task.points })}</Text>
+          {relatedPlace ? (
+            <Pressable
+              onPress={mekanaGit}
+              accessibilityRole="link"
+              accessibilityLabel={mekanEtiketi}
+              style={({ pressed }) => [styles.placeLink, pressed && styles.pressed]}
+            >
+              <MaterialCommunityIcons name="map-marker-outline" size={13} color={colors.primary} />
+              <Text style={styles.placeLinkText} numberOfLines={1}>
+                {relatedPlace.name}
+              </Text>
+            </Pressable>
+          ) : null}
+        </View>
       </View>
       <View style={[styles.check, completed && styles.checkDone]}>
         {completed ? (
@@ -108,10 +142,34 @@ const styles = StyleSheet.create({
     ...typography.caption,
     color: colors.mutedText,
   },
+  metaRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    gap: spacing.sm,
+    marginTop: 2,
+  },
   points: {
     ...typography.overline,
     color: colors.primary,
-    marginTop: 2,
+  },
+  placeLink: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 3,
+    flexShrink: 1,
+    // hitSlop ebeveyn sinirini asamadigi icin dokunma alani kutunun kendisi kadar.
+    // 32dp, WCAG 2.5.8 AA esigini (24dp) gecer; 44dp'ye cikarmak kart yuksekligini
+    // gorev basina 30dp buyuturdu ve asil hedef zaten kartin tamami.
+    minHeight: 32,
+    paddingHorizontal: spacing.sm,
+    borderRadius: radius.sm,
+    backgroundColor: withAlpha(colors.primary, 0.08),
+  },
+  placeLinkText: {
+    ...typography.overline,
+    color: colors.primary,
+    flexShrink: 1,
   },
   check: {
     width: 24,

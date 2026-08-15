@@ -130,6 +130,7 @@
     "tourProgress": "{{city}} Turu",
     "percent": "%{{percent}} tamamlandı",
     "points": "{{points}} puan",
+    "goToPlace": "{{place}} sayfasını aç",
     "completedCount": "{{completed}}/{{total}} görev",
     "reset": "İlerlemeyi sıfırla",
     "resetConfirmTitle": "İlerleme sıfırlansın mı?",

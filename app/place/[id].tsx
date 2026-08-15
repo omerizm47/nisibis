@@ -67,6 +67,9 @@ export default function PlaceDetailScreen() {
     ],
   }));
 
+  // Dogrudan baglantiyla acildiginda yigin tek ekranliktir ve router.back() olu kalir.
+  const geriDon = () => (router.canGoBack() ? router.back() : router.dismissTo('/'));
+
   if (!place) {
     return (
       <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
@@ -74,7 +77,7 @@ export default function PlaceDetailScreen() {
           icon="map-marker-off-outline"
           title={t('place.notFound')}
           actionLabel={t('common.back')}
-          onAction={() => router.back()}
+          onAction={geriDon}
         />
       </View>
     );
@@ -126,7 +129,7 @@ export default function PlaceDetailScreen() {
             <ArchFrame archColor={colors.background} archHeight={52} style={StyleSheet.absoluteFill} />
           </View>
           <Pressable
-            onPress={() => router.back()}
+            onPress={geriDon}
             accessibilityRole="button"
             accessibilityLabel={t('common.back')}
             style={[styles.backBtn, { top: insets.top + spacing.sm }, rtl ? { left: undefined, right: spacing.lg } : null]}

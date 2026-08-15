@@ -23,7 +23,11 @@ export default function PrivacyScreen() {
 
   return (
     <View style={[styles.container, { paddingTop: insets.top + spacing.xs }]}>
-      <ScreenHeader title={t('privacy.title')} onBack={() => router.back()} />
+      <ScreenHeader
+        title={t('privacy.title')}
+        // Dogrudan baglantiyla acildiginda yigin tek ekranliktir ve router.back() olu kalir.
+        onBack={() => (router.canGoBack() ? router.back() : router.dismissTo('/'))}
+      />
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         <View style={styles.iconWrap}>
           <MaterialCommunityIcons name="shield-lock-outline" size={40} color={colors.primary} />

@@ -38,9 +38,12 @@ export default function StoryScreen() {
   const blocks = list<Block>('blocks');
   const timeline = list<TimelineItem>('timeline');
 
+  // Dogrudan baglantiyla acildiginda yigin tek ekranliktir ve router.back() olu kalir.
+  const geriDon = () => (router.canGoBack() ? router.back() : router.dismissTo('/'));
+
   return (
     <View style={[styles.container, { paddingTop: insets.top + spacing.xs }]}>
-      <ScreenHeader title={s('title')} onBack={() => router.back()} />
+      <ScreenHeader title={s('title')} onBack={geriDon} />
       <ScrollView
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
@@ -122,7 +125,7 @@ export default function StoryScreen() {
         <PrimaryButton
           label={t('story.cta')}
           icon="compass-outline"
-          onPress={() => router.back()}
+          onPress={geriDon}
           style={styles.cta}
         />
       </ScrollView>
