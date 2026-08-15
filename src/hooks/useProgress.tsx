@@ -14,6 +14,7 @@ import {
   setCompletedPlaceIds,
   setCompletedTaskIds,
 } from '@/storage/taskStorage';
+import type { CityId } from '@/types';
 import { useCity } from './useCity';
 
 export interface ProgressContextValue {
@@ -22,10 +23,11 @@ export interface ProgressContextValue {
   completedPlaceIds: string[];
   isTaskCompleted: (id: string) => boolean;
   isPlaceCompleted: (id: string) => boolean;
-  toggleTask: (id: string) => void;
-  completeTask: (id: string) => void;
+  /** Uygulanmadiysa false doner; cagiran taraf kutlamayi buna gore yapar. */
+  toggleTask: (id: string) => boolean;
+  completeTask: (id: string) => boolean;
   /** Mekanı tamamlandı/iptal yapar; tamamlanırsa ilgili görevleri de tamamlar. */
-  togglePlaceVisited: (placeId: string) => void;
+  togglePlaceVisited: (placeId: string) => boolean;
   resetProgress: () => void;
   completedCount: number;
   totalCount: number;
@@ -37,17 +39,23 @@ export interface ProgressContextValue {
 
 const ProgressContext = createContext<ProgressContextValue | undefined>(undefined);
 
+// Sabit referans: her renderda yeni dizi uretmek memo bagimliliklarini bozar.
+const EMPTY: string[] = [];
+
 export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const { cityId, city } = useCity();
   const tasks = city.tasks;
   const totalCount = tasks.length;
   const [completedTaskIds, setTaskIds] = useState<string[]>([]);
   const [completedPlaceIds, setPlaceIds] = useState<string[]>([]);
-  const [loaded, setLoaded] = useState(false);
+  const [loadedCityId, setLoadedCityId] = useState<CityId | null>(null);
+
+  // Render sırasında hesaplanır: efekt içinde bayrak indirmek, aynı commit'teki
+  // diğer efektler için geç kalır ve şehir değişiminde bir kare bayat veri görünür.
+  const loaded = loadedCityId === cityId;
 
   useEffect(() => {
     let active = true;
-    setLoaded(false);
     void (async () => {
       const [storedTasks, storedPlaces] = await Promise.all([
         getCompletedTaskIds(cityId),
@@ -56,7 +64,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       if (active) {
         setTaskIds(storedTasks);
         setPlaceIds(storedPlaces);
-        setLoaded(true);
+        setLoadedCityId(cityId);
       }
     })();
     return () => {
@@ -80,38 +88,49 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     [cityId],
   );
 
+  // Sehir degistiginde `tasks` aninda yeni sehre gecer ama tamamlananlar bir sonraki
+  // karede gelir. O ara karede eski sehrin id'lerini yeni sehrin toplamiyla saymamak
+  // icin, yuklenene kadar ilerleme bos kabul edilir.
+  const gorunenTasks = loaded ? completedTaskIds : EMPTY;
+  const gorunenPlaces = loaded ? completedPlaceIds : EMPTY;
+
   const isTaskCompleted = useCallback(
-    (id: string) => completedTaskIds.includes(id),
-    [completedTaskIds],
+    (id: string) => gorunenTasks.includes(id),
+    [gorunenTasks],
   );
 
   const isPlaceCompleted = useCallback(
-    (id: string) => completedPlaceIds.includes(id),
-    [completedPlaceIds],
+    (id: string) => gorunenPlaces.includes(id),
+    [gorunenPlaces],
   );
 
   const toggleTask = useCallback(
     (id: string) => {
+      if (!loaded) return false;
       persistTasks(
         completedTaskIds.includes(id)
           ? completedTaskIds.filter((x) => x !== id)
           : [...completedTaskIds, id],
       );
+      return true;
     },
-    [completedTaskIds, persistTasks],
+    [completedTaskIds, persistTasks, loaded],
   );
 
   const completeTask = useCallback(
     (id: string) => {
+      if (!loaded) return false;
       if (!completedTaskIds.includes(id)) {
         persistTasks([...completedTaskIds, id]);
       }
+      return true;
     },
-    [completedTaskIds, persistTasks],
+    [completedTaskIds, persistTasks, loaded],
   );
 
   const togglePlaceVisited = useCallback(
     (placeId: string) => {
+      if (!loaded) return false;
       const willComplete = !completedPlaceIds.includes(placeId);
       persistPlaces(
         willComplete
@@ -121,12 +140,16 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       if (willComplete) {
         const relatedTaskIds = tasks.filter((t) => t.relatedPoiId === placeId).map((t) => t.id);
         const merged = Array.from(new Set([...completedTaskIds, ...relatedTaskIds]));
-        if (merged.length !== completedTaskIds.length) {
+        // Uzunluk degil benzersiz sayi karsilastirilir: depoda tekrar eden id varsa
+        // uzunluk esitligi yeni gorevi yutuyordu. Ikinci kosul o tekrarlari da temizler.
+        const oncekiBenzersiz = new Set(completedTaskIds).size;
+        if (merged.length !== oncekiBenzersiz || completedTaskIds.length !== oncekiBenzersiz) {
           persistTasks(merged);
         }
       }
+      return true;
     },
-    [completedPlaceIds, completedTaskIds, persistPlaces, persistTasks, tasks],
+    [completedPlaceIds, completedTaskIds, persistPlaces, persistTasks, tasks, loaded],
   );
 
   const resetProgress = useCallback(() => {
@@ -136,15 +159,17 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   }, [cityId]);
 
   const value = useMemo<ProgressContextValue>(() => {
-    const completedCount = completedTaskIds.length;
-    const points = tasks
-      .filter((t) => completedTaskIds.includes(t.id))
-      .reduce((sum, t) => sum + t.points, 0);
+    // Depo guvenilir bir sinir degil: eski surumden kalan, yeniden adlandirilmis ya da
+    // tekrar eden id'ler bulunabilir. Sayimi gorev listesinden turetmek hem bunlari eler
+    // hem de benzersizligi garanti eder, boylece yuzde yapisal olarak 100'u asamaz.
+    const tamamlananlar = tasks.filter((t) => gorunenTasks.includes(t.id));
+    const completedCount = tamamlananlar.length;
+    const points = tamamlananlar.reduce((sum, t) => sum + t.points, 0);
     const percent = totalCount === 0 ? 0 : Math.round((completedCount / totalCount) * 100);
     return {
       loaded,
-      completedTaskIds,
-      completedPlaceIds,
+      completedTaskIds: gorunenTasks,
+      completedPlaceIds: gorunenPlaces,
       isTaskCompleted,
       isPlaceCompleted,
       toggleTask,
@@ -155,12 +180,12 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       totalCount,
       percent,
       points,
-      isTourComplete: totalCount > 0 && completedCount === totalCount,
+      isTourComplete: loaded && totalCount > 0 && completedCount === totalCount,
     };
   }, [
     loaded,
-    completedTaskIds,
-    completedPlaceIds,
+    gorunenTasks,
+    gorunenPlaces,
     isTaskCompleted,
     isPlaceCompleted,
     toggleTask,

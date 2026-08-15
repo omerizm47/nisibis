@@ -31,7 +31,6 @@ export const nusaybinImages: Record<string, ImageSourcePropType[]> = {
   ],
   beyazsu: [
     require('../../../assets/images/places/nusaybin/beyazsu.jpg'),
-    require('../../../assets/images/places/nusaybin/beyazsu-2.jpg'),
   ],
   'guzel-ticaret': [
     require('../../../assets/images/places/nusaybin/guzel-ticaret.jpg'),

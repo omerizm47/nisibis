@@ -12,6 +12,7 @@ const dataDir = join(__dirname, '..', 'src', 'data');
 
 const CITIES = ['nusaybin', 'mardin'];
 const errors = [];
+const warnings = [];
 const summary = [];
 
 for (const city of CITIES) {
@@ -24,6 +25,7 @@ for (const city of CITIES) {
 
   const ids = new Set(places.map((p) => p.id));
   const fail = (msg) => errors.push(`[${city}] ${msg}`);
+  const warn = (msg) => warnings.push(`[${city}] ${msg}`);
   let images = 0;
 
   // Referential integrity
@@ -78,6 +80,26 @@ for (const city of CITIES) {
           fail(`place "${p.id}" -> a gallery entry is missing credit/license/sourceUrl`);
         }
       }
+      // Ayni Commons dosyasi hem ana gorsel hem galeride olursa ayni fotograf iki kez cikar.
+      const kaynaklar = [p.imageSourceUrl, ...(p.gallery ?? []).map((g) => g.sourceUrl)].filter(
+        Boolean,
+      );
+      const tekrar = kaynaklar.filter((u, i) => kaynaklar.indexOf(u) !== i);
+      for (const u of new Set(tekrar)) {
+        fail(`place "${p.id}" -> ayni gorsel kaynagi birden fazla kez kullanilmis: ${u}`);
+      }
+      // Ayni yerel dosya iki kez paketlenmis olmasin.
+      const tekrarDosya = files.filter((f, i) => files.indexOf(f) !== i);
+      for (const f of new Set(tekrarDosya)) {
+        fail(`place "${p.id}" -> ayni dosya images.ts icinde iki kez: ${f}`);
+      }
+      // Uygulama kunyesi bos olan gorselin atif satirini hic cizmiyor, yani eksik
+      // atif ekranda gorunmez. Yayin oncesi kapatilmasi gereken bir bosluk.
+      if (!p.imageCredit) {
+        warn(`place "${p.id}" -> paketlenmis gorseli var ama imageCredit BOS (${files[0]})`);
+      } else if (!p.imageLicense || !p.imageSourceUrl) {
+        warn(`place "${p.id}" -> "${p.imageCredit}" icin lisans ya da kaynak adresi eksik`);
+      }
       images += files.length;
     }
   }
@@ -95,3 +117,10 @@ if (errors.length) {
 }
 console.log('\u2713 Data OK. No dead references, every place has a bundled image.');
 for (const line of summary) console.log('  ' + line);
+if (warnings.length) {
+  console.log('');
+  console.log(`\u26a0 ATIF EKSIGI, YAYIN ONCESI COZULMELI (${warnings.length}):`);
+  for (const w of warnings) console.log('  - ' + w);
+  console.log('  Bu gorsellerin nereden geldigi depoda kayitli degil. Commons kaynakliysa');
+  console.log('  atifsiz yayinlamak CC BY / CC BY-SA lisansini ihlal eder.');
+}

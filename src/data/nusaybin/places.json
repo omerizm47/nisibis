@@ -26,8 +26,8 @@
       "İnsanları fotoğraflarken önce izin isteyin."
     ],
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Outside%20view%20over%20the%20Church%20of%20Saint%20Jacob%20of%20Nisibis%20archeological%20site.jpg?width=1200",
-    "imageCredit": "Wikimedia Commons katkıcıları",
-    "imageLicense": "Lisans, dosya sayfasında belirtilmiştir (TODO: atıf/lisans doğrulanmalı).",
+    "imageCredit": "Oystercard, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Outside_view_over_the_Church_of_Saint_Jacob_of_Nisibis_archeological_site.jpg",
     "gallery": [
       { "credit": "Oystercard, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dome_of_the_Church_of_Saint_Jacob_of_Nisibis.jpg" },
@@ -76,8 +76,8 @@
       "Türbe bölümünde sessizliğe özen gösterin."
     ],
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Zeynel%20Abidin%20Mosque%20Nusaybin.jpg?width=1200",
-    "imageCredit": "Wikimedia Commons katkıcıları",
-    "imageLicense": "Lisans, dosya sayfasında belirtilmiştir (TODO: atıf/lisans doğrulanmalı).",
+    "imageCredit": "Oystercard, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Zeynel_Abidin_Mosque_Nusaybin.jpg",
     "latitude": 37.06722,
     "longitude": 41.21417,
@@ -118,8 +118,8 @@
       "Öğlen sıcağından kaçınmak için sabah/akşam tercih edin."
     ],
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bars%C4%B1%20Park%C4%B1%20in%20Nusaybin%2C%20Turkey.jpg?width=1200",
-    "imageCredit": "Wikimedia Commons katkıcıları",
-    "imageLicense": "Lisans, dosya sayfasında belirtilmiştir (TODO: atıf/lisans doğrulanmalı).",
+    "imageCredit": "Oystercard, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Bars%C4%B1_Park%C4%B1_in_Nusaybin,_Turkey.jpg",
     "gallery": [
       { "credit": "Oystercard, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bars%C4%B1_Park%C4%B1_in_Nusaybin,_Turkey_2.jpg" },
@@ -162,8 +162,8 @@
       "Çevreyi temiz bırakın."
     ],
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%87a%C4%9F%20%C3%87a%C4%9F%20deresi%2C%20Nusaybin%2C%20Musa%20Anter%20Park%C4%B1.jpg?width=1200",
-    "imageCredit": "Wikimedia Commons katkıcıları",
-    "imageLicense": "Lisans, dosya sayfasında belirtilmiştir (TODO: atıf/lisans doğrulanmalı).",
+    "imageCredit": "Ftkurt, Wikimedia Commons",
+    "imageLicense": "CC BY 3.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:%C3%87a%C4%9F_%C3%87a%C4%9F_deresi,_Nusaybin,_Musa_Anter_Park%C4%B1.jpg",
     "latitude": 37.0788,
     "longitude": 41.2188,
@@ -280,12 +280,9 @@
       "Su kenarında dikkatli olun ve yerel yönlendirmeleri izleyin."
     ],
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beyaz%20Su%20-%20Vadi.jpg?width=1200",
-    "imageCredit": "Wikimedia Commons katkıcıları",
-    "imageLicense": "Lisans, dosya sayfasında belirtilmiştir (TODO: atıf/lisans doğrulanmalı).",
+    "imageCredit": "Wikimedia Commons",
+    "imageLicense": "Public domain",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Beyaz_Su_-_Vadi.jpg",
-    "gallery": [
-      { "credit": "Beyaz Su - Vadi, Wikimedia Commons", "license": "Public domain", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beyaz_Su_-_Vadi.jpg" }
-    ],
     "latitude": 37.11213,
     "longitude": 41.22907,
     "approxLatitude": 37.11213,

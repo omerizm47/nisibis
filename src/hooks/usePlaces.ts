@@ -3,6 +3,7 @@ import { getActiveCity } from '@/data/activeCity';
 import type { Place, PlaceCategory } from '@/types';
 import { haversineDistance } from '@/utils/distance';
 import { getDisplayCoordinate } from '@/utils/map';
+import { foldForSearch } from '@/utils/text';
 
 export function getAllPlaces(): Place[] {
   return getActiveCity().places;
@@ -56,13 +57,13 @@ export function usePlaces(options: UsePlacesOptions = {}): Place[] {
   const { category = 'all', query = '' } = options;
   const places = getAllPlaces();
   return useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = foldForSearch(query.trim());
     return places.filter((p) => {
       if (category !== 'all' && p.category !== category) return false;
       if (!q) return true;
-      const haystack = [p.name, p.shortDescription, p.category, ...(p.tags ?? [])]
-        .join(' ')
-        .toLowerCase();
+      const haystack = foldForSearch(
+        [p.name, p.shortDescription, p.category, ...(p.tags ?? [])].join(' '),
+      );
       return haystack.includes(q);
     });
   }, [places, category, query]);

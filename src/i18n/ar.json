@@ -90,6 +90,7 @@
     "featured": "مميز",
     "nearby": "بالقرب",
     "imageCredit": "الصورة: {{credit}} · {{license}}",
+    "imageCreditOnly": "الصورة: {{credit}}",
     "shareMessage": "{{name}} · اكتشف {{city}} مع نيسيبيس\n{{url}}",
     "notFound": "لم يُعثر على المكان"
   },

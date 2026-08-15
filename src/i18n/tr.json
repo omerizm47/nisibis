@@ -90,6 +90,7 @@
     "featured": "Öne çıkan",
     "nearby": "Hemen yakında",
     "imageCredit": "Görsel: {{credit}} · {{license}}",
+    "imageCreditOnly": "Görsel: {{credit}}",
     "shareMessage": "{{name}} · {{city}} şehrini Nisibis ile keşfet\n{{url}}",
     "notFound": "Mekan bulunamadı"
   },

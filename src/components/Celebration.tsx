@@ -128,15 +128,25 @@ function Burst({ big, title, onDone }: { big: boolean; title?: string; onDone: (
 function MilestoneWatcher() {
   const { t } = useTranslation();
   const { percent, loaded } = useProgress();
-  const { city } = useCity();
+  const { city, cityId } = useCity();
   const { celebrate } = useCelebration();
-  const prev = useRef(percent);
+  // null = bu şehir için taban henüz kurulmadı. Taban kurulmadan kutlama yapılmaz,
+  // yoksa turu bitmiş biri uygulamayı her açtığında ya da şehre her dönüşünde kutlama patlar.
+  const taban = useRef<number | null>(null);
+  const oncekiSehir = useRef(cityId);
+
   useEffect(() => {
-    if (loaded && prev.current < 100 && percent === 100) {
+    if (oncekiSehir.current !== cityId) {
+      oncekiSehir.current = cityId;
+      taban.current = null;
+    }
+    if (!loaded) return;
+    const onceki = taban.current;
+    taban.current = percent;
+    if (onceki != null && onceki < 100 && percent === 100) {
       celebrate({ big: true, title: t('progress.tourComplete', { city: city.name }) });
     }
-    prev.current = percent;
-  }, [percent, loaded, celebrate, t, city.name]);
+  }, [percent, loaded, celebrate, t, city.name, cityId]);
   return null;
 }
 

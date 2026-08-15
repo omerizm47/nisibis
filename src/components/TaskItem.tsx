@@ -11,7 +11,8 @@ import { useCelebration } from './Celebration';
 interface TaskItemProps {
   task: TourTask;
   completed: boolean;
-  onToggle: () => void;
+  /** Uygulanmadiysa false doner; kutlama ancak kayit gerceklestiyse yapilir. */
+  onToggle: () => boolean;
   style?: StyleProp<ViewStyle>;
 }
 
@@ -20,12 +21,12 @@ export function TaskItem({ task, completed, onToggle, style }: TaskItemProps) {
   const { celebrate } = useCelebration();
 
   const handle = () => {
+    if (!onToggle()) return;
     if (completed) {
       void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     } else {
       celebrate();
     }
-    onToggle();
   };
 
   return (

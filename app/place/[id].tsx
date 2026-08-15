@@ -276,12 +276,22 @@ export default function PlaceDetailScreen() {
             </Section>
           ) : null}
 
-          {shownImage ? (
-            <Text style={styles.credit}>
-              {t('place.imageCredit', {
-                credit: shownImage.credit,
-                license: shownImage.license,
-              })}
+          {shownImage?.credit ? (
+            <Text
+              style={[styles.credit, shownImage.sourceUrl ? styles.creditLink : null]}
+              onPress={
+                shownImage.sourceUrl
+                  ? () => void Linking.openURL(shownImage.sourceUrl)
+                  : undefined
+              }
+              accessibilityRole={shownImage.sourceUrl ? 'link' : undefined}
+            >
+              {shownImage.license
+                ? t('place.imageCredit', {
+                    credit: shownImage.credit,
+                    license: shownImage.license,
+                  })
+                : t('place.imageCreditOnly', { credit: shownImage.credit })}
             </Text>
           ) : null}
         </View>
@@ -300,8 +310,7 @@ export default function PlaceDetailScreen() {
           icon={completed ? 'check-circle' : 'check-circle-outline'}
           onPress={() => {
             const wasCompleted = completed;
-            togglePlaceVisited(place.id);
-            if (!wasCompleted) {
+            if (togglePlaceVisited(place.id) && !wasCompleted) {
               celebrate();
             }
           }}
@@ -493,6 +502,9 @@ const styles = StyleSheet.create({
   credit: {
     ...typography.caption,
     color: colors.subtleText,
+  },
+  creditLink: {
+    textDecorationLine: 'underline',
   },
   nearby: {
     gap: spacing.sm,

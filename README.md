@@ -294,7 +294,12 @@ içindeki mevcut `id`'lere referans vermelidir:
 ## 📝 Lisans / içerik notu
 
 Görseller Wikimedia Commons katkıcılarına aittir ve cihazda paketlenir. Her mekan kaydında
-`imageCredit`, `imageLicense` ve `imageSourceUrl` alanları bulunur; atıf uygulama içinde mekan
-sayfasının altında gösterilir. Mardin kayıtlarının lisansları (CC BY-SA 3.0 / 4.0) dosya
-sayfalarından doğrulanmıştır; Nusaybin kayıtlarında bazı lisans alanları hâlâ **TODO** işaretlidir
-ve yayın öncesi kesinleştirilmelidir.
+`imageCredit`, `imageLicense` ve `imageSourceUrl` alanları bulunur; galerideki her ek görselin
+künyesi de `gallery` içinde ayrı durur. Atıf, mekan sayfasının altında ve kaydırdıkça o an
+görünen fotoğrafa göre gösterilir.
+
+Commons'tan gelen bütün görsellerin lisansı ve yazarı Commons API'sinden okunarak doldurulmuştur
+(CC BY 3.0, CC BY-SA 3.0, CC BY-SA 4.0 ve kamu malı). Üç Nusaybin kaydının görseli Commons'tan
+değildir: Kültür İnanç Parkı'nın fotoğrafı Sinan Doğan'a aittir, Kaçakçılar Çarşısı ve Güzel
+Züccaciye kayıtlarında ise künye alanı boştur ve bu durumda uygulama künye satırını hiç
+göstermez. Bu iki kayda fotoğraf eklenirken künyesinin de girilmesi gerekir.
