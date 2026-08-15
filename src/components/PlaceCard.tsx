@@ -20,6 +20,10 @@ interface PlaceCardProps {
   style?: StyleProp<ViewStyle>;
 }
 
+/** Kemer bandı görselin üst şerididir; rozetler onun altından başlamazsa yarı saydam
+ *  zeminleri yarı kemer yarı fotoğraf üzerinde kalıp iki tonlu görünüyor. */
+const ARCH_HEIGHT = 26;
+
 export function PlaceCard({
   place,
   onPress,
@@ -39,7 +43,7 @@ export function PlaceCard({
       style={[styles.card, featured ? styles.featuredCard : styles.listCard, shadow.md, style]}
     >
       <View style={featured ? styles.featuredImage : styles.listImage}>
-        <ArchFrame archColor={colors.card} archHeight={26} style={StyleSheet.absoluteFill}>
+        <ArchFrame archColor={colors.card} archHeight={ARCH_HEIGHT} style={StyleSheet.absoluteFill}>
           <RemoteImage source={getPlaceImageSource(place)} style={StyleSheet.absoluteFill} />
           <LinearGradient colors={gradients.imageScrim} style={StyleSheet.absoluteFill} />
         </ArchFrame>
@@ -123,12 +127,12 @@ const styles = StyleSheet.create({
   },
   badgeRow: {
     position: 'absolute',
-    top: spacing.md,
+    top: ARCH_HEIGHT + spacing.xs,
     left: spacing.md,
   },
   completedBadge: {
     position: 'absolute',
-    top: spacing.md,
+    top: ARCH_HEIGHT + spacing.xs,
     right: spacing.md,
     width: 26,
     height: 26,
