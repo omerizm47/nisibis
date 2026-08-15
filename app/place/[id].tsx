@@ -9,7 +9,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { ArchFrame, CategoryBadge, CategoryIcon, EmptyState, KilimBand, PrimaryButton, RemoteImage, SafetyNotice, StoneLattice, useCelebration } from '@/components';
 import { getPlaceImageSource } from '@/data/placeImages';
-import { getNearbyPlaces, getPlaceById, useProgress } from '@/hooks';
+import { getNearbyPlaces, getPlaceById, useCity, useProgress } from '@/hooks';
 import { colors, getCategoryMeta, gradients, radius, spacing, typography } from '@/theme';
 import { withAlpha } from '@/utils/color';
 import { formatDistance } from '@/utils/distance';
@@ -52,6 +52,7 @@ export default function PlaceDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const place = id ? getPlaceById(id) : undefined;
   const { isPlaceCompleted, togglePlaceVisited } = useProgress();
+  const { city } = useCity();
   const { celebrate } = useCelebration();
   const scrollY = useSharedValue(0);
   const onScroll = useAnimatedScrollHandler((e) => {
@@ -91,7 +92,11 @@ export default function PlaceDetailScreen() {
   const handleShare = () => {
     hapticLight();
     void shareContent(
-      t('place.shareMessage', { name: place.name, url: coord ? mapsUrl(coord) : '' }).trim(),
+      t('place.shareMessage', {
+        name: place.name,
+        city: city.name,
+        url: coord ? mapsUrl(coord) : '',
+      }).trim(),
     );
   };
 

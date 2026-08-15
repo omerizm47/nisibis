@@ -1,0 +1,124 @@
+[
+  {
+    "id": "mardin-eski-sehir-tam-kesif",
+    "title": "Eski Şehir Tam Keşif Rotası",
+    "description": "Mardin'in taş şehrini tek bir günde baştan sona yürümek isteyenler için kapsamlı rota. Cumhuriyet Meydanı'ndan başlar, müzeyle şehrin hafızasına girer, Kırklar Kilisesi ve Latifiye Camii'nden geçerek Ulu Cami'ye çıkar, Revaklı Çarşı'nın bakırcı seslerine dalar, Şehidiye'nin burmalı minaresini görür ve rota Zinciriye Medresesi'nin terasında, ova gün batımına dönerken biter.",
+    "estimatedDuration": "≈ 5-6 saat",
+    "poiIds": ["cumhuriyet-meydani", "mardin-muzesi", "kirklar-kilisesi", "latifiye-camii", "mardin-ulu-camii", "revakli-carsi", "abbaralar", "sehidiye-medresesi", "sakip-sabanci-kent-muzesi", "zinciriye-medresesi"],
+    "difficulty": "zor",
+    "recommendedTime": "Sabah başlangıç",
+    "highlights": [
+      "Mardin Müzesi'nde Sürekli Definesi ve bölgenin bütün katmanları",
+      "Kırklar Kilisesi'nin oyma taş sunak perdeleri",
+      "Ulu Cami'nin Artuklu minberi ve kaburgalı kubbesi",
+      "Revaklı Çarşı'da elle çalışan bakırcılar ve telkari atölyeleri",
+      "Abbaraların altından geçen serin yürüyüş",
+      "Zinciriye terasında ova üzerinde gün batımı"
+    ],
+    "safetyNotes": [
+      "Rota baştan sona yokuş ve merdivendir, rahat ayakkabı şart.",
+      "Yaz aylarında öğlen sıcağından kaçının, bol su ve şapka alın.",
+      "İbadet mekanlarında mütevazı kıyafet tercih edin ve namaz vakitlerini kollayın.",
+      "Mardin Müzesi pazartesi kapalıdır, rotayı ona göre planlayın."
+    ]
+  },
+  {
+    "id": "mardin-hizli-tur-2-saat",
+    "title": "2 Saatlik Hızlı Mardin Turu",
+    "description": "Az vaktin varsa şehrin karakterini en hızlı veren üç durak: Artuklu mimarisinin zirvesi Zinciriye, çarşının canlı hattı ve Ulu Cami.",
+    "estimatedDuration": "≈ 2 saat",
+    "poiIds": ["zinciriye-medresesi", "mardin-ulu-camii", "revakli-carsi"],
+    "difficulty": "kolay",
+    "recommendedTime": "Sabah",
+    "highlights": [
+      "Zinciriye Medresesi terasından Mezopotamya ovası",
+      "Ulu Cami'nin Artuklu minberi",
+      "Revaklı Çarşı'da bakırcı tezgahları"
+    ],
+    "safetyNotes": [
+      "Zinciriye'ye çıkan yol diktir, acele etmeyin.",
+      "Namaz vakitleri dışında cami ziyareti daha rahattır."
+    ]
+  },
+  {
+    "id": "mardin-kultur-inanc-rotasi",
+    "title": "Kültür ve İnanç Rotası",
+    "description": "Bir camiden bir kiliseye, bir medreseden bir manastıra: Mardin'in yüzyıllardır yan yana yaşayan inançlarını tek bir hatta izleyen rota.",
+    "estimatedDuration": "≈ 4 saat",
+    "poiIds": ["mardin-ulu-camii", "kirklar-kilisesi", "latifiye-camii", "kasimiye-medresesi", "deyrulzafaran-manastiri"],
+    "difficulty": "orta",
+    "recommendedTime": "Sabah başlangıç",
+    "highlights": [
+      "Ulu Cami'nin Artuklu taş ve ahşap işçiliği",
+      "Kırklar Kilisesi'nde Süryani sunak geleneği",
+      "Kasımiye avlusunda ömrü anlatan su kanalı",
+      "Deyrulzafaran'da sekiz yüzyıllık patriklik merkezi"
+    ],
+    "safetyNotes": [
+      "Kasımiye ve Deyrulzafaran merkeze yürüme mesafesinde değildir, araç gerekir.",
+      "Bütün duraklar ibadet mekanıdır, omuz ve diz kapalı kıyafet tercih edin.",
+      "Deyrulzafaran ziyaretleri belirli saatlerde ve rehber eşliğindedir."
+    ]
+  },
+  {
+    "id": "mardin-carsi-zanaat-rotasi",
+    "title": "Çarşı ve Zanaat Rotası",
+    "description": "Mardin'i vitrinden değil tezgahtan tanımak isteyenler için. Bakır, gümüş ve taşın hâlâ elle işlendiği hatta yürür, abbaraların gölgesinde dinlenir ve kent müzesinde zanaatların hikayesini tamamlarsın.",
+    "estimatedDuration": "≈ 3 saat",
+    "poiIds": ["revakli-carsi", "abbaralar", "sehidiye-medresesi", "sakip-sabanci-kent-muzesi"],
+    "difficulty": "kolay",
+    "recommendedTime": "Sabah, ustalar tezgah başındayken",
+    "highlights": [
+      "Bakırcıların elle dövme işi ve çekiç sesi",
+      "Telkari gümüş atölyelerinde ince işçilik",
+      "Abbaraların altından geçen serin ara sokaklar",
+      "Kent müzesinde Mardin zanaatlarının hikayesi"
+    ],
+    "safetyNotes": [
+      "Ustaları fotoğraflamadan önce izin isteyin.",
+      "Atölyelerde sıcak metal ve kıvılcım olabilir, tezgaha yaklaşmayın.",
+      "Pazar günleri birçok dükkan kapalıdır."
+    ]
+  },
+  {
+    "id": "mardin-sehir-disi-rotasi",
+    "title": "Şehir Dışı: Manastır, Antik Kent ve Ova",
+    "description": "Bir günü şehrin dışına ayır. Deyrulzafaran'ın yeraltı güneş odasından Dara'nın kayaya oyulmuş dev sarnıçlarına, oradan Kızıltepe'nin Artuklu mihrabına uzanan, araçla yapılan tam gün rotası.",
+    "estimatedDuration": "≈ 6-7 saat, araçla",
+    "poiIds": ["deyrulzafaran-manastiri", "dara-antik-kenti", "kiziltepe-ulu-camii"],
+    "difficulty": "orta",
+    "recommendedTime": "Erken sabah çıkış",
+    "highlights": [
+      "Deyrulzafaran'ın yeraltı tonozlu güneş odası",
+      "Dara'da kayaya oyulmuş dev sarnıçlar ve nekropol",
+      "Kızıltepe Ulu Camii'nin oyma mihrabı"
+    ],
+    "safetyNotes": [
+      "Üç durak da araç gerektirir, toplam yol yaklaşık yüz kilometredir.",
+      "Dara'da gölge azdır ve zemin engebelidir, bol su ve sağlam ayakkabı alın.",
+      "Deyrulzafaran ve Kızıltepe ibadet mekanıdır, kıyafetinize dikkat edin."
+    ]
+  },
+  {
+    "id": "mardin-fotograf-rotasi",
+    "title": "Işık ve Taş: Fotoğraf Rotası",
+    "description": "Mardin'i ışığa göre gezen rota. Sabah kaleye çıkan sokaklardan taş şehrin kademeli dokusunu, öğlen abbaraların karanlığından çıkan ışık dikdörtgenini, akşam da Cumhuriyet Meydanı teraslarından ovanın üzerine inen gün batımını çekersin. Arada Zinciriye'nin ikiz kubbeleri ve Şehidiye'nin burmalı minaresi var.",
+    "estimatedDuration": "≈ 3-4 saat",
+    "poiIds": ["mardin-kalesi", "zinciriye-medresesi", "sehidiye-medresesi", "abbaralar", "cumhuriyet-meydani"],
+    "difficulty": "orta",
+    "recommendedTime": "Sabah erken başla, akşamüstü bitir",
+    "highlights": [
+      "Kaleye çıkan sokaklardan taş şehrin kademeli silüeti",
+      "Zinciriye terasında ikiz kubbeler ve ova",
+      "Şehidiye'nin bitkisel bezemeli burmalı minaresi",
+      "Abbaranın ucundaki ışık dikdörtgeni",
+      "Cumhuriyet Meydanı teraslarında ova üzerinde gün batımı"
+    ],
+    "safetyNotes": [
+      "Mardin Kalesi askeri bölgedir; kaleyi, tesisleri ve personeli fotoğraflamayın, yalnızca aşağıdan şehir dokusunu çekin.",
+      "Teras ve üst sokak kenarlarında korkuluk her yerde yoktur, kadraja bakarken kenardan uzak durun.",
+      "İnsanları ve tezgah başındaki ustaları çekmeden önce izin isteyin.",
+      "Abbaralar loş ve zaman zaman ıslaktır, adımınıza dikkat edin."
+    ]
+  }
+]

@@ -3,6 +3,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useTranslation } from 'react-i18next';
 import { StyleSheet, Text, View, type StyleProp, type ViewStyle } from 'react-native';
 import { colors, gradients, radius, shadow, spacing, typography } from '@/theme';
+import { useCity } from '@/hooks/useCity';
 import { withAlpha } from '@/utils/color';
 import { upperLocale } from '@/utils/text';
 import { isRtl } from '@/utils/rtl';
@@ -14,9 +15,10 @@ interface StoryCardProps {
   style?: StyleProp<ViewStyle>;
 }
 
-/** "Nusaybin'in Hikâyesi" giriş kartı — kültür mozaiği anlatısına yönlendirir. */
+/** Aktif şehrin hikâye anlatısına yönlendiren giriş kartı. */
 export function StoryCard({ onPress, style }: StoryCardProps) {
   const { t, i18n } = useTranslation();
+  const { cityId } = useCity();
   const rtl = isRtl(i18n.language);
   return (
     <PressableScale
@@ -35,12 +37,12 @@ export function StoryCard({ onPress, style }: StoryCardProps) {
         <MaterialCommunityIcons name="book-open-page-variant-outline" size={22} color={colors.primary} />
       </View>
       <View style={styles.body}>
-        <Text style={styles.overline}>{upperLocale(t('story.title'), i18n.language)}</Text>
+        <Text style={styles.overline}>{upperLocale(t(`story.${cityId}.title`), i18n.language)}</Text>
         <Text style={styles.title} numberOfLines={2}>
-          {t('story.cardTitle')}
+          {t(`story.${cityId}.cardTitle`)}
         </Text>
         <Text style={styles.desc} numberOfLines={2}>
-          {t('story.cardBody')}
+          {t(`story.${cityId}.cardBody`)}
         </Text>
       </View>
       <MaterialCommunityIcons name={rtl ? 'chevron-left' : 'chevron-right'} size={22} color={colors.subtleText} />

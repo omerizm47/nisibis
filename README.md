@@ -1,27 +1,33 @@
-# Nisibis — Nusaybin Keşif Rehberi
+# Nisibis — Mardin ve Nusaybin Keşif Rehberi
 
-Nusaybin'i keşfetmek için **ücretsiz**, modern ve oyunlaştırılmış bir mobil şehir rehberi.
+Mardin'i ve Nusaybin'i keşfetmek için **ücretsiz**, modern ve oyunlaştırılmış bir mobil şehir rehberi.
 Android ve iOS'ta çalışan bir **Expo / React Native** uygulamasıdır. Ana ekran, görev odaklı
-koyu bir **haritadır**: canlı konumunu görür, önemli durakları işaretçi olarak keşfeder,
-"Buraya git" / "Tamamlandı" diyebilir ve Nusaybin turundaki ilerlemeni yüzde olarak takip edersin.
+bir **haritadır**: canlı konumunu görür, önemli durakları işaretçi olarak keşfeder,
+"Buraya git" / "Tamamlandı" diyebilir ve seçili şehrin turundaki ilerlemeni yüzde olarak takip edersin.
+
+**İki şehir tek uygulamada.** İstediğin an haritadaki şehir rozetinden ya da Ayarlar > Şehir
+bölümünden geçiş yaparsın. Her şehrin kendi durakları, rotaları, görevleri, hikâyesi ve
+**ayrı tur yüzdesi** vardır; şehir değiştirmek ilerlemeni silmez.
 
 > MVP tamamen **çevrimdışı veriyle** çalışır (yerel JSON). Backend yoktur; ilerleme cihazda
-> `AsyncStorage` ile saklanır. Yapı; ileride backend, admin panel ve gerçek harita verisi
-> eklenebilecek şekilde modülerdir.
+> `AsyncStorage` ile şehir başına saklanır. Yapı; ileride backend, admin panel ve gerçek harita
+> verisi eklenebilecek şekilde modülerdir.
 
 ---
 
 ## ✨ Özellikler
 
-- **Oyunlaştırılmış harita** (react-native-maps + ücretsiz, API anahtarsız koyu OSM döşemeleri).
+- **İki şehir**: Mardin (Artuklu eski şehir + yakın çevre) ve Nusaybin. Aralarında tek dokunuşla geçiş.
+- **Oyunlaştırılmış harita** (react-native-maps + ücretsiz, API anahtarsız OSM döşemeleri).
 - **Canlı konum** (expo-location) — izin reddedilse de uygulama çalışır.
-- **Keşfet**: kategori filtreleri + arama (kahve, kilise, cami, çarşı, fotoğraf…).
+- **Keşfet**: kategori filtreleri + arama. Filtreler yalnızca o şehirde var olan kategorileri gösterir.
 - **Yer detayları**: tarihçe, aktiviteler, tavsiyeler, fotoğraf önerileri, ziyaret notları, kaynaklar.
 - **Hazır rotalar** ve durak ilerlemesi.
-- **Görev sistemi** + AsyncStorage ile kalıcı ilerleme.
-- **i18n** altyapısı: `tr` (tam), `en` ve `ar` (placeholder).
-- **Premium, Nusaybin kültürüne uygun tasarım**: koyu taban, altın vurgu, taş-toprak tonları,
-  Fraunces (serif) + Inter (sans) tipografi, dokunsal geri bildirim.
+- **Görev sistemi** + AsyncStorage ile kalıcı, şehir başına ilerleme.
+- **Çapraz şehir önerisi**: bir şehirde yol alırken ya da turu bitirirken diğer şehri önerir.
+- **i18n**: `tr`, `en` ve `ar`. Üç dosya da aynı anahtar kümesine sahiptir.
+- **Premium, yöreye uygun tasarım**: altın vurgu, taş‑toprak tonları, Fraunces (serif) + Inter (sans)
+  tipografi, dokunsal geri bildirim, şehir başına özel amblem.
 
 ---
 
@@ -96,35 +102,54 @@ npx expo run:ios
 
 ```
 app/
-  _layout.tsx              # Kök: fontlar, i18n, sağlayıcılar, Stack
+  _layout.tsx              # Kök: fontlar, i18n, sağlayıcılar (CityProvider dahil), Stack
   (tabs)/
     _layout.tsx            # Sekmeler + onboarding kapısı
-    index.tsx              # Harita ekranı (ana)
+    index.tsx              # Harita ekranı (ana) + şehir rozeti
     explore.tsx            # Keşfet
     routes.tsx             # Rotalar
     checklist.tsx          # Görevler
-    settings.tsx           # Ayarlar
+    settings.tsx           # Ayarlar (şehir ve dil seçimi)
   place/[id].tsx           # Yer detay
   route/[id].tsx           # Rota detay
-  onboarding.tsx           # Karşılama
+  onboarding.tsx           # Karşılama + şehir seçimi
   privacy.tsx              # Gizlilik
+  story.tsx                # Aktif şehrin hikâyesi
 src/
-  components/              # PlaceCard, RouteCard, TaskItem, BottomPlaceSheet, MapMarker, ...
-  data/                    # places.json, routes.json, tasks.json
-  hooks/                   # useLocation, usePlaces, useRoutes, useTasks, useProgress, useOnboarding
-  storage/                 # taskStorage.ts (AsyncStorage)
-  types/                   # place.ts, route.ts, task.ts, category.ts
+  components/              # PlaceCard, RouteCard, CityChip, CityInviteCard, Emblem, ...
+  data/
+    cities.ts              # Şehir kayıt defteri (veri, harita bölgesi, kaynaklar, amblem)
+    activeCity.ts          # Aktüel şehrin modül düzeyindeki işaretçisi
+    placeImages.ts         # Aktif şehrin görselini çözer
+    nusaybin/              # places.json, routes.json, tasks.json, images.ts
+    mardin/                # places.json, routes.json, tasks.json, images.ts
+  hooks/                   # useCity, useLocation, usePlaces, useRoutes, useTasks, useProgress, ...
+  storage/                 # taskStorage.ts (AsyncStorage, şehir başına anahtar + göç)
+  types/                   # place.ts, route.ts, task.ts, category.ts, city.ts
   theme/                   # colors, spacing, typography, categories
   i18n/                    # tr.json, en.json, ar.json, index.ts
   utils/                   # distance, map, constants, color, icons
+assets/images/places/
+  nusaybin/                # paketlenmiş mekan görselleri
+  mardin/
 docs/research/             # nusaybin-tourism-research.md
 ```
 
 ---
 
+## ➕ Yeni şehir nasıl eklenir
+
+1. `src/data/<sehir>/` altında `places.json`, `routes.json`, `tasks.json` ve `images.ts` oluştur.
+2. Görselleri `assets/images/places/<sehir>/` altına indir ve `images.ts` içinde `require` ile eşle.
+3. `src/types/city.ts` içindeki `CityId` birleşimine yeni kimliği ekle.
+4. `src/data/cities.ts` içine kaydı ekle: ad, antik ad, harita bölgesi, kaynaklar, `signatureLink`, amblem.
+5. `src/i18n/*.json` içinde `story.<sehir>` bloğunu üç dilde de doldur (`blocks` ve `timeline` dahil).
+6. `scripts/validate-data.mjs` içindeki `CITIES` dizisine ekle ve çalıştır.
+
 ## ➕ Yeni mekan nasıl eklenir
 
-`src/data/places.json` dosyasına yeni bir nesne ekle (alanlar `src/types/place.ts` ile uyumlu olmalı):
+İlgili şehrin `src/data/<sehir>/places.json` dosyasına yeni bir nesne ekle (alanlar `src/types/place.ts`
+ile uyumlu olmalı). Her mekanın `images.ts` içinde bir kaydı olmalıdır, yoksa doğrulayıcı hata verir:
 
 ```jsonc
 {
@@ -160,7 +185,8 @@ docs/research/             # nusaybin-tourism-research.md
 
 ## ➕ Yeni rota nasıl eklenir
 
-`src/data/routes.json` dosyasına ekle; `poiIds`, `places.json` içindeki mevcut `id`'lere referans vermeli:
+İlgili şehrin `src/data/<sehir>/routes.json` dosyasına ekle; `poiIds`, aynı şehrin `places.json`
+içindeki mevcut `id`'lere referans vermelidir:
 
 ```json
 {
@@ -178,8 +204,8 @@ docs/research/             # nusaybin-tourism-research.md
 
 ## ➕ Yeni görev nasıl eklenir
 
-`src/data/tasks.json` dosyasına ekle. `icon`, MaterialCommunityIcons adıdır; `relatedPoiId`
-bir mekana bağlıysa o mekanın `id`'si, değilse `null`:
+İlgili şehrin `src/data/<sehir>/tasks.json` dosyasına ekle. `icon`, MaterialCommunityIcons adıdır;
+`relatedPoiId` bir mekana bağlıysa o mekanın `id`'si, değilse `null`:
 
 ```json
 {
@@ -232,8 +258,10 @@ bir mekana bağlıysa o mekanın `id`'si, değilse `null`:
 
 ## 🌍 Çoklu dil
 
-- `src/i18n/tr.json` tamdır. `en.json` İngilizce, `ar.json` Arapça (kısmi placeholder; eksik
-  anahtarlar `tr`'ye düşer). Metinleri hardcode etmek yerine `t('anahtar')` kullanın.
+- `tr`, `en` ve `ar` dosyaları **aynı anahtar kümesine** sahiptir; eksik anahtar `tr`'ye düşer.
+  Metinleri hardcode etmek yerine `t('anahtar')` kullanın.
+- Şehir adı geçen metinler `{{city}}` ile enterpole edilir, sabit yazılmaz.
+- Hikâye içeriği `story.<sehir>` altında şehir başına tutulur (`blocks` ve `timeline` dizileriyle).
 - Arapça için tam **RTL** düzeni MVP'de zorunlu kılınmamıştır; gelecek geliştirmedir.
 
 ---
@@ -251,6 +279,8 @@ bir mekana bağlıysa o mekanın `id`'si, değilse `null`:
 
 ## 📝 Lisans / içerik notu
 
-Görseller Wikimedia Commons katkıcılarına aittir ve `Special:FilePath` ile referanslanır;
-yayın öncesi her görselin lisansı doğrulanmalı ve uygun atıf (Ayarlar > Kaynaklar) sağlanmalıdır.
-Bazı kayıtlarda temsilî yöresel görsel kullanılmıştır ve veride **TODO** ile işaretlenmiştir.
+Görseller Wikimedia Commons katkıcılarına aittir ve cihazda paketlenir. Her mekan kaydında
+`imageCredit`, `imageLicense` ve `imageSourceUrl` alanları bulunur; atıf uygulama içinde mekan
+sayfasının altında gösterilir. Mardin kayıtlarının lisansları (CC BY-SA 3.0 / 4.0) dosya
+sayfalarından doğrulanmıştır; Nusaybin kayıtlarında bazı lisans alanları hâlâ **TODO** işaretlidir
+ve yayın öncesi kesinleştirilmelidir.

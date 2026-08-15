@@ -19,7 +19,7 @@ import {
 import { I18nextProvider } from 'react-i18next';
 
 import i18n, { loadStoredLanguage } from '@/i18n';
-import { ProgressProvider } from '@/hooks';
+import { CityProvider, ProgressProvider } from '@/hooks';
 import { CelebrationProvider, ErrorBoundary } from '@/components';
 import { OnboardingProvider } from '@/hooks/useOnboarding';
 import { colors } from '@/theme';
@@ -78,6 +78,7 @@ export default function RootLayout() {
         <ErrorBoundary>
         <I18nextProvider i18n={i18n}>
           <OnboardingProvider>
+            <CityProvider>
             <ProgressProvider>
               <CelebrationProvider>
                 <StatusBar style="dark" />
@@ -99,6 +100,7 @@ export default function RootLayout() {
               </View>
               </CelebrationProvider>
             </ProgressProvider>
+            </CityProvider>
           </OnboardingProvider>
         </I18nextProvider>
         </ErrorBoundary>

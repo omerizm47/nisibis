@@ -1,7 +1,7 @@
 {
   "app": {
     "name": "Nisibis",
-    "tagline": "Nusaybin Explorer's Guide"
+    "tagline": "Mardin & Nusaybin Explorer's Guide"
   },
   "common": {
     "loading": "Loading…",
@@ -20,9 +20,22 @@
     "openSource": "Open source",
     "noCoordinates": "Location not verified yet"
   },
+  "city": {
+    "title": "City",
+    "hint": "Each city has its own stops, routes and tour progress. Switching cities never loses your progress.",
+    "switchTo": "Switch to {{city}}",
+    "choose": "Which city would you like to start with?"
+  },
+  "crossCity": {
+    "doneTitle": "You completed the {{city}} tour",
+    "doneBody": "{{other}} is next. {{count}} stops and a fresh set of missions are waiting.",
+    "inviteTitle": "{{other}} is here too",
+    "inviteBody": "{{count}} stops and {{routes}} ready-made routes. Just switch cities; your {{city}} progress stays exactly where it is.",
+    "cta": "Switch to {{city}}"
+  },
   "onboarding": {
-    "welcomeTitle": "Welcome to Nusaybin.",
-    "welcomeBody": "Walk in the footsteps of Nisibis — millennia of Assyrian, Roman, Syriac and Islamic heritage. With a church and a mosque rising side by side, lively bazaars and local flavours, Nusaybin is ready to amaze you. Chart your own route.",
+    "welcomeTitle": "Welcome to Upper Mesopotamia.",
+    "welcomeBody": "Mardin, a stone city terraced down a hillside, and Nusaybin, the ancient Nisibis of millennia past. Both are in this app. Pick the city you want to start with, and switch whenever you like.",
     "discoverTitle": "Chart your own route",
     "discoverBody": "See key stops on the map, complete missions and track your tour progress as a percentage.",
     "locationTitle": "Discover what's nearby",
@@ -76,12 +89,12 @@
     "details": "View details",
     "featured": "Featured",
     "nearby": "Nearby",
-    "shareMessage": "{{name}} · Discover Nusaybin with Nisibis\n{{url}}",
+    "shareMessage": "{{name}} · Discover {{city}} with Nisibis\n{{url}}",
     "notFound": "Place not found"
   },
   "explore": {
     "title": "Explore",
-    "subtitle": "Discover Nusaybin's stops",
+    "subtitle": "Discover the stops of {{city}}",
     "searchPlaceholder": "Search: coffee, church, mosque, bazaar, photo…",
     "all": "All",
     "sortFeatured": "Featured",
@@ -106,30 +119,30 @@
     "difficulty_kolay": "Easy",
     "difficulty_orta": "Moderate",
     "difficulty_zor": "Hard",
-    "shareMessage": "{{title}} · Nusaybin route ({{duration}})\nExplore with Nisibis",
+    "shareMessage": "{{title}} · {{city}} route ({{duration}})\nExplore with Nisibis",
     "notFound": "Route not found"
   },
   "checklist": {
     "title": "Missions",
-    "subtitle": "Complete missions to advance your Nusaybin tour",
-    "tourProgress": "Nusaybin Tour",
+    "subtitle": "Complete missions to advance your {{city}} tour",
+    "tourProgress": "{{city}} Tour",
     "percent": "{{percent}}% complete",
     "points": "{{points}} points",
     "completedCount": "{{completed}}/{{total}} missions",
     "reset": "Reset progress",
     "resetConfirmTitle": "Reset progress?",
-    "resetConfirmBody": "All completed missions will be removed. This cannot be undone.",
+    "resetConfirmBody": "All missions completed in {{city}} will be removed. This cannot be undone.",
     "resetConfirm": "Reset",
     "cancel": "Cancel",
     "emptyTitle": "No missions",
     "done": "Completed"
   },
   "progress": {
-    "tourProgress": "Nusaybin Tour",
+    "tourProgress": "{{city}} Tour",
     "percentComplete": "{{percent}}% complete",
     "keepExploring": "Keep exploring",
     "completedOfTotal": "{{completed}}/{{total}}",
-    "tourComplete": "You completed the Nusaybin tour!"
+    "tourComplete": "You completed the {{city}} tour!"
   },
   "settings": {
     "title": "Settings",
@@ -142,12 +155,12 @@
     "privacy": "Privacy",
     "sources": "Sources & credits",
     "about": "About",
-    "aboutBody": "Nisibis is a free city guide to help you explore Nusaybin. All tourist data is stored locally on your device.",
+    "aboutBody": "Nisibis is a free city guide to help you explore Mardin and Nusaybin. All tourist data is stored locally on your device.",
     "version": "Version",
     "locationGranted": "Granted",
     "locationDenied": "Denied",
     "locationUndetermined": "Not determined",
-    "sourcesIntro": "Content is compiled from the sources below. Images belong to Wikimedia Commons contributors; attributions are being verified."
+    "sourcesIntro": "Content is compiled from the sources below. Images belong to Wikimedia Commons contributors; each image's author and licence are listed on its place page."
   },
   "privacy": {
     "title": "Privacy",
@@ -159,33 +172,59 @@
     "noPersonalData": "No personal data is collected."
   },
   "story": {
-    "title": "The Story of Nusaybin",
     "shortcut": "Story",
-    "cardTitle": "Where civilizations meet",
-    "cardBody": "A church and a mosque rising side by side — a mosaic thousands of years in the making.",
-    "intro": "Nusaybin — known in antiquity as Nisibis — has lived for millennia on the fertile lands of Mesopotamia, along the Silk Road.",
-    "layersTitle": "A crossroads of civilizations",
-    "layersBody": "From Assyrian to Roman, Persian to Syriac, Islamic to modern — every civilization left a layer and a story on this land.",
-    "mosaicTitle": "A church and a mosque, side by side",
-    "mosaicBody": "In the heart of the city, the Mor Yakup Church and the Zeynel Abidin Mosque rise just a hundred metres apart. Centuries of coexistence among different faiths form Nusaybin's most striking symbol; both were added together to the UNESCO World Heritage Tentative List in 2014.",
-    "schoolTitle": "A cradle of learning: the School of Nisibis",
-    "schoolBody": "Ancient Nisibis was renowned for its school of theology and science, remembered as a cradle of learning.",
     "antiquityOverline": "HOW OLD IS IT?",
+    "timelineTitle": "Key moments in history",
+    "cta": "Start exploring",
+    "mardin": {
+      "title": "The Story of Mardin",
+      "cardTitle": "A city of stone and plain",
+      "cardBody": "Stone houses terraced down a hillside, three centuries as an Artuqid capital, and Mesopotamia opening to the horizon.",
+      "intro": "Mardin is built on the southern slope of a long rocky ridge overlooking the Mesopotamian plain, almost entirely from local limestone.",
+      "blocks": [
+        { "icon": "layers-outline", "title": "A crossroads of civilizations", "body": "From its name in Assyrian records to the kingdom of Osroene, from a Roman frontier fortress to an Artuqid capital, from the Aq Qoyunlu to the Ottomans, every era added a layer to this stone." },
+        { "icon": "stairs", "title": "Stone terraced to the slope", "body": "Houses step down to follow the incline, upper floors set back from the courtyard, and vaulted abbara passages run beneath them. What gives the city its stepped profile is every house wanting to see the plain." },
+        { "icon": "crown-outline", "title": "An Artuqid capital", "body": "From 1103 the city was capital to one of the two main branches of the Artuqid dynasty. From the Great Mosque to the Zinciriye, most of the architecture you see today is the work of those three centuries." }
+      ],
+      "antiquityStat": "1st millennium BCE",
+      "antiquityTitle": "The first trace in Assyrian records",
+      "antiquityBody": "A Neo-Assyrian legal document mentions a road to Mardiane, commonly identified with modern Mardin. As Aramean settlement grew, the Akkadian name fell out of use and gave way to the name Mardin.",
+      "timeline": [
+        { "year": "Early 1st millennium BCE", "title": "First trace in Assyrian records", "body": "A Neo-Assyrian legal document records a road to Mardiane, commonly identified with modern Mardin." },
+        { "year": "150 BCE to 250 CE", "title": "The kingdom of Osroene", "body": "The city belongs to the kingdom of Osroene, ruled by the Abgarid dynasty." },
+        { "year": "4th century CE", "title": "Marida on the Roman frontier", "body": "The name Mardin first appears in the 4th-century historian Ammianus Marcellinus. In the Roman period the city is known as Marida, from a Syriac root meaning fortress." },
+        { "year": "640 CE", "title": "The coming of Islam", "body": "The Byzantine city is taken by the commander Iyad ibn Ghanm; heavy Arab settlement of the region begins and the city falls under the governorate of al-Jazira." },
+        { "year": "1103", "title": "An Artuqid capital", "body": "The city becomes capital to one of the two main branches of the Oghuz Turkish Artuqid dynasty, and over roughly three centuries reaches its architectural peak." },
+        { "year": "3 February 1385", "title": "The Zinciriye Medrese", "body": "The foundation inscription over the portal of the Sultan Isa Medrese records the completion date to the day." },
+        { "year": "1409 to 1451", "title": "Qara Qoyunlu and Aq Qoyunlu", "body": "The last Artuqid ruler yields the city to Qara Yusuf in 1409; the castle surrenders to the Aq Qoyunlu in 1432 and the rest of the century passes under their rule." },
+        { "year": "1517", "title": "The Ottoman era", "body": "The town submits to the Ottomans in 1515 but the castle holds out; after Biyikli Mehmed Pasha returns with reinforcements the castle is taken in 1517." },
+        { "year": "2000", "title": "UNESCO Tentative List", "body": "Mardin Cultural Landscape is submitted to the UNESCO World Heritage Tentative List on 25 February 2000. The listing covers both the city and Deyrulzafaran Monastery. Mardin is on the tentative list, not the World Heritage List." }
+      ]
+    },
+    "nusaybin": {
+      "title": "The Story of Nusaybin",
+      "cardTitle": "Where civilizations meet",
+    "cardBody": "A church and a mosque rising side by side, a mosaic thousands of years in the making.",
+      "intro": "Nusaybin, known in antiquity as Nisibis, has lived for millennia on the fertile lands of Mesopotamia, along the Silk Road.",
+      "blocks": [
+        { "icon": "layers-outline", "title": "A crossroads of civilizations", "body": "From Assyrian to Roman, Persian to Syriac, Islamic to modern, every civilization left a layer and a story on this land." },
+        { "icon": "puzzle-outline", "title": "A church and a mosque, side by side", "body": "In the heart of the city, the Mor Yakup Church and the Zeynel Abidin Mosque rise just a hundred metres apart. Centuries of coexistence among different faiths form Nusaybin's most striking symbol; both were added together to the UNESCO World Heritage Tentative List in 2014." },
+        { "icon": "school-outline", "title": "A cradle of learning: the School of Nisibis", "body": "Ancient Nisibis was renowned for its school of theology and science, remembered as a cradle of learning." }
+      ],
     "antiquityStat": "~3,000 years",
     "antiquityTitle": "A recorded history since 901 BCE",
-    "antiquityBody": "The city's name appears in Assyrian records as 'Naṣibīna' as early as 901 BCE — giving Nusaybin nearly three thousand years of written history and making it one of Mesopotamia's most ancient settlements.",
-    "timelineTitle": "Key moments in history",
+    "antiquityBody": "The city's name appears in Assyrian records as Nasibina as early as 901 BCE, giving Nusaybin nearly three thousand years of written history and making it one of Mesopotamia's most ancient settlements.",
     "timeline": [
-      { "year": "901 BCE", "title": "First named in Assyrian records", "body": "The city enters Assyrian inscriptions as the Aramean town of 'Naṣibīna' and is soon annexed by the Assyrian Empire." },
-      { "year": "332 BCE", "title": "Alexander & the Hellenistic age", "body": "After Alexander the Great's conquest, the Seleucids re-found the city as 'Antiochia Mygdonia'." },
-      { "year": "337–350 CE", "title": "Three great sieges", "body": "On the Roman–Persian frontier, the Sasanian king Shapur II besieges the city three times, yet its walls hold; Nisibis is hailed as the 'Shield of the East'." },
-      { "year": "359 CE", "title": "Church of Mor Yakup", "body": "The Mor Yakup baptistery — the most important structure surviving from the ancient city — is built in this period." },
+      { "year": "901 BCE", "title": "First named in Assyrian records", "body": "The city enters Assyrian inscriptions as the Aramean town of Nasibina and is soon annexed by the Assyrian Empire." },
+      { "year": "332 BCE", "title": "Alexander and the Hellenistic age", "body": "After Alexander the Great's conquest, the Seleucids re-found the city as Antiochia Mygdonia." },
+      { "year": "337 to 350 CE", "title": "Three great sieges", "body": "On the Roman and Persian frontier, the Sasanian king Shapur II besieges the city three times, yet its walls hold; Nisibis is hailed as the Shield of the East." },
+      { "year": "359 CE", "title": "Church of Mor Yakup", "body": "The Mor Yakup baptistery, the most important structure surviving from the ancient city, is built in this period." },
       { "year": "489 CE", "title": "Rise of the School of Nisibis", "body": "The city's famous school becomes one of the foremost centres of theology and learning of its age." },
-      { "year": "639–640 CE", "title": "The coming of Islam", "body": "The city peacefully joins the Islamic world under Caliph Umar and serves as an administrative centre." },
+      { "year": "639 to 640 CE", "title": "The coming of Islam", "body": "The city peacefully joins the Islamic world under Caliph Umar and serves as an administrative centre." },
       { "year": "12th century", "title": "The Zengid era", "body": "Under Nur al-Din Zengi the city is reshaped; the Zeynel Abidin complex bears the marks of this age." },
       { "year": "1515", "title": "The Ottoman era", "body": "Under Sultan Selim I, Nusaybin becomes part of the Ottoman Empire." },
       { "year": "Today", "title": "A district of Mardin", "body": "Today Nusaybin is a district of Mardin, carrying the legacy and multicultural fabric of ancient Nisibis." }
-    ],
-    "cta": "Start exploring"
+      ]
+    }
   }
 }

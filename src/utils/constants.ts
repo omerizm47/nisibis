@@ -1,25 +1,24 @@
 /** Uygulama genelinde paylaşılan sabitler. */
 
-/** AsyncStorage anahtarları. */
+/** Şehirden bağımsız AsyncStorage anahtarları. */
 export const STORAGE_KEYS = {
   onboardingComplete: 'nisibis:onboarding_complete',
+  language: 'nisibis:language',
+  city: 'nisibis:city',
+} as const;
+
+/** İlerleme anahtarları şehir başınadır; her şehrin turu ayrı yüzde ile ilerler. */
+export function progressKeys(cityId: string) {
+  return {
+    completedTasks: `nisibis:completed_tasks:${cityId}`,
+    completedPlaces: `nisibis:completed_places:${cityId}`,
+  } as const;
+}
+
+/** Tek şehirli sürümden kalan anahtarlar. Bir kez Nusaybin'e taşınıp silinirler. */
+export const LEGACY_PROGRESS_KEYS = {
   completedTasks: 'nisibis:completed_tasks',
   completedPlaces: 'nisibis:completed_places',
-  language: 'nisibis:language',
-} as const;
-
-/** Nusaybin şehir merkezi (yaklaşık demir-çıpa). Kaynak: Vikipedi koordinatları. */
-export const NUSAYBIN_CENTER = {
-  latitude: 37.0747,
-  longitude: 41.2156,
-} as const;
-
-/** Harita açılış bölgesi: Nusaybin merkez durakları yakından gösteren dar görünüm. */
-export const DEFAULT_REGION = {
-  latitude: 37.0725,
-  longitude: 41.2152,
-  latitudeDelta: 0.017,
-  longitudeDelta: 0.012,
 } as const;
 
 /**

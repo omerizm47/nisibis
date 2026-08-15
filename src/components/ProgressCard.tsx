@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Pressable, StyleSheet, Text, View, type StyleProp, type ViewStyle } from 'react-native';
+import { useCity } from '@/hooks/useCity';
 import { colors, radius, shadow, spacing, typography } from '@/theme';
 import { ProgressRing } from './ProgressRing';
 
@@ -21,6 +22,7 @@ export function ProgressCard({
   style,
 }: ProgressCardProps) {
   const { t } = useTranslation();
+  const { city } = useCity();
 
   const inner = (
     <>
@@ -28,7 +30,7 @@ export function ProgressCard({
         <Text style={styles.percent}>{percent}%</Text>
       </ProgressRing>
       <View style={styles.texts}>
-        <Text style={styles.title}>{t('progress.tourProgress')}</Text>
+        <Text style={styles.title}>{t('progress.tourProgress', { city: city.name })}</Text>
         <Text style={styles.subtitle}>
           {t('progress.completedOfTotal', { completed: completedCount, total: totalCount })}
           {points != null ? ` · ${t('checklist.points', { points })}` : ''}

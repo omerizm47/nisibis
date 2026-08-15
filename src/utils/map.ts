@@ -1,5 +1,5 @@
+import { getActiveCity } from '@/data/activeCity';
 import type { Place } from '@/types';
-import { DEFAULT_REGION } from './constants';
 import type { LatLng } from './distance';
 
 export interface Region extends LatLng {
@@ -47,7 +47,7 @@ export function regionForPlaces(places: CoordinateFields[]): Region {
     .filter((c): c is LatLng => c != null);
 
   if (coords.length === 0) {
-    return { ...DEFAULT_REGION };
+    return { ...getActiveCity().region };
   }
 
   let minLat = coords[0].latitude;

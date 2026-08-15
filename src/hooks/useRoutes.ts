@@ -1,15 +1,13 @@
-import routesData from '@/data/routes.json';
+import { getActiveCity } from '@/data/activeCity';
 import type { Place, TourRoute } from '@/types';
 import { getPlaceById } from './usePlaces';
 
-const ROUTES = routesData as unknown as TourRoute[];
-
 export function getAllRoutes(): TourRoute[] {
-  return ROUTES;
+  return getActiveCity().routes;
 }
 
 export function getRouteById(id: string): TourRoute | undefined {
-  return ROUTES.find((r) => r.id === id);
+  return getAllRoutes().find((r) => r.id === id);
 }
 
 /** Rotanın duraklarını (mekanları) sırayla döndürür. */
@@ -20,5 +18,5 @@ export function getRoutePlaces(route: TourRoute): Place[] {
 }
 
 export function useRoutes(): TourRoute[] {
-  return ROUTES;
+  return getAllRoutes();
 }

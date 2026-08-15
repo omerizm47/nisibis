@@ -6,15 +6,16 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { Emblem, KilimBand, OrnamentDivider, PrimaryButton, ScreenHeader, StoneLattice } from '@/components';
+import { CityEmblem, KilimBand, OrnamentDivider, PrimaryButton, ScreenHeader, StoneLattice } from '@/components';
+import { useCity } from '@/hooks';
 import { colors, fontFamily, gradients, radius, spacing, typography } from '@/theme';
 import { withAlpha } from '@/utils/color';
 import type { MciName } from '@/utils/icons';
 
 interface Block {
   icon: MciName;
-  titleKey: string;
-  bodyKey: string;
+  title: string;
+  body: string;
 }
 
 interface TimelineItem {
@@ -23,23 +24,23 @@ interface TimelineItem {
   body: string;
 }
 
-const BLOCKS: Block[] = [
-  { icon: 'layers-outline', titleKey: 'story.layersTitle', bodyKey: 'story.layersBody' },
-  { icon: 'puzzle-outline', titleKey: 'story.mosaicTitle', bodyKey: 'story.mosaicBody' },
-  { icon: 'school-outline', titleKey: 'story.schoolTitle', bodyKey: 'story.schoolBody' },
-];
-
 export default function StoryScreen() {
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
   const router = useRouter();
+  const { city, cityId } = useCity();
 
-  const timelineRaw = t('story.timeline', { returnObjects: true });
-  const timeline: TimelineItem[] = Array.isArray(timelineRaw) ? (timelineRaw as TimelineItem[]) : [];
+  const s = (key: string) => t(`story.${cityId}.${key}`);
+  const list = <T,>(key: string): T[] => {
+    const raw = t(`story.${cityId}.${key}`, { returnObjects: true });
+    return Array.isArray(raw) ? (raw as T[]) : [];
+  };
+  const blocks = list<Block>('blocks');
+  const timeline = list<TimelineItem>('timeline');
 
   return (
     <View style={[styles.container, { paddingTop: insets.top + spacing.xs }]}>
-      <ScreenHeader title={t('story.title')} onBack={() => router.back()} />
+      <ScreenHeader title={s('title')} onBack={() => router.back()} />
       <ScrollView
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
@@ -47,17 +48,17 @@ export default function StoryScreen() {
         <View style={styles.hero}>
           <LinearGradient colors={gradients.hero} style={StyleSheet.absoluteFill} />
           <StoneLattice patternId="story-hero-lattice" color={colors.clay} opacity={0.16} tile={34} />
-          <Emblem size={98} color={colors.primary} accent={colors.copper} style={styles.emblem} />
-          <Text style={styles.heroOverline}>NISIBIS</Text>
-          <Text style={styles.heroTitle}>{t('story.cardTitle')}</Text>
+          <CityEmblem size={98} color={colors.primary} accent={colors.copper} style={styles.emblem} />
+          <Text style={styles.heroOverline}>{city.ancientName}</Text>
+          <Text style={styles.heroTitle}>{s('cardTitle')}</Text>
           <KilimBand patternId="hero-kilim" color={colors.copper} accent={colors.primary} height={14} style={styles.heroKilim} />
         </View>
 
         <View style={styles.introWrap}>
           <View style={styles.dropCap}>
-            <Text style={styles.dropCapText}>{t('story.intro').trim().charAt(0)}</Text>
+            <Text style={styles.dropCapText}>{s('intro').trim().charAt(0)}</Text>
           </View>
-          <Text style={styles.introText}>{t('story.intro').trim().slice(1)}</Text>
+          <Text style={styles.introText}>{s('intro').trim().slice(1)}</Text>
         </View>
 
         <OrnamentDivider style={{ marginVertical: spacing.xs }} />
@@ -68,14 +69,14 @@ export default function StoryScreen() {
             <MaterialCommunityIcons name="history" size={18} color={colors.primary} />
             <Text style={styles.antiquityOverline}>{t('story.antiquityOverline')}</Text>
           </View>
-          <Text style={styles.antiquityStat}>{t('story.antiquityStat')}</Text>
-          <Text style={styles.antiquityTitle}>{t('story.antiquityTitle')}</Text>
-          <Text style={styles.antiquityBody}>{t('story.antiquityBody')}</Text>
+          <Text style={styles.antiquityStat}>{s('antiquityStat')}</Text>
+          <Text style={styles.antiquityTitle}>{s('antiquityTitle')}</Text>
+          <Text style={styles.antiquityBody}>{s('antiquityBody')}</Text>
         </Animated.View>
 
-        {BLOCKS.map((b, i) => (
+        {blocks.map((b, i) => (
           <Animated.View
-            key={b.titleKey}
+            key={b.title}
             entering={FadeInDown.duration(320).delay(i * 90)}
             style={styles.block}
           >
@@ -83,8 +84,8 @@ export default function StoryScreen() {
               <MaterialCommunityIcons name={b.icon} size={22} color={colors.primary} />
             </View>
             <View style={styles.blockBody}>
-              <Text style={styles.blockTitle}>{t(b.titleKey)}</Text>
-              <Text style={styles.blockText}>{t(b.bodyKey)}</Text>
+              <Text style={styles.blockTitle}>{b.title}</Text>
+              <Text style={styles.blockText}>{b.body}</Text>
             </View>
           </Animated.View>
         ))}

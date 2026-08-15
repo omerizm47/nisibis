@@ -7,8 +7,9 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { EmptyState, PlaceCard, PrimaryButton, SafetyNotice } from '@/components';
-import { getRouteById, getRoutePlaces, useProgress } from '@/hooks';
+import { EmptyState, PlaceCard, PrimaryButton, RemoteImage, SafetyNotice } from '@/components';
+import { getPlaceImageSource } from '@/data/placeImages';
+import { getRouteById, getRoutePlaces, useCity, useProgress } from '@/hooks';
 import { colors, gradients, radius, spacing, typography } from '@/theme';
 import { withAlpha } from '@/utils/color';
 import { hapticLight } from '@/utils/haptics';
@@ -46,6 +47,7 @@ export default function RouteDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const route = id ? getRouteById(id) : undefined;
   const { isPlaceCompleted } = useProgress();
+  const { city } = useCity();
 
   if (!route) {
     return (
@@ -61,13 +63,18 @@ export default function RouteDetailScreen() {
   }
 
   const places = getRoutePlaces(route);
+  const cover = places[0];
   const total = route.poiIds.length;
   const completedStops = route.poiIds.filter((pid) => isPlaceCompleted(pid)).length;
 
   const handleShare = () => {
     hapticLight();
     void shareContent(
-      t('routes.shareMessage', { title: route.title, duration: route.estimatedDuration }).trim(),
+      t('routes.shareMessage', {
+        title: route.title,
+        city: city.name,
+        duration: route.estimatedDuration,
+      }).trim(),
     );
   };
 
@@ -77,8 +84,15 @@ export default function RouteDetailScreen() {
         contentContainerStyle={{ paddingBottom: 96 + insets.bottom }}
         showsVerticalScrollIndicator={false}
       >
-        <View style={styles.hero}>
-          <LinearGradient colors={gradients.hero} style={StyleSheet.absoluteFill} />
+        <View style={[styles.hero, cover ? styles.heroWithCover : null]}>
+          {cover ? (
+            <>
+              <RemoteImage source={getPlaceImageSource(cover)} style={StyleSheet.absoluteFill} />
+              <LinearGradient colors={gradients.imageScrim} style={StyleSheet.absoluteFill} />
+            </>
+          ) : (
+            <LinearGradient colors={gradients.hero} style={StyleSheet.absoluteFill} />
+          )}
           <Pressable
             onPress={() => router.back()}
             accessibilityRole="button"
@@ -98,7 +112,7 @@ export default function RouteDetailScreen() {
             <MaterialCommunityIcons name="share-variant" size={22} color={colors.text} />
           </Pressable>
           <View style={[styles.heroContent, { paddingTop: insets.top + spacing.x3l }]}>
-            <Text style={styles.title}>{route.title}</Text>
+            <Text style={[styles.title, cover ? styles.titleOnCover : null]}>{route.title}</Text>
             <View style={styles.metaRow}>
               <MetaChip icon="clock-outline" text={route.estimatedDuration} />
               <MetaChip icon="chart-line-variant" text={t(`routes.difficulty_${route.difficulty}`)} />
@@ -179,6 +193,10 @@ const styles = StyleSheet.create({
   hero: {
     minHeight: 180,
   },
+  heroWithCover: {
+    minHeight: 280,
+    justifyContent: 'flex-end',
+  },
   backBtn: {
     position: 'absolute',
     left: spacing.lg,
@@ -209,6 +227,9 @@ const styles = StyleSheet.create({
   title: {
     ...typography.hero,
     color: colors.text,
+  },
+  titleOnCover: {
+    color: colors.onPrimary,
   },
   metaRow: {
     flexDirection: 'row',

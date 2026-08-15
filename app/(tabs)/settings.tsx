@@ -11,20 +11,14 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { setAppLanguage } from '@/i18n';
 import { OrnamentDivider } from '@/components';
+import { useCity } from '@/hooks';
+import { CITIES, CITY_IDS } from '@/data/cities';
 import { type AppLanguage, SUPPORTED_LANGUAGES } from '@/utils/constants';
 import { colors, radius, spacing, typography } from '@/theme';
 import { hapticSelection } from '@/utils/haptics';
 import type { MciName } from '@/utils/icons';
 import { upperLocale } from '@/utils/text';
 import { isRtl } from '@/utils/rtl';
-
-const SOURCES: { title: string; url: string }[] = [
-  { title: 'Türkiye Kültür Portalı', url: 'https://www.kulturportali.gov.tr/turkiye/mardin' },
-  { title: 'Mardin İl Kültür ve Turizm Müdürlüğü', url: 'https://mardin.ktb.gov.tr' },
-  { title: 'TDV İslam Ansiklopedisi — Nusaybin', url: 'https://islamansiklopedisi.org.tr/nusaybin' },
-  { title: 'Vikipedi — Nusaybin', url: 'https://tr.wikipedia.org/wiki/Nusaybin' },
-  { title: 'Wikimedia Commons — Nusaybin', url: 'https://commons.wikimedia.org/wiki/Category:Nusaybin' },
-];
 
 function Section({ title, children, index = 0 }: { title: string; children: React.ReactNode; index?: number }) {
   const { i18n } = useTranslation();
@@ -67,6 +61,7 @@ export default function SettingsScreen() {
   const { t, i18n } = useTranslation();
   const insets = useSafeAreaInsets();
   const router = useRouter();
+  const { cityId, city, setCity } = useCity();
   const current = (i18n.language || 'tr').split('-')[0];
 
   const [perm, setPerm] = useState<'granted' | 'denied' | 'undetermined'>('undetermined');
@@ -109,7 +104,32 @@ export default function SettingsScreen() {
         <OrnamentDivider style={styles.headerDivider} />
       </Animated.View>
 
-      <Section title={t('settings.language')} index={1}>
+      <Section title={t('city.title')} index={1}>
+        <View style={styles.langRow}>
+          {CITY_IDS.map((id) => {
+            const active = cityId === id;
+            return (
+              <Pressable
+                key={id}
+                onPress={() => {
+                  hapticSelection();
+                  setCity(id);
+                }}
+                accessibilityRole="button"
+                accessibilityState={{ selected: active }}
+                style={[styles.langChip, active && styles.langChipActive]}
+              >
+                <Text style={[styles.langText, active && styles.langTextActive]}>
+                  {CITIES[id].name}
+                </Text>
+              </Pressable>
+            );
+          })}
+        </View>
+        <Text style={styles.cityHint}>{t('city.hint')}</Text>
+      </Section>
+
+      <Section title={t('settings.language')} index={2}>
         <View style={styles.langRow}>
           {SUPPORTED_LANGUAGES.map((code) => {
             const active = current === code;
@@ -131,7 +151,7 @@ export default function SettingsScreen() {
         </View>
       </Section>
 
-      <Section title={t('settings.locationStatus')} index={2}>
+      <Section title={t('settings.locationStatus')} index={3}>
         <Row icon="map-marker-outline" label={t('settings.locationStatus')} value={locationStatus} />
         {perm !== 'granted' ? (
           <Pressable onPress={() => void requestLocation()} style={styles.inlineBtn}>
@@ -140,7 +160,7 @@ export default function SettingsScreen() {
         ) : null}
       </Section>
 
-      <Section title={t('settings.privacy')} index={3}>
+      <Section title={t('settings.privacy')} index={4}>
         <Row
           icon="shield-check-outline"
           label={t('settings.privacy')}
@@ -148,14 +168,19 @@ export default function SettingsScreen() {
         />
       </Section>
 
-      <Section title={t('settings.sources')} index={4}>
+      <Section title={t('settings.sources')} index={5}>
         <Text style={styles.sourcesIntro}>{t('settings.sourcesIntro')}</Text>
-        {SOURCES.map((s) => (
-          <Row key={s.url} icon="link-variant" label={s.title} onPress={() => void Linking.openURL(s.url)} />
+        {city.sources.map((s) => (
+          <Row
+            key={s.url ?? s.title}
+            icon="link-variant"
+            label={s.title}
+            onPress={s.url ? () => void Linking.openURL(s.url as string) : undefined}
+          />
         ))}
       </Section>
 
-      <Section title={t('settings.about')} index={5}>
+      <Section title={t('settings.about')} index={6}>
         <View style={styles.aboutCard}>
           <Text style={styles.aboutBrand}>{t('app.name')}</Text>
           <Text style={styles.aboutTagline}>{t('app.tagline')}</Text>
@@ -231,6 +256,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: spacing.sm,
     padding: spacing.md,
+  },
+  cityHint: {
+    ...typography.caption,
+    color: colors.mutedText,
+    paddingHorizontal: spacing.md,
+    paddingBottom: spacing.md,
+    marginTop: -spacing.sm,
   },
   langChip: {
     flex: 1,

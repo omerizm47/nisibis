@@ -7,8 +7,6 @@ import React, {
   useState,
 } from 'react';
 
-import tasksData from '@/data/tasks.json';
-import type { TourTask } from '@/types';
 import {
   clearProgress as clearStoredProgress,
   getCompletedPlaceIds,
@@ -16,9 +14,7 @@ import {
   setCompletedPlaceIds,
   setCompletedTaskIds,
 } from '@/storage/taskStorage';
-
-const TASKS = tasksData as unknown as TourTask[];
-const TOTAL_TASKS = TASKS.length;
+import { useCity } from './useCity';
 
 export interface ProgressContextValue {
   loaded: boolean;
@@ -35,42 +31,54 @@ export interface ProgressContextValue {
   totalCount: number;
   percent: number;
   points: number;
+  /** Bu şehrin tüm görevleri bitti mi? */
+  isTourComplete: boolean;
 }
 
 const ProgressContext = createContext<ProgressContextValue | undefined>(undefined);
 
 export function ProgressProvider({ children }: { children: React.ReactNode }) {
+  const { cityId, city } = useCity();
+  const tasks = city.tasks;
+  const totalCount = tasks.length;
   const [completedTaskIds, setTaskIds] = useState<string[]>([]);
   const [completedPlaceIds, setPlaceIds] = useState<string[]>([]);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     let active = true;
+    setLoaded(false);
     void (async () => {
-      const [tasks, places] = await Promise.all([
-        getCompletedTaskIds(),
-        getCompletedPlaceIds(),
+      const [storedTasks, storedPlaces] = await Promise.all([
+        getCompletedTaskIds(cityId),
+        getCompletedPlaceIds(cityId),
       ]);
       if (active) {
-        setTaskIds(tasks);
-        setPlaceIds(places);
+        setTaskIds(storedTasks);
+        setPlaceIds(storedPlaces);
         setLoaded(true);
       }
     })();
     return () => {
       active = false;
     };
-  }, []);
+  }, [cityId]);
 
-  const persistTasks = useCallback((ids: string[]) => {
-    setTaskIds(ids);
-    void setCompletedTaskIds(ids);
-  }, []);
+  const persistTasks = useCallback(
+    (ids: string[]) => {
+      setTaskIds(ids);
+      void setCompletedTaskIds(cityId, ids);
+    },
+    [cityId],
+  );
 
-  const persistPlaces = useCallback((ids: string[]) => {
-    setPlaceIds(ids);
-    void setCompletedPlaceIds(ids);
-  }, []);
+  const persistPlaces = useCallback(
+    (ids: string[]) => {
+      setPlaceIds(ids);
+      void setCompletedPlaceIds(cityId, ids);
+    },
+    [cityId],
+  );
 
   const isTaskCompleted = useCallback(
     (id: string) => completedTaskIds.includes(id),
@@ -111,29 +119,28 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
           : completedPlaceIds.filter((x) => x !== placeId),
       );
       if (willComplete) {
-        const relatedTaskIds = TASKS.filter((t) => t.relatedPoiId === placeId).map((t) => t.id);
+        const relatedTaskIds = tasks.filter((t) => t.relatedPoiId === placeId).map((t) => t.id);
         const merged = Array.from(new Set([...completedTaskIds, ...relatedTaskIds]));
         if (merged.length !== completedTaskIds.length) {
           persistTasks(merged);
         }
       }
     },
-    [completedPlaceIds, completedTaskIds, persistPlaces, persistTasks],
+    [completedPlaceIds, completedTaskIds, persistPlaces, persistTasks, tasks],
   );
 
   const resetProgress = useCallback(() => {
     setTaskIds([]);
     setPlaceIds([]);
-    void clearStoredProgress();
-  }, []);
+    void clearStoredProgress(cityId);
+  }, [cityId]);
 
   const value = useMemo<ProgressContextValue>(() => {
     const completedCount = completedTaskIds.length;
-    const points = TASKS.filter((t) => completedTaskIds.includes(t.id)).reduce(
-      (sum, t) => sum + t.points,
-      0,
-    );
-    const percent = TOTAL_TASKS === 0 ? 0 : Math.round((completedCount / TOTAL_TASKS) * 100);
+    const points = tasks
+      .filter((t) => completedTaskIds.includes(t.id))
+      .reduce((sum, t) => sum + t.points, 0);
+    const percent = totalCount === 0 ? 0 : Math.round((completedCount / totalCount) * 100);
     return {
       loaded,
       completedTaskIds,
@@ -145,9 +152,10 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       togglePlaceVisited,
       resetProgress,
       completedCount,
-      totalCount: TOTAL_TASKS,
+      totalCount,
       percent,
       points,
+      isTourComplete: totalCount > 0 && completedCount === totalCount,
     };
   }, [
     loaded,
@@ -159,6 +167,8 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     completeTask,
     togglePlaceVisited,
     resetProgress,
+    tasks,
+    totalCount,
   ]);
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;

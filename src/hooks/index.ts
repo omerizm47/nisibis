@@ -14,3 +14,4 @@ export type { LocationPermission, UseLocationResult } from './useLocation';
 export { ProgressProvider, useProgress } from './useProgress';
 export type { ProgressContextValue } from './useProgress';
 export { OnboardingProvider, useOnboarding } from './useOnboarding';
+export { CityProvider, useCity } from './useCity';

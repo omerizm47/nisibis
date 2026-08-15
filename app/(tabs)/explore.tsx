@@ -15,8 +15,8 @@ import {
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { EmptyState, OrnamentDivider, PlaceCard, StoneLattice, StoryCard } from '@/components';
-import { useLocation, usePlaces, useProgress } from '@/hooks';
+import { CityInviteCard, EmptyState, OrnamentDivider, PlaceCard, StoneLattice, StoryCard } from '@/components';
+import { useCity, useLocation, usePlaces, useProgress } from '@/hooks';
 import { PLACE_CATEGORIES, type PlaceCategory } from '@/types';
 import { colors, radius, shadow, spacing, typography } from '@/theme';
 import { formatDistance, haversineDistance } from '@/utils/distance';
@@ -30,7 +30,8 @@ export default function ExploreScreen() {
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
   const router = useRouter();
-  const { isPlaceCompleted } = useProgress();
+  const { isPlaceCompleted, completedCount, isTourComplete } = useProgress();
+  const { city } = useCity();
 
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState<Filter>('all');
@@ -74,20 +75,23 @@ export default function ExploreScreen() {
     setRefreshing(false);
   }, [requestPermission]);
 
-  const filters = useMemo<{ key: Filter; label: string }[]>(
-    () => [
+  const filters = useMemo<{ key: Filter; label: string }[]>(() => {
+    const present = new Set(city.places.map((p) => p.category));
+    return [
       { key: 'all', label: t('explore.all') },
-      ...PLACE_CATEGORIES.map((c) => ({ key: c, label: t(`categories.${c}`) })),
-    ],
-    [t],
-  );
+      ...PLACE_CATEGORIES.filter((c) => present.has(c)).map((c) => ({
+        key: c,
+        label: t(`categories.${c}`),
+      })),
+    ];
+  }, [t, city.places]);
 
   return (
     <View style={[styles.container, { paddingTop: insets.top + spacing.sm }]}>
       <StoneLattice patternId="explore-bg" color={colors.clay} opacity={0.05} tile={40} />
       <View style={styles.headerWrap}>
         <Text style={styles.title}>{t('explore.title')}</Text>
-        <Text style={styles.subtitle}>{t('explore.subtitle')}</Text>
+        <Text style={styles.subtitle}>{t('explore.subtitle', { city: city.name })}</Text>
         <OrnamentDivider style={styles.headerDivider} />
       </View>
 
@@ -188,6 +192,11 @@ export default function ExploreScreen() {
         ListHeaderComponent={
           !query && filter === 'all' ? (
             <StoryCard onPress={() => router.push('/story')} style={styles.storyHeader} />
+          ) : null
+        }
+        ListFooterComponent={
+          !query && filter === 'all' && completedCount > 0 && !isTourComplete ? (
+            <CityInviteCard variant="invite" style={styles.inviteFooter} />
           ) : null
         }
         ItemSeparatorComponent={() => <View style={{ height: spacing.md }} />}
@@ -326,5 +335,8 @@ const styles = StyleSheet.create({
   },
   storyHeader: {
     marginBottom: spacing.md,
+  },
+  inviteFooter: {
+    marginTop: spacing.lg,
   },
 });

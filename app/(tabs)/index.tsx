@@ -6,12 +6,12 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import MapView, { Marker, Polyline, PROVIDER_DEFAULT, UrlTile } from '@/components/PlatformMap';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { BottomPlaceSheet, LoadingState, ProgressRing } from '@/components';
+import { BottomPlaceSheet, CityChip, LoadingState, ProgressRing } from '@/components';
 import { getMarkerImageSource, userMarkerImage } from '@/components/MapMarker';
-import { getAllPlaces, getPlaceById, getRouteById, getRoutePlaces, useLocation, useProgress } from '@/hooks';
+import { getPlaceById, getRouteById, getRoutePlaces, useCity, useLocation, useProgress } from '@/hooks';
 import type { Place, TourRoute } from '@/types';
 import { colors, radius, shadow, spacing, typography } from '@/theme';
-import { DEFAULT_REGION, MAP_ATTRIBUTION, MAP_STYLE, MAP_TILE_URL } from '@/utils/constants';
+import { MAP_ATTRIBUTION, MAP_STYLE, MAP_TILE_URL } from '@/utils/constants';
 import { withAlpha } from '@/utils/color';
 import { hapticLight } from '@/utils/haptics';
 import { openDirections } from '@/utils/links';
@@ -42,15 +42,21 @@ export default function MapScreen() {
   const router = useRouter();
   const mapRef = useRef<MapView>(null);
 
-  const places = useMemo(() => getAllPlaces().filter((p) => getDisplayCoordinate(p) != null), []);
-  const initialRegion = DEFAULT_REGION;
-  const mosaicLink = useMemo(() => {
-    const church = getPlaceById('mor-yakup-kilisesi');
-    const mosque = getPlaceById('zeynel-abidin-camii');
-    const a = church ? getDisplayCoordinate(church) : null;
-    const b = mosque ? getDisplayCoordinate(mosque) : null;
+  const { city, cityId } = useCity();
+  const places = useMemo(
+    () => city.places.filter((p) => getDisplayCoordinate(p) != null),
+    [city.places],
+  );
+  const initialRegion = city.region;
+  const signatureLink = useMemo(() => {
+    if (!city.signatureLink) return null;
+    const [firstId, secondId] = city.signatureLink;
+    const first = getPlaceById(firstId);
+    const second = getPlaceById(secondId);
+    const a = first ? getDisplayCoordinate(first) : null;
+    const b = second ? getDisplayCoordinate(second) : null;
     return a && b ? [a, b] : null;
-  }, []);
+  }, [city]);
 
   const { location, permission, requestPermission } = useLocation();
   const { percent, isPlaceCompleted, togglePlaceVisited } = useProgress();
@@ -101,6 +107,13 @@ export default function MapScreen() {
     const timer = setTimeout(() => setMapReady(true), 2500);
     return () => clearTimeout(timer);
   }, []);
+
+  // Şehir değişince seçim ve rota o şehre ait değil, haritayı yeni şehre taşı.
+  useEffect(() => {
+    setSelected(null);
+    setRouteId(null);
+    mapRef.current?.animateToRegion(city.region, 600);
+  }, [cityId, city.region]);
 
   const handleMarkerPress = (place: Place) => {
     setSelected(place);
@@ -174,9 +187,9 @@ export default function MapScreen() {
         showsCompass={false}
       >
         <UrlTile urlTemplate={MAP_TILE_URL} maximumZ={19} flipY={false} zIndex={-1} />
-        {!activeRoute && mosaicLink ? (
+        {!activeRoute && signatureLink ? (
           <Polyline
-            coordinates={mosaicLink}
+            coordinates={signatureLink}
             strokeColor={colors.primary}
             strokeWidth={2}
             lineDashPattern={[6, 6]}
@@ -230,20 +243,23 @@ export default function MapScreen() {
               <Text style={styles.brand}>{t('app.name')}</Text>
               <Text style={styles.tagline}>{t('app.tagline')}</Text>
             </View>
-            <Pressable
-              onPress={() => router.push('/story')}
-              accessibilityRole="button"
-              accessibilityLabel={t('story.shortcut')}
-              style={({ pressed }) => [styles.storyChip, pressed && styles.pressed]}
-            >
-              <MaterialCommunityIcons name="book-open-page-variant-outline" size={14} color={colors.primary} />
-              <Text style={styles.storyChipText}>{t('story.shortcut')}</Text>
-            </Pressable>
+            <View style={styles.chipRow}>
+              <CityChip />
+              <Pressable
+                onPress={() => router.push('/story')}
+                accessibilityRole="button"
+                accessibilityLabel={t('story.shortcut')}
+                style={({ pressed }) => [styles.storyChip, pressed && styles.pressed]}
+              >
+                <MaterialCommunityIcons name="book-open-page-variant-outline" size={14} color={colors.primary} />
+                <Text style={styles.storyChipText}>{t('story.shortcut')}</Text>
+              </Pressable>
+            </View>
           </View>
           <Pressable
             onPress={() => router.push('/checklist')}
             accessibilityRole="button"
-            accessibilityLabel={t('progress.tourProgress')}
+            accessibilityLabel={t('progress.tourProgress', { city: city.name })}
             style={({ pressed }) => [styles.progressChip, shadow.md, pressed && styles.pressed]}
           >
             <ProgressRing percent={percent} size={42} strokeWidth={5}>
@@ -365,6 +381,12 @@ const styles = StyleSheet.create({
   topLeft: {
     gap: spacing.sm,
     alignItems: 'flex-start',
+  },
+  chipRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+    flexWrap: 'wrap',
   },
   storyChip: {
     flexDirection: 'row',

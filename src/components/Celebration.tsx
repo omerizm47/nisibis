@@ -15,6 +15,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import Svg, { Polygon } from 'react-native-svg';
 import { useProgress } from '@/hooks';
+import { useCity } from '@/hooks/useCity';
 import { colors, shadow, typography } from '@/theme';
 import { withAlpha } from '@/utils/color';
 
@@ -127,14 +128,15 @@ function Burst({ big, title, onDone }: { big: boolean; title?: string; onDone: (
 function MilestoneWatcher() {
   const { t } = useTranslation();
   const { percent, loaded } = useProgress();
+  const { city } = useCity();
   const { celebrate } = useCelebration();
   const prev = useRef(percent);
   useEffect(() => {
     if (loaded && prev.current < 100 && percent === 100) {
-      celebrate({ big: true, title: t('progress.tourComplete') });
+      celebrate({ big: true, title: t('progress.tourComplete', { city: city.name }) });
     }
     prev.current = percent;
-  }, [percent, loaded, celebrate, t]);
+  }, [percent, loaded, celebrate, t, city.name]);
   return null;
 }
 

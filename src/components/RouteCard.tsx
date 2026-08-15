@@ -1,12 +1,17 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useTranslation } from 'react-i18next';
 import { StyleSheet, Text, View, type StyleProp, type ViewStyle } from 'react-native';
 import type { TourRoute } from '@/types';
-import { colors, radius, shadow, spacing, typography } from '@/theme';
+import { getPlaceImageSource } from '@/data/placeImages';
+import { getRoutePlaces } from '@/hooks/useRoutes';
+import { colors, gradients, radius, shadow, spacing, typography } from '@/theme';
 import { withAlpha } from '@/utils/color';
 import type { MciName } from '@/utils/icons';
+import { ArchFrame } from './ArchFrame';
 import { StoneLattice } from './Patterns';
 import { PressableScale } from './PressableScale';
+import { RemoteImage } from './RemoteImage';
 
 interface RouteCardProps {
   route: TourRoute;
@@ -28,6 +33,7 @@ export function RouteCard({ route, onPress, completedStops = 0, style }: RouteCa
   const { t } = useTranslation();
   const total = route.poiIds.length;
   const pct = total ? Math.round((completedStops / total) * 100) : 0;
+  const cover = getRoutePlaces(route)[0];
 
   return (
     <PressableScale
@@ -36,6 +42,14 @@ export function RouteCard({ route, onPress, completedStops = 0, style }: RouteCa
       style={[styles.card, shadow.md, style]}
     >
       <StoneLattice patternId={`route-lattice-${route.id}`} color={colors.copper} opacity={0.07} tile={32} />
+      {cover ? (
+        <View style={styles.cover}>
+          <ArchFrame archColor={colors.card} archHeight={26} style={StyleSheet.absoluteFill}>
+            <RemoteImage source={getPlaceImageSource(cover)} style={StyleSheet.absoluteFill} />
+            <LinearGradient colors={gradients.imageScrim} style={StyleSheet.absoluteFill} />
+          </ArchFrame>
+        </View>
+      ) : null}
       <View style={styles.header}>
         <View style={styles.iconWrap}>
           <MaterialCommunityIcons name="map-marker-path" size={20} color={colors.primary} />
@@ -74,6 +88,14 @@ const styles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.92,
+  },
+  // Kart dolgusunun dışına taşarak kenardan kenara uzanır.
+  cover: {
+    height: 140,
+    marginTop: -spacing.lg,
+    marginHorizontal: -spacing.lg,
+    marginBottom: spacing.xs,
+    backgroundColor: colors.cardAlt,
   },
   header: {
     flexDirection: 'row',

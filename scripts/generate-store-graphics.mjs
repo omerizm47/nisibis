@@ -65,7 +65,7 @@ function featureSvg() {
     ${GRAD}<rect width="${W}" height="${H}" fill="url(#bg)"/>
     <g transform="translate(${tx},${ty}) scale(${s.toFixed(5)})">${emblem('#FBF3E6', '#F4CE86')}</g>
     <text x="540" y="248" font-family="Georgia, 'Times New Roman', serif" font-size="120" font-weight="700" fill="#FBF3E6">Nisibis</text>
-    <text x="544" y="312" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="#F4DEB8">Nusaybin Keşif Rehberi</text>
+    <text x="544" y="312" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="#F4DEB8">Mardin ve Nusaybin Keşif Rehberi</text>
   </svg>`;
 }
 

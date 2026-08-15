@@ -4,8 +4,8 @@ import { Alert, FlatList, StyleSheet, Text, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { OrnamentDivider, PrimaryButton, ProgressCard, StoneLattice, TaskItem } from '@/components';
-import { useProgress, useTasks } from '@/hooks';
+import { CityInviteCard, OrnamentDivider, PrimaryButton, ProgressCard, StoneLattice, TaskItem } from '@/components';
+import { useCity, useProgress, useTasks } from '@/hooks';
 import { colors, radius, spacing, typography } from '@/theme';
 import { withAlpha } from '@/utils/color';
 
@@ -13,6 +13,7 @@ export default function ChecklistScreen() {
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
   const tasks = useTasks();
+  const { city } = useCity();
   const {
     isTaskCompleted,
     toggleTask,
@@ -21,13 +22,18 @@ export default function ChecklistScreen() {
     completedCount,
     totalCount,
     points,
+    isTourComplete,
   } = useProgress();
 
   const confirmReset = () => {
-    Alert.alert(t('checklist.resetConfirmTitle'), t('checklist.resetConfirmBody'), [
-      { text: t('checklist.cancel'), style: 'cancel' },
-      { text: t('checklist.resetConfirm'), style: 'destructive', onPress: resetProgress },
-    ]);
+    Alert.alert(
+      t('checklist.resetConfirmTitle'),
+      t('checklist.resetConfirmBody', { city: city.name }),
+      [
+        { text: t('checklist.cancel'), style: 'cancel' },
+        { text: t('checklist.resetConfirm'), style: 'destructive', onPress: resetProgress },
+      ],
+    );
   };
 
   return (
@@ -42,7 +48,7 @@ export default function ChecklistScreen() {
         ListHeaderComponent={
           <View style={styles.header}>
             <Text style={styles.title}>{t('checklist.title')}</Text>
-            <Text style={styles.subtitle}>{t('checklist.subtitle')}</Text>
+            <Text style={styles.subtitle}>{t('checklist.subtitle', { city: city.name })}</Text>
             <OrnamentDivider style={styles.headerDivider} />
             <ProgressCard
               percent={percent}
@@ -51,10 +57,12 @@ export default function ChecklistScreen() {
               points={points}
               style={styles.progress}
             />
-            {completedCount === totalCount && totalCount > 0 ? (
+            {isTourComplete ? (
               <View style={styles.allDone}>
                 <MaterialCommunityIcons name="trophy-outline" size={20} color={colors.primary} />
-                <Text style={styles.allDoneText}>{t('progress.tourComplete')}</Text>
+                <Text style={styles.allDoneText}>
+                  {t('progress.tourComplete', { city: city.name })}
+                </Text>
               </View>
             ) : null}
           </View>
@@ -69,15 +77,17 @@ export default function ChecklistScreen() {
           </Animated.View>
         )}
         ListFooterComponent={
-          completedCount > 0 ? (
-            <PrimaryButton
-              label={t('checklist.reset')}
-              icon="restore"
-              variant="ghost"
-              onPress={confirmReset}
-              style={styles.reset}
-            />
-          ) : null
+          <View style={styles.footer}>
+            {isTourComplete ? <CityInviteCard variant="done" /> : null}
+            {completedCount > 0 ? (
+              <PrimaryButton
+                label={t('checklist.reset')}
+                icon="restore"
+                variant="ghost"
+                onPress={confirmReset}
+              />
+            ) : null}
+          </View>
         }
       />
     </View>
@@ -128,7 +138,8 @@ const styles = StyleSheet.create({
     color: colors.primary,
     flex: 1,
   },
-  reset: {
+  footer: {
     marginTop: spacing.lg,
+    gap: spacing.lg,
   },
 });

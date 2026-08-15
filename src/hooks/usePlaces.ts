@@ -1,27 +1,26 @@
 import { useMemo } from 'react';
-import placesData from '@/data/places.json';
+import { getActiveCity } from '@/data/activeCity';
 import type { Place, PlaceCategory } from '@/types';
 import { haversineDistance } from '@/utils/distance';
 import { getDisplayCoordinate } from '@/utils/map';
 
-const PLACES = placesData as unknown as Place[];
-
 export function getAllPlaces(): Place[] {
-  return PLACES;
+  return getActiveCity().places;
 }
 
 export function getPlaceById(id: string): Place | undefined {
-  return PLACES.find((p) => p.id === id);
+  return getAllPlaces().find((p) => p.id === id);
 }
 
 export function getFeaturedPlaces(): Place[] {
-  return PLACES.filter((p) => p.isFeatured);
+  return getAllPlaces().filter((p) => p.isFeatured);
 }
 
 /** id listesini, verilen sırayı koruyarak Place dizisine çevirir. */
 export function getPlacesByIds(ids: string[]): Place[] {
+  const places = getAllPlaces();
   return ids
-    .map((id) => PLACES.find((p) => p.id === id))
+    .map((id) => places.find((p) => p.id === id))
     .filter((p): p is Place => p != null);
 }
 
@@ -32,10 +31,12 @@ export interface NearbyPlace {
 
 /** Verilen mekana yürüme mesafesindeki (varsayılan 600 m) diğer mekanları döndürür. */
 export function getNearbyPlaces(placeId: string, maxMeters = 600, limit = 3): NearbyPlace[] {
-  const origin = PLACES.find((p) => p.id === placeId);
+  const places = getAllPlaces();
+  const origin = places.find((p) => p.id === placeId);
   const originCoord = origin ? getDisplayCoordinate(origin) : null;
   if (!origin || !originCoord) return [];
-  return PLACES.filter((p) => p.id !== placeId)
+  return places
+    .filter((p) => p.id !== placeId)
     .map((p) => {
       const coord = getDisplayCoordinate(p);
       return coord ? { place: p, meters: haversineDistance(originCoord, coord) } : null;
@@ -53,9 +54,10 @@ export interface UsePlacesOptions {
 /** Kategori ve metin aramasına göre filtrelenmiş mekan listesi. */
 export function usePlaces(options: UsePlacesOptions = {}): Place[] {
   const { category = 'all', query = '' } = options;
+  const places = getAllPlaces();
   return useMemo(() => {
     const q = query.trim().toLowerCase();
-    return PLACES.filter((p) => {
+    return places.filter((p) => {
       if (category !== 'all' && p.category !== category) return false;
       if (!q) return true;
       const haystack = [p.name, p.shortDescription, p.category, ...(p.tags ?? [])]
@@ -63,5 +65,5 @@ export function usePlaces(options: UsePlacesOptions = {}): Place[] {
         .toLowerCase();
       return haystack.includes(q);
     });
-  }, [category, query]);
+  }, [places, category, query]);
 }

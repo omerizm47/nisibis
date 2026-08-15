@@ -1,0 +1,710 @@
+[
+  {
+    "id": "mardin-ulu-camii",
+    "name": "Mardin Ulu Camii",
+    "slug": "mardin-ulu-camii",
+    "category": "inanc-kultur",
+    "shortDescription": "Eski şehrin kalbinde yükselen, Artuklu döneminden kalma ve kubbesiyle Mardin siluetine adını yazdıran ulu cami.",
+    "longDescription": "Mardin Ulu Camii, taş şehrin tam ortasında, çarşı sokaklarının bir kaç adım yukarısında durur. Kalın taş duvarları, kaburgalı kubbesi ve yamaçtan yükselen minaresiyle Mardin'in ovadan bakıldığında bile seçilen simgesidir. İçeride serinlik ve sessizlik vardır; Artuklu taş işçiliğinin en olgun örneklerinden biri olan oyma ahşap minber, yüzyıllardır aynı yerde durur. Caminin çevresindeki dar sokaklar Kayseriye Çarşısı'na ve Revaklı Çarşı'ya açılır, bu yüzden şehri gezmeye buradan başlamak alışılmış bir tercihtir.",
+    "history": "Minare kitabesi camiyi 1176 yılında Artuklu hükümdarı Kutbeddin İlgazi II'ye bağlar; avludaki ayrı bir kitabe ise yapıyı 1186'da Hüsameddin Yavlak Arslan'a atfeder. Yapı üzerinde toplam on altı kitabe bulunur. Timur istilalarında zarar gören cami, yıkılan minaresiyle birlikte Memlük ve Akkoyunlu dönemlerinde onarıldı. 1833 ile 1835 arasındaki Mardin kuşatmasında, Diyarbekir valisi Reşid Mehmed Paşa'nın Milli aşiretini bastırdığı çatışmalarda büyük hasar gördü ve büyük olasılıkla özgün planına sadık kalınarak yeniden yapıldı. Artuklu yapısından bugüne yalnızca kuzey duvarı ile oyma ahşap minber ulaşmıştır. Bugünkü minare 1888 ile 1889 yıllarında kare bir kaide üzerine inşa edildi; 1967 ile 1968 ve 2010 ile 2012 yıllarında kapsamlı restorasyonlar yapıldı.",
+    "activities": [
+      "Artuklu döneminden kalan oyma ahşap minberi incele",
+      "Kaburgalı kubbeyi ve kare kaideli minareyi avludan izle",
+      "Avlunun serinliğinde bir mola ver",
+      "Caminin kuzeyindeki Kayseriye Çarşısı'na doğru yürü"
+    ],
+    "tips": [
+      "Namaz vakitleri dışında ziyaret çok daha sakindir.",
+      "Kubbe ve minare, yukarıdaki sokaklardan bakıldığında bir arada görünür.",
+      "Mihrabın solunda halkın ziyaret ettiği Sakal-ı Şerif emaneti bulunur."
+    ],
+    "photoTips": [
+      "Minareyi yukarıdaki dar sokaklardan, damların üzerinden çerçevele.",
+      "Kubbe ile ova aynı karede ancak yamacın üst kotundan yakalanır.",
+      "Avlu taşı öğle güneşinde çok parlar, sabah ışığı daha yumuşaktır."
+    ],
+    "safetyNotes": [
+      "Aktif bir camidir; namaz vakitlerinde ziyaretten kaçının.",
+      "Mütevazı kıyafet tercih edin, girişte ayakkabılarınızı çıkarın.",
+      "İbadet edenleri fotoğraflamayın."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mardin%20Ulu%20Cami%20DSCF0534.jpg?width=1200",
+    "imageCredit": "R Prazeres, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Ulu_Cami_DSCF0534.jpg",
+    "latitude": 37.31266,
+    "longitude": 40.7393,
+    "approxLatitude": 37.31266,
+    "approxLongitude": 40.7393,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 30,
+    "tags": ["cami", "artuklu", "ulu cami", "tarih", "minare", "kubbe", "inanç", "taş işçiliği"],
+    "isFeatured": true,
+    "sources": [
+      { "title": "Mardin Ulu Camii, Vikipedi", "url": "https://tr.wikipedia.org/wiki/Mardin_Ulu_Camii" },
+      { "title": "Ulu Cami, Türkiye Kültür Portalı", "url": "https://www.kulturportali.gov.tr/turkiye/mardin" },
+      { "title": "Mardin, Wikipedia (Artuklu mimarisi)", "url": "https://en.wikipedia.org/wiki/Mardin" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "zinciriye-medresesi",
+    "name": "Zinciriye Medresesi",
+    "slug": "zinciriye-medresesi",
+    "category": "tarihi",
+    "shortDescription": "Sultan İsa Medresesi olarak da bilinen, ikiz kubbeleri ve ovaya bakan terasıyla Mardin'in en çok fotoğraflanan yapısı.",
+    "longDescription": "Zinciriye Medresesi, eski şehrin üst kotunda, kaleye doğru tırmanan sokakların ucundadır. Aslında yalnızca bir medrese değil, mescidi, türbe odası ve iki avlusu olan bir külliyedir. Kademeli iki teras üzerine oturur ve yaklaşık 45 metreye 25 metrelik bir alanı kaplar. Taç kapısının taş işçiliği, avlunun sessizliği ve üst terastan Mezopotamya ovasına açılan manzara, yapıyı Mardin'in en çok fotoğraflanan noktası yapar. İkiz kubbeleri şehrin siluetinde uzaktan tanınır.",
+    "history": "Yapı, Mardin Artuklularının son dönem hükümdarı Melik Zahir Necmeddin İsa (Sultan İsa) tarafından yaptırıldı. Taç kapı üzerindeki vakıf kitabesi, tamamlanma tarihini 2 Muharrem 787, yani 3 Şubat 1385 olarak verir. Sultan İsa savaşta öldürüldüğü için türbe odasına hiç gömülmedi. Yapıda belgelenmiş onarımlar 1797 (güney revaktaki yazlık mihrap kitabesinde kayıtlı), 1949, 1963 ile 1966 arası, 1967 ve 2006 yıllarında yapıldı. 1963 ile 1966 arasındaki çalışmada üst revaklar yeniden örüldü ve yapı bir dönem öğrenci yurdu olarak kullanıldı; taş işlerini yerli Ermeni ve Süryani taş ustaları yürüttü. Medrese, Mardin Müzesi'ne de uzun süre ev sahipliği yapmış, 1981'de burada bir arkeoloji müzesi düzenlenmişti.",
+    "activities": [
+      "Taç kapıdaki oyma taş işçiliğini yakından incele",
+      "Üst terasa çık ve Mezopotamya ovasını seyret",
+      "İki avlunun kademeli kurgusunu gez",
+      "İkiz kubbeleri avludan ve dışarıdan karşılaştır"
+    ],
+    "tips": [
+      "Yokuş diktir, rahat ayakkabı şart.",
+      "Gün batımında üst teras kalabalıklaşır, erken gitmekte fayda var.",
+      "İçindeki mescit hâlâ kullanımdadır, sessiz olun."
+    ],
+    "photoTips": [
+      "İkiz kubbeleri üst terastan ova fonuyla birlikte çek.",
+      "Taç kapıyı yan ışıkta çekince oyma derinliği ortaya çıkar.",
+      "Avlu kemerlerini çerçeve olarak kullanıp manzarayı içine al."
+    ],
+    "safetyNotes": [
+      "Teras kenarlarında korkuluk her yerde yoktur, dikkatli olun.",
+      "İçeride ibadete açık bir mescit vardır, mütevazı kıyafet tercih edin.",
+      "Merdivenler eskidir ve basamak yükseklikleri eşit değildir."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sultan%20Isa%20Medrese%20DSCF9680.jpg?width=1200",
+    "imageCredit": "R Prazeres, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Sultan_Isa_Medrese_DSCF9680.jpg",
+    "latitude": 37.31423,
+    "longitude": 40.73988,
+    "approxLatitude": 37.31423,
+    "approxLongitude": 40.73988,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 45,
+    "tags": ["medrese", "artuklu", "sultan isa", "manzara", "tarih", "kubbe", "teras", "taş işçiliği"],
+    "isFeatured": true,
+    "sources": [
+      { "title": "Sultan Isa Medrese, Wikipedia", "url": "https://en.wikipedia.org/wiki/Sultan_Isa_Medrese" },
+      { "title": "Zinciriye (İsa Bey) Medresesi, Türkiye Kültür Portalı", "url": "https://www.kulturportali.gov.tr/turkiye/mardin/gezilecekyer/zinciriye-sa-bey-medresesi" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "kasimiye-medresesi",
+    "name": "Kasımiye Medresesi",
+    "slug": "kasimiye-medresesi",
+    "category": "tarihi",
+    "shortDescription": "Avlusundaki su kanalı hayatın akışını anlatan, Artuklu döneminde başlanıp Akkoyunlular zamanında tamamlanan medrese.",
+    "longDescription": "Kasımiye Medresesi, eski şehrin batısında ve biraz aşağısında, ovaya doğru açılan geniş bir düzlükte durur. Ulu Cami'nin yaklaşık 1,7 kilometre batısındadır ve yaklaşık 975 metre yükseklikte, güney cephesi doğrudan ovaya bakar. Dikdörtgen planlı, iki katlı ve tek avlulu yapıda on biri altta, on ikisi üstte olmak üzere yirmi üç öğrenci hücresi bulunur. Avlunun ortasındaki su kanalı ve havuz, yerel anlatıda insan ömrünün evreleri olarak okunur: kaynaktan çıkan su, genişleyen havuz ve sonunda kaybolan akış. Dersliklerin kapıları bilerek alçak yapılmıştır, böylece giren herkes eğilmek zorunda kalır.",
+    "history": "Yapıya, Zinciriye Medresesi'nin de banisi olan Artuklu sultanı Melik Zahir Necmeddin İsa döneminde başlandı. Sultan İsa 1407'de Karakoyunlulara karşı savaşırken öldürülünce yapı yarım kaldı. Medrese, Akkoyunlu döneminde, sultan Muizzeddin'in oğlu Kasım adına tamamlandı; kaynaklarda tamamlanma yılı için 1445 ve 1469 tarihleri birlikte geçer. 16. yüzyılda Mardin'in en zengin vakfa sahip medresesiydi ve Birinci Dünya Savaşı sırasında kapandı; 1924'teki eğitim reformuyla Türkiye'deki bütün medreseler gibi resmen kapatıldı. Yapıda batıda bir Şafii mescidi, doğuda daha küçük bir Sünni mescidi, bir türbe ve bir çeşme yer alır.",
+    "activities": [
+      "Avludaki su kanalını kaynağından havuza kadar izle",
+      "Alçak derslik kapılarından geçerken eğilme geleneğini dene",
+      "Güney cephesinden ovaya bak",
+      "İki mescidi ve türbeyi gez"
+    ],
+    "tips": [
+      "Eski şehir merkezine yürüme mesafesinde değildir, araçla gidin.",
+      "Öğleden sonra güney cephesi ışığı çok sert olur.",
+      "Yapı bugün El Cezire Sanat Müzesi olarak da kullanılmaktadır."
+    ],
+    "photoTips": [
+      "Havuzun su yüzeyindeki taç kapı yansımasını yakala.",
+      "Revak kemerlerinin altından avluya bakan simetrik kareyi dene.",
+      "Ova manzarasını güney cephesinden geniş açıyla çek."
+    ],
+    "safetyNotes": [
+      "İçeride kullanımda olan iki mescit vardır, mütevazı kıyafet tercih edin.",
+      "Avlu taşları ıslakken kaygan olur.",
+      "Yaz aylarında gölge azdır, su ve şapka alın."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kas%C4%B1miye%20medrese%2C%20Mardin%2C%20Turkey.JPG?width=1200",
+    "imageCredit": "Nedim Ardoğa, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Kas%C4%B1miye_medrese,_Mardin,_Turkey.JPG",
+    "latitude": 37.30761,
+    "longitude": 40.71981,
+    "approxLatitude": 37.30761,
+    "approxLongitude": 40.71981,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 45,
+    "tags": ["medrese", "artuklu", "akkoyunlu", "su kanalı", "avlu", "tarih", "manzara"],
+    "isFeatured": false,
+    "sources": [
+      { "title": "Kasımiye Medresesi, Vikipedi", "url": "https://tr.wikipedia.org/wiki/Kas%C4%B1miye_Medresesi" },
+      { "title": "Kasımiye Medrese, Wikipedia", "url": "https://en.wikipedia.org/wiki/Kas%C4%B1miye_Medrese" },
+      { "title": "Kasim Pasa Medresesi, Archnet", "url": "https://archnet.org/sites/2065" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "mardin-muzesi",
+    "name": "Mardin Müzesi",
+    "slug": "mardin-muzesi",
+    "category": "tarihi",
+    "shortDescription": "1895'te Süryani Katolik Patrikhanesi olarak yapılmış konakta, kırk beş bini aşkın eserle bölgenin hafızası.",
+    "longDescription": "Mardin Müzesi, Cumhuriyet Meydanı'nın hemen kenarında, 1895'te Süryani Katolik Patrikhanesi olarak inşa edilmiş görkemli bir taş yapıdadır. Aynı yapı adasının doğusunda Meryem Ana Kilisesi yer alır. Koleksiyon kırk beş bin eseri aşar ve Paleolitik çağdan, yani yaklaşık M.Ö. 45.000'den başlayarak bölgenin bütün katmanlarını kapsar. Kalıcı salonlar Arkeolojik Kazılar, İnanç, Ticaret ve Yaşam başlıklarını taşır; ayrıca Bakanlığın Türkiye'de ilk olarak nitelediği bir Sahte Eserler salonu bulunur. Ticaret salonundaki Sürekli Definesi, Kızıltepe'nin Sürekli köyünde bulunmuş 9. ile 14. yüzyıl arası Abbasi, İlhanlı, Eyyubi, Bizans, Zengi ve Artuklu altın ve gümüş sikkelerini bir araya getirir. Güneydeki U planlı avlu ovaya bakar ve içinde bir Arkeopark ile beş yüz kişilik bir amfi tiyatro barındırır.",
+    "history": "Yapı 1895 yılında Patrik Ignatios Behnam Banni tarafından Süryani Katolik Patrikhanesi olarak inşa edildi. Kültür Bakanlığı binayı Süryani Katolik Vakfı'ndan satın aldı, restore etti ve 2000 yılında Mardin Müzesi olarak açtı. Müzenin daha önceki adresi Zinciriye Medresesi'ydi. Müzenin kuzeybatısındaki idari bina, tescilli 19. yüzyıl geleneksel Mardin evidir; Bakanlık ve Mardin Valiliği tarafından restore edilerek 2012'de hizmete girdi ve müzeye bir asma köprüyle bağlandı. Uzmanlık kütüphanesi 2010'da kuruldu ve yirmi bine yakın kaynak barındırır.",
+    "activities": [
+      "Sürekli Definesi'ndeki Artuklu ve Abbasi sikkelerini incele",
+      "Sahte Eserler salonunda neyin nasıl ayırt edildiğini öğren",
+      "Dara kazılarından çıkan Roma dönemi buluntularını gör",
+      "Güney avlusundaki Arkeopark'ta ovaya karşı bir mola ver"
+    ],
+    "tips": [
+      "Pazartesi günleri kapalıdır.",
+      "Gişe kapanışı, müze kapanışından yaklaşık yirmi dakika öncedir.",
+      "Türk vatandaşları için MüzeKart geçerlidir."
+    ],
+    "photoTips": [
+      "Cephedeki oyma taş pencere çerçevelerini sabah ışığında çek.",
+      "Avludan ovaya bakan kareyi kemerlerin arasından dene.",
+      "İç mekanda flaş kullanımı için görevlilere danışın."
+    ],
+    "safetyNotes": [
+      "Ziyaret saatleri 08.30 ile 17.30 arasındadır, gişe 17.10'da kapanır.",
+      "Vitrinlere dokunmayın ve çantanızı önde taşıyın.",
+      "Bahçe merdivenleri yağmurda kayganlaşır."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mardin%20Museum%20Exterior%20in%202025%201055.jpg?width=1200",
+    "imageCredit": "Dosseman, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Museum_Exterior_in_2025_1055.jpg",
+    "latitude": 37.31349,
+    "longitude": 40.73477,
+    "approxLatitude": 37.31349,
+    "approxLongitude": 40.73477,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 75,
+    "tags": ["müze", "arkeoloji", "sikke", "tarih", "patrikhane", "sürekli definesi", "dara"],
+    "isFeatured": true,
+    "sources": [
+      { "title": "Mardin Müzesi, T.C. Kültür ve Turizm Bakanlığı", "url": "https://muze.gov.tr/muze-detay?SectionId=MRD01&DistId=MRK" },
+      { "title": "Mardin Müzesi, Türkiye Kültür Portalı", "url": "https://www.kulturportali.gov.tr/portal/mardinmuzesi" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "sakip-sabanci-kent-muzesi",
+    "name": "Sakıp Sabancı Mardin Kent Müzesi",
+    "slug": "sakip-sabanci-mardin-kent-muzesi",
+    "category": "tarihi",
+    "shortDescription": "1889'da Süvari Kışlası olarak yapılmış, Mardinli mimar Sarkis Lole imzalı yapıda kent müzesi ve sanat galerisi.",
+    "longDescription": "Sakıp Sabancı Mardin Kent Müzesi, eski şehrin doğu ucunda, adını yanındaki geçitten alan Abbara Geçidi'nin kenarında durur. Yapı 1889'da Süvari Kışlası olarak inşa edildi ve Mardin'in Sinan'ı diye anılan Osmanlı Ermeni mimarı Sarkis Elyas Lole tarafından tasarlandı. İki katın alttaki, güney kapısından girilen bölümü kışlanın ahırıydı. Müze bugün Mardin'in gündelik hayatını, zanaatlarını ve kent belleğini anlatır; aynı çatı altındaki Dilek Sabancı Sanat Galerisi ise dönemsel sergilere ev sahipliği yapar.",
+    "history": "Bina, Sultan İkinci Abdülhamid döneminde Diyarbakır valisi Hacı Hasan Paşa tarafından 1889'da Süvari Kışlası olarak yaptırıldı. Sonraki yıllarda Jandarma Komutanlığı askerlik şubesi ve jandarma karakolu olarak kullanıldı; 1991 ile 2003 arasında ise vergi dairesi oldu. 2000 yılında ÇEKÜL Vakfı yapının kurtarılması için bir kampanya yürüttü ve dönemin İstanbul valisi, Mardin doğumlu Muammer Güler, destek için Sakıp Sabancı'ya başvurdu. Sakıp Sabancı'nın 2004'teki vefatının ardından projeyi Sabancı Vakfı ve aile üstlendi. Müze ve galeri protokolü 28 Mart 2006'da Mardin valisi Mehmet Kılıçlar ile Sabancı Vakfı Mütevelli Heyeti Başkanı Güler Sabancı arasında imzalandı ve restorasyon aynı yıl başladı. Yapı bugün Sabancı Vakfı bünyesinde özel müze olarak işletilmektedir.",
+    "activities": [
+      "Kışla dönemine ait alt kat ahır mekanını gör",
+      "Sarkis Lole'nin taş cephe işçiliğini incele",
+      "Kent belleği sergisinde Mardin zanaatlarını takip et",
+      "Dilek Sabancı Sanat Galerisi'ndeki güncel sergiye bak"
+    ],
+    "tips": [
+      "Özel müzedir, MüzeKart burada geçmez.",
+      "Ziyaret saatleri mevsime göre değişebilir, gitmeden önce telefonla teyit edin.",
+      "Yanındaki Abbara Geçidi, şehrin en bilinen abbaralarındandır."
+    ],
+    "photoTips": [
+      "Uzun cepheyi köşeden, perspektif kaçışı verecek şekilde çek.",
+      "Kemerli pencere dizisini tekrar eden bir desen olarak kadraja al.",
+      "Alt kattaki tonozları düşük ışıkta, tripodsuz çekim için ISO artırarak dene."
+    ],
+    "safetyNotes": [
+      "Girişte bilet alınması gerekir.",
+      "Sergi salonlarında flaş kullanımı sınırlı olabilir, görevlilere danışın.",
+      "Alt kat mekanları serindir, yazın bile üstünüze bir şey alın."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mardin%20Sak%C4%B1p%20Sabanc%C4%B1%20Mardin%20Kent%20M%C3%BCzesi%20in%202025%200824.jpg?width=1200",
+    "imageCredit": "Dosseman, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Sak%C4%B1p_Sabanc%C4%B1_Mardin_Kent_M%C3%BCzesi_in_2025_0824.jpg",
+    "latitude": null,
+    "longitude": null,
+    "approxLatitude": 37.31448,
+    "approxLongitude": 40.74601,
+    "coordinatesVerified": false,
+    "estimatedVisitMinutes": 60,
+    "tags": ["müze", "kışla", "sarkis lole", "kent müzesi", "sanat galerisi", "osmanlı", "abbara"],
+    "isFeatured": false,
+    "sources": [
+      { "title": "Sakıp Sabancı Mardin Kent Müzesi, Sabancı Vakfı", "url": "https://www.sabancivakfi.org/tr/kultur-sanat/sakip-sabanci-mardin-kent-muzesi" },
+      { "title": "Mardin, Wikipedia (Sarkis Lole ve Osmanlı mimarisi)", "url": "https://en.wikipedia.org/wiki/Mardin" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "mardin-kalesi",
+    "name": "Mardin Kalesi",
+    "slug": "mardin-kalesi",
+    "category": "fotograf",
+    "shortDescription": "Kartal Yuvası denen, şehrin tepesindeki askeri bölge. İçine girilemez, ama aşağıdan bakışı Mardin'in en güçlü manzarasıdır.",
+    "longDescription": "Mardin Kalesi, eski şehrin üzerinde uzanan uzun kayalık sırtı boydan boya kaplar ve ovadan yaklaşık bin metre yükselir. Halk arasında Kartal Yuvası diye anılır. Bugün askeri bölgedir ve ziyarete kapalıdır: içine girilemez, kale yapıları ve tesisler fotoğraflanamaz. Buna karşılık kaleye doğru tırmanan sokaklardan bakıldığında, taş evlerin kademe kademe aşağı indiği ve ovanın ufka kadar açıldığı manzara şehrin en etkileyici görüntüsüdür. Bu kayıt, kaleyi ziyaret etmen için değil, aşağıdan doğru şekilde görmen ve sınırı bilmen için burada.",
+    "history": "Kale büyük olasılıkla 10. yüzyılda Hamdaniler döneminde inşa edildi; 885'te Hamdan bin Hamdun tarafından alındı, 894'te Abbasi halifesi Mutazıd tarafından geri kazanıldı. Bugünkü surlar büyük ölçüde Akkoyunlu ve Osmanlı dönemlerinde, muhtemelen Artuklu malzemesi yeniden kullanılarak örüldü. Üçüncü Selim döneminde kısmen onarıldı, Osmanlı'nın son döneminde ise bakımsız kaldı. Kale 1366 ve 1383'teki Karakoyunlu saldırılarına direndi, 1432'de Akkoyunlulara teslim oldu ve şehrin 1515'te teslim olmasının ardından 1517'de Osmanlı kuvvetlerince alındı. 19. yüzyıla kadar içi yoğun şekilde meskundu; içeride küçük bir mescidin kalıntıları vardır ve Artuklu hükümdarı Necmeddin İlgazi'ye atfedilen bir kitabe 1269'daki onarımı kaydeder. Ermeni soykırımı sırasında kale hapishane olarak kullanıldı. Mardin Müzesi kalede Artuklu, Akkoyunlu ve Osmanlı katmanlarını kapsayan arkeolojik kazılar yürütmüştür.",
+    "activities": [
+      "Kaleye çıkan sokaklardan taş şehrin kademeli dokusunu izle",
+      "Sırtın uzunluğunu ve şehrin ona nasıl yaslandığını gözlemle",
+      "Zinciriye Medresesi terasından kaleyi karşıdan gör"
+    ],
+    "tips": [
+      "Kale ziyarete kapalıdır, kapıya kadar gitmeyi planlamayın.",
+      "En iyi bakış açısı Zinciriye Medresesi ve üst sokaklardır.",
+      "Yokuş dik ve taş zemin kaygandır, rahat ayakkabı giyin."
+    ],
+    "photoTips": [
+      "Kale silüetini gün doğumunda, ışık sırta yandan vururken çek.",
+      "Taş evleri ön planda, kayalık sırtı arka planda katmanla.",
+      "Askeri tesisleri, antenleri ve nöbet noktalarını kadraja almayın."
+    ],
+    "safetyNotes": [
+      "Kale aktif bir askeri bölgedir ve ziyarete kapalıdır, girmeye çalışmayın.",
+      "Askeri tesisleri ve personeli fotoğraflamak yasaktır.",
+      "Uyarı levhalarına ve görevlilerin uyarılarına mutlaka uyun.",
+      "Yukarı sokaklarda korkuluksuz kenarlar vardır, kenardan uzak durun."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mardin%20kalesi%20-%20panoramio.jpg?width=1200",
+    "imageCredit": "Necim, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_kalesi_-_panoramio.jpg",
+    "latitude": null,
+    "longitude": null,
+    "approxLatitude": 37.31544,
+    "approxLongitude": 40.73839,
+    "coordinatesVerified": false,
+    "estimatedVisitMinutes": 20,
+    "tags": ["kale", "manzara", "fotoğraf", "kartal yuvası", "askeri bölge", "silüet", "tarih"],
+    "isFeatured": false,
+    "sources": [
+      { "title": "Mardin Castle, Wikipedia", "url": "https://en.wikipedia.org/wiki/Mardin_Castle" },
+      { "title": "Mardin Castle may be opened to tourism, Hürriyet Daily News", "url": "https://www.hurriyetdailynews.com/mardin-castle-may-be-opened-to-tourism--114039" },
+      { "title": "Mardin, Vikipedi", "url": "https://tr.wikipedia.org/wiki/Mardin" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "kirklar-kilisesi",
+    "name": "Kırklar Kilisesi",
+    "slug": "kirklar-kilisesi",
+    "category": "inanc-kultur",
+    "shortDescription": "Mor Behnam adına kurulmuş, 1293'ten sonra Süryani Patriklik Kilisesi olan ve taş oyma sunak perdeleriyle bilinen 6. yüzyıl kilisesi.",
+    "longDescription": "Kırklar Kilisesi, dar bir sokağın içinde, dışarıdan neredeyse fark edilmeyen bir kapının ardındadır. Geniş avlusunda çan kulesi evi bulunur, kiliseye üç ayrı kapıdan girilir. İç mekanın en dikkat çekici yanı, ince ince oyulmuş taş sunak perdeleri ve dört yüz yıllık ahşap sunak kapılarıdır; divanın taş işçiliği dantel gibidir. Kök boyayla basılmış perdeler ve Deyrulzafaran matbaasından günümüze ulaşan basılı eserler de burada sergilenir. Kilise hâlâ ibadete açıktır ve Mardin'in Süryani cemaatinin merkezlerinden biridir.",
+    "history": "Yapı 6. yüzyılın ortalarına tarihlenir; Türkçe kaynaklarda inşa yılı 569 olarak verilir. 1293'te Süryani Patriklik Kilisesi oldu. Aslen Mor Behnam adına kurulmuştu; 12. yüzyılda Mardin'deki asıl Kırklar kilisesi camiye çevrilince adı Kırklar olarak değişti. Yerel gelenek, Kırk Şehitler'in emanetlerinin 1170'te bu kiliseye getirildiğini anlatır. Patrikhaneye ait konut ekleri 19. yüzyılda ve 20. yüzyılın başında genişletildi.",
+    "activities": [
+      "Taş oyma sunak perdelerini yakından incele",
+      "Dört yüz yıllık ahşap sunak kapılarını gör",
+      "Avludaki çan kulesi evini ve taş işçiliğini gez",
+      "Deyrulzafaran matbaasından kalan basılı eserlere bak"
+    ],
+    "tips": [
+      "Kapı her zaman açık olmayabilir, görevliye ya da cemaate danışın.",
+      "Ayin sırasında ziyaret uygun değildir.",
+      "Sokak dardır, tabelayı kaçırmamak için yavaş yürüyün."
+    ],
+    "photoTips": [
+      "Sunak perdesinin oyma dokusunu yandan gelen ışıkla çek.",
+      "Avludan çan kulesini gökyüzüyle çerçevele.",
+      "İç mekan karanlıktır, flaş yerine yüksek ISO tercih edin."
+    ],
+    "safetyNotes": [
+      "İbadete açık bir kilisedir, sessiz ve saygılı olun.",
+      "Mütevazı kıyafet tercih edin.",
+      "Fotoğraf çekmeden önce izin isteyin, ayinde kesinlikle çekmeyin."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Forty%20martyrs%20church.jpg?width=1200",
+    "imageCredit": "Immano82, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Forty_martyrs_church.jpg",
+    "latitude": 37.31346,
+    "longitude": 40.73282,
+    "approxLatitude": 37.31346,
+    "approxLongitude": 40.73282,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 30,
+    "tags": ["kilise", "süryani", "mor behnam", "kırklar", "inanç", "taş işçiliği", "patrikhane"],
+    "isFeatured": false,
+    "sources": [
+      { "title": "Mor Behnam (Kırklar) Kilisesi, Türkiye Kültür Portalı", "url": "http://www.kulturportali.gov.tr/turkiye/mardin/gezilecekyer/mor-behnam-kirklar-kilisesi" },
+      { "title": "Kırklar Kilisesi, Vikipedi", "url": "https://tr.wikipedia.org/wiki/K%C4%B1rklar_Kilisesi" },
+      { "title": "Mardin, Wikipedia (Süryani mimarisi)", "url": "https://en.wikipedia.org/wiki/Mardin" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "sehidiye-medresesi",
+    "name": "Şehidiye Medresesi ve Camii",
+    "slug": "sehidiye-medresesi-ve-camii",
+    "category": "inanc-kultur",
+    "shortDescription": "Sarkis Lole'nin 1916'da yeniden yaptığı, bitkisel bezemeli ve güneş kabartmalı minaresiyle şehrin en çok fotoğraflanan minaresi.",
+    "longDescription": "Şehidiye Medresesi ve Camii, ana cadde olan 1. Cadde'nin kenarında, çarşı kalabalığının hemen yanındadır. Revaklı avlusu ve eyvanlarıyla bir medrese şeması kurar, güney tarafında iki sahınlı camisi bulunur. Yapının en tanınan parçası minaresidir: yıkılmış olan eski minare, 1916 ve 1917 yıllarında Mardinli Osmanlı Ermeni mimar Sarkis Lole tarafından eklektik bir üslupla yeniden yapıldı. Burmalı gövde, bitkisel bezeme kuşakları ve güneş kabartmaları onu Mardin'in en çok fotoğraflanan minaresi hâline getirdi.",
+    "history": "Yapı, Artuklu hükümdarı Melik Mansur Nasreddin Artuk Arslan tarafından, 13. yüzyılın başlarında inşa ettirildi; Artuk Arslan 1200 ile 1239 arasında hüküm sürdü. Medrese Osmanlı döneminde genişletildi. Tekrarlanan değişiklik, onarım ve eklemeler sonucunda medresenin özgün hâlinden bugüne az şey kalmıştır. Yıkık minare, 1916 ve 1917 yıllarında mimar Sarkis Lole tarafından yeniden inşa edildi.",
+    "activities": [
+      "Burmalı minarenin bezeme kuşaklarını aşağıdan incele",
+      "Revaklı avluyu ve eyvanları gez",
+      "İki sahınlı cami bölümüne göz at"
+    ],
+    "tips": [
+      "Minarenin en iyi göründüğü yer 1. Cadde'nin karşı kaldırımıdır.",
+      "Namaz vakitleri dışında ziyaret daha rahattır.",
+      "Çarşı kalabalığının içindedir, öğle saatlerinde yoğun olur."
+    ],
+    "photoTips": [
+      "Minareyi alttan, gökyüzüyle birlikte dikey kadrajda çek.",
+      "Bezeme kuşaklarını yakınlaştırıp detay karesi al.",
+      "Öğleden sonra ışık minarenin doğu yüzünü daha iyi ortaya çıkarır."
+    ],
+    "safetyNotes": [
+      "Aktif bir camidir, namaz vakitlerinde ziyaretten kaçının.",
+      "Mütevazı kıyafet tercih edin.",
+      "Cadde kenarında durup fotoğraf çekerken trafiğe dikkat edin."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mardin%20Sehidiye%20Medresesi%202382.jpg?width=1200",
+    "imageCredit": "Dosseman, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Sehidiye_Medresesi_2382.jpg",
+    "latitude": 37.31383,
+    "longitude": 40.74334,
+    "approxLatitude": 37.31383,
+    "approxLongitude": 40.74334,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 20,
+    "tags": ["medrese", "cami", "minare", "sarkis lole", "artuklu", "bezeme", "fotoğraf"],
+    "isFeatured": false,
+    "sources": [
+      { "title": "Şehidiye Camii, Kültür Envanteri", "url": "https://kulturenvanteri.com/yer/sehidiye-camii/" },
+      { "title": "Mardin, Wikipedia (camiler)", "url": "https://en.wikipedia.org/wiki/Mardin" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "latifiye-camii",
+    "name": "Latifiye Camii",
+    "slug": "latifiye-camii",
+    "category": "inanc-kultur",
+    "shortDescription": "1314'te yapılmış, bulunduğu mahalleye adını veren ve zengin bezemeli kapılarıyla bilinen Artuklu dönemi camisi.",
+    "longDescription": "Latifiye Camii, Abdüllatif Camii adıyla da bilinir ve bulunduğu Latifiye Mahallesi adını bu yapıdan alır. Avlulu bir külliye düzenine sahiptir; dış ve iç kapıları klasik üslupta, yoğun bezemelidir. Çarşı gürültüsünden bir sokak içeride kaldığı için avlusu şehir merkezindeki en sakin mola noktalarından biridir.",
+    "history": "Cami 1314 yılında, Artuklu sultanları Melik Salih ve Melik Muzaffer döneminde görev yapan Abdüllatif bin Abdullah tarafından inşa ettirildi. Minare 19. yüzyılda, Mısır valisi Muhammed Ziya Tayyar Paşa tarafından eklendi.",
+    "activities": [
+      "İç ve dış kapılardaki bezeme işçiliğini incele",
+      "Avluda kısa bir mola ver",
+      "19. yüzyılda eklenen minareyi gövdesiyle karşılaştır"
+    ],
+    "tips": [
+      "Namaz vakitleri dışında ziyaret daha sakindir.",
+      "Ana caddeden bir sokak içeridedir, tabelayı takip edin."
+    ],
+    "photoTips": [
+      "Taç kapının bezemelerini yan ışıkta çek.",
+      "Avludan minareyi kemer boşluğunun içine yerleştir."
+    ],
+    "safetyNotes": [
+      "Aktif bir camidir, namaz vakitlerinde ziyaretten kaçının.",
+      "Mütevazı kıyafet tercih edin, girişte ayakkabılarınızı çıkarın."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mardin%20Latifiye%20Mosque%20Outside%20in%202025%201029.jpg?width=1200",
+    "imageCredit": "Dosseman, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Latifiye_Mosque_Outside_in_2025_1029.jpg",
+    "latitude": 37.31257,
+    "longitude": 40.73445,
+    "approxLatitude": 37.31257,
+    "approxLongitude": 40.73445,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 20,
+    "tags": ["cami", "artuklu", "abdüllatif", "bezeme", "avlu", "inanç"],
+    "isFeatured": false,
+    "sources": [
+      { "title": "Mardin, Wikipedia (camiler)", "url": "https://en.wikipedia.org/wiki/Mardin" },
+      { "title": "Sinclair, T. A. (1989), Eastern Turkey: an architectural and archaeological survey, Cilt III" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "revakli-carsi",
+    "name": "Revaklı Çarşı",
+    "slug": "revakli-carsi",
+    "category": "carsi",
+    "shortDescription": "Tellallar Çarşısı olarak da bilinen, bakırcı çekiçlerinin sesiyle dolu kemer altı çarşı.",
+    "longDescription": "Revaklı Çarşı, 1. Cadde boyunca uzanan ve Ulu Cami'nin yaklaşık yüz elli metre doğusunda yoğunlaşan kemer altı çarşıdır; Tellallar Çarşısı adıyla da anılır. Bakırcılar burada hâlâ elle çalışır ve sokağın sesini çekiç darbeleri belirler. Telkari işleyen gümüş atölyeleri, baharatçılar, sabuncular ve ip eğiren semerciler aynı hat üzerinde sıralanır. Ulu Cami'nin hemen kuzeyindeki Kayseriye Çarşısı ise çarşı dokusunun en eski parçasıdır ve kalın iki sıra sütun üzerine oturan çapraz tonozlarıyla ayırt edilir.",
+    "history": "Revaklı Çarşı, Türkçe kaynaklarda dua kubbesi geleneğinin Artuklu dönemine uzanan erken örneklerinden biri olarak anılır. Ulu Cami'nin kuzeyindeki Kayseriye Çarşısı'nın 1487 ile 1502 yılları arasında inşa edildiği tahmin edilir; Osmanlı kayıtları 1526'da 74, 1540'ta 80 ve 1564'te 111 dükkan (99'u faal) kaydeder. Mardin'in kapalı çarşısı 1891'de yandı. Yörede kayıtlı geleneksel zanaatlar arasında bakırcılık, telkari, taş işlemeciliği, ahşap oymacılığı ve semercilik bulunur.",
+    "activities": [
+      "Bakırcıların elle dövme işini izle",
+      "Telkari gümüş atölyelerinde işçiliği yakından gör",
+      "Baharatçılardan yöresel karışımlara bak",
+      "Kayseriye Çarşısı'nın çapraz tonozlarının altından geç"
+    ],
+    "tips": [
+      "Sabah erken saatlerde ustalar tezgah başındadır, çarşı da daha sakindir.",
+      "Pazar günleri birçok dükkan kapalıdır.",
+      "Pazarlık burada olağandır, ama kırıcı olmayan bir dille yapılır."
+    ],
+    "photoTips": [
+      "Kemer altındaki ışık huzmelerini karşıdan çek.",
+      "Bakır tezgahını, çekicin hareketini yakalamak için düşük enstantanede dene.",
+      "Ustaları fotoğraflamadan önce mutlaka izin isteyin."
+    ],
+    "safetyNotes": [
+      "Kalabalık saatlerde çantanızı önde taşıyın.",
+      "Atölyelerde sıcak metal ve kıvılcım olabilir, tezgaha yaklaşmayın.",
+      "Dar sokaklarda yük taşıyan el arabalarına yol verin."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mardin%20-%20Bazaar%202327.jpg?width=1200",
+    "imageCredit": "Dosseman, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_-_Bazaar_2327.jpg",
+    "latitude": 37.31334,
+    "longitude": 40.74107,
+    "approxLatitude": 37.31334,
+    "approxLongitude": 40.74107,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 60,
+    "tags": ["çarşı", "bakırcı", "telkari", "zanaat", "alışveriş", "kayseriye", "esnaf", "baharat"],
+    "isFeatured": true,
+    "sources": [
+      { "title": "Kayseriye Çarşısı, Vikipedi", "url": "https://tr.wikipedia.org/wiki/Kayseriye_%C3%87ar%C5%9F%C4%B1s%C4%B1" },
+      { "title": "Dua kubbesi, Vikipedi", "url": "https://tr.wikipedia.org/wiki/Dua_kubbesi" },
+      { "title": "Mardin (il), Vikipedi (el sanatları)", "url": "https://tr.wikipedia.org/wiki/Mardin_(il)" }
+    ],
+    "verificationStatus": "needs_review"
+  },
+  {
+    "id": "abbaralar",
+    "name": "Abbaralar",
+    "slug": "abbaralar",
+    "category": "yerel-deneyim",
+    "shortDescription": "Evlerin altından geçen tonozlu geçitler. Mardin'i Mardin yapan, üstü ev altı sokak olan mimari çözüm.",
+    "longDescription": "Abbara, Mardin'de evlerin altından geçen tonozlu geçide verilen yerel addır. Yamaca kurulmuş bir şehirde sokak kıt, gölge değerlidir; abbara ikisini birden çözer. Üstünde bir ev, altında bir yol vardır. İçlerine girdiğinde ses değişir, sıcaklık düşer ve ileride görünen ışık dikdörtgeni sana yönünü verir. Bu kayıt tek bir yapıyı değil, eski şehrin tamamına yayılmış bir dokuyu anlatır; haritadaki nokta, geçitlerin açıldığı çarşı hattını temsil eder. En bilinen ve tabelalı örneklerden biri Sakıp Sabancı Mardin Kent Müzesi'nin yanındaki Abbara Geçidi'dir.",
+    "history": "Abbaralar için tarihlendirilmiş bir yapım kaydı ya da bani bilgisi bulunmamaktadır; geçitler eski şehrin organik dokusunun parçasıdır. Mardin evleri yamaca uyacak şekilde kademelendirilmiştir ve şehre basamaklı görünümünü veren de budur; evler iç avlular çevresinde kurulur, üst katlar avludan geriye çekilir. Eski şehir neredeyse bütünüyle yerel açık bej kireç taşından örülmüştür. UNESCO'nun geçici listedeki değerlendirmesi de tam olarak bu kademeli kent dokusuna ve yerel taş mimarisine dayanır ve şehri türünün en iyi korunmuş örneği olarak tanımlar.",
+    "activities": [
+      "Bir abbaranın içinden geçip ışığa çıkışı yaşa",
+      "Üstünde ev, altında sokak olan kesiti fark et",
+      "Sıcak bir günde abbara gölgesindeki sıcaklık farkını hisset",
+      "Kent Müzesi yanındaki Abbara Geçidi'ni bul"
+    ],
+    "tips": [
+      "Aydınlatma zayıftır, telefon ışığını hazır tut.",
+      "Yazın en serin yürüyüş rotaları abbaralardan geçenlerdir.",
+      "Kaybolmak burada kötü değil, ama dönüş için bir yön işareti belirle."
+    ],
+    "photoTips": [
+      "Geçidin sonundaki ışık dikdörtgenini siluet olarak kullan.",
+      "Tonozun eğrisini simetrik ortalayıp derinlik ver.",
+      "İçerisi karanlıktır, telefonda gece modu ya da sabit destek işe yarar."
+    ],
+    "safetyNotes": [
+      "Geçitler loş, dik ve zaman zaman ıslaktır, adımınıza dikkat edin.",
+      "Bir kısmı özel evlerin altından geçer, sesinizi alçak tutun.",
+      "Geçitler sakinlerin ve yük hayvanlarının da yoludur, yol verin."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mardin%20P1050415%2020080426130657.JPG?width=1200",
+    "imageCredit": "Nevit Dilmen, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_P1050415_20080426130657.JPG",
+    "latitude": null,
+    "longitude": null,
+    "approxLatitude": 37.31334,
+    "approxLongitude": 40.74107,
+    "coordinatesVerified": false,
+    "estimatedVisitMinutes": 30,
+    "tags": ["abbara", "geçit", "sokak", "mimari", "yerel", "gölge", "taş", "eski şehir"],
+    "isFeatured": false,
+    "sources": [
+      { "title": "Mardin Cultural Landscape, UNESCO Dünya Mirası Geçici Listesi", "url": "https://whc.unesco.org/en/tentativelists/1406/" },
+      { "title": "Mardin, Wikipedia (konut dokusu)", "url": "https://en.wikipedia.org/wiki/Mardin" }
+    ],
+    "verificationStatus": "needs_review"
+  },
+  {
+    "id": "cumhuriyet-meydani",
+    "name": "Cumhuriyet Meydanı ve Ova Terasları",
+    "slug": "cumhuriyet-meydani-ve-ova-teraslari",
+    "category": "fotograf",
+    "shortDescription": "Eski şehrin buluşma noktası ve Mezopotamya ovasının ufka kadar açıldığı güney terasları.",
+    "longDescription": "Cumhuriyet Meydanı, eski şehrin pratik merkezidir: Mardin Müzesi, müzenin gişesi ve 1. Cadde çarşı hattı buradan açılır. Meydanın ve çevresindeki yapıların güney yüzü doğrudan Mezopotamya ovasına bakar. Mardin yaklaşık 1050 metre yükseklikte, uzun bir tepenin güney yamacına kurulmuştur ve yamaç ovaya doğru iner; teraslardan bakıldığında ova hiçbir engel olmadan ufka kadar uzanır. Sabahın ilk ve akşamın son saatlerinde ova üzerindeki ışık en yumuşak hâlini alır. Müzenin güney avlusundaki Arkeopark ve beş yüz kişilik amfi tiyatro da aynı manzaraya bakar.",
+    "history": "Meydanın düzenlenme ya da adlandırılma tarihine ilişkin doğrulanmış bir kayda ulaşılamamıştır. Meydanın kimliğini belirleyen yapı, 1895'te Süryani Katolik Patrikhanesi olarak inşa edilip 2000 yılında Mardin Müzesi olarak açılan konaktır. Kültür Bakanlığı müzeyi kentin meydanındaki yapı olarak tanımlar ve güney avlusunun ovaya baktığını belirtir.",
+    "activities": [
+      "Güney teraslarından Mezopotamya ovasını seyret",
+      "Gün batımını ova üzerinde izle",
+      "Meydandan 1. Cadde çarşı hattına yürü",
+      "Müzenin güney avlusundaki Arkeopark'a bak"
+    ],
+    "tips": [
+      "En iyi ışık sabah erken ve akşamüstüdür.",
+      "Yaz öğleninde meydanda gölge azdır, sıcak çok bunaltıcı olabilir.",
+      "Şehrin ulaşım ve yön bulma açısından en kolay referans noktasıdır."
+    ],
+    "photoTips": [
+      "Ovayı geniş açıyla, ufuk çizgisini kadranın alt üçte birine koyarak çek.",
+      "Akşam sisinde ova katman katman görünür, teleobjektif bunu güzelleştirir.",
+      "Ön plana bir taş korkuluk ya da kemer koyarak derinlik ver."
+    ],
+    "safetyNotes": [
+      "Teras kenarlarında her yerde korkuluk yoktur, kenardan uzak durun.",
+      "Yaz aylarında bol su için, Mardin'de ölçülen en yüksek sıcaklık 42,5 dereceye ulaşmıştır.",
+      "Meydan trafiğe açıktır, karşıdan karşıya geçerken dikkatli olun."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/P1040528%20Mardin%20pano.JPG?width=1200",
+    "imageCredit": "Nevit Dilmen, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:P1040528_Mardin_pano.JPG",
+    "latitude": 37.31335,
+    "longitude": 40.7347,
+    "approxLatitude": 37.31335,
+    "approxLongitude": 40.7347,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 30,
+    "tags": ["meydan", "manzara", "ova", "mezopotamya", "gün batımı", "fotoğraf", "teras"],
+    "isFeatured": false,
+    "sources": [
+      { "title": "Mardin, Wikipedia (coğrafya)", "url": "https://en.wikipedia.org/wiki/Mardin" },
+      { "title": "Mardin Müzesi, T.C. Kültür ve Turizm Bakanlığı", "url": "https://muze.gov.tr/muze-detay?SectionId=MRD01&DistId=MRK" }
+    ],
+    "verificationStatus": "needs_review"
+  },
+  {
+    "id": "deyrulzafaran-manastiri",
+    "name": "Deyrulzafaran Manastırı",
+    "slug": "deyrulzafaran-manastiri",
+    "category": "inanc-kultur",
+    "shortDescription": "493'te kurulan, yaklaşık sekiz yüzyıl Süryani Ortodoks Patrikliğine merkezlik etmiş manastır. Şehir merkezine yaklaşık 5 km.",
+    "longDescription": "Deyrulzafaran Manastırı, Süryanice adıyla Deyro d Mor Hananyo, şehir merkezinin yaklaşık beş kilometre güneydoğusunda, ovaya bakan bir yamaçtadır. Kalın taş duvarları, avlusu ve kiliseleriyle bugün de yaşayan bir manastırdır. En eski bölümü, ana avlunun altındaki yeraltı tonozlu odadır: harçsız, birbirine geçmeli taş bloklardan örülü tavanı ve gün doğumuna hizalanmış doğu açıklığıyla, geleneksel olarak yaklaşık M.Ö. 2000'e ve Asur güneş tanrısı Şamaş'a bağlanır. Kütüphanesinde en eskisi 9. yüzyıldan olmak üzere üç yüzden fazla Süryanice ve Arapça el yazması korunur. Manastırda bir kafe, hediyelik eşya dükkanı ve yörede üretilen şarabın satışı vardır.",
+    "history": "Yapı, daha önce Roma kalesi ve Bizans istihkamı olan bir alanda, 493 yılında Mor Şlemun tarafından manastıra çevrildi. 607'de Sasaniler tarafından yıkıldı ve terk edildi. Mardin ve Kafartut metropoliti Mor Hananyo, harap alanı 793'te satın alıp onardı, bir el yazması kütüphanesi kurdu ve topluluğu yaklaşık seksen keşişe çıkardı; manastır o günden beri onun adını taşır. Patrik Büyük Mihail 1166'da burada tahta çıktı ve manastır yaklaşık 1160'tan 1932'ye kadar Antakya Süryani Ortodoks Patrikliğinin merkezi oldu. Timur 1396'daki ikinci Mardin saldırısında manastırın surlarını, hücrelerini ve kapısını tahrip etti. Patrik İkinci İgnatius manastırı 1696 ile 1699 arasında yeniden inşa etti ve sinodlar için Patriklik Tahtı Kilisesi'ni ekledi. 1874'te İngiltere'den alınan matbaa 1881'de manastıra kuruldu, 1882'de basımevi binası yapıldı ve ilk kitap 1888'de basılarak bir nüshası Kraliçe Victoria'ya gönderildi. Patriklik merkezi 1924'te, Patrik Üçüncü İgnatius İlyas'ın sürgün edilmesiyle sona erdi.",
+    "activities": [
+      "Yeraltı tonozlu güneş tapınağı odasını gör",
+      "Patriklik Tahtı Kilisesi'ni ve 1699 tarihli oyma ahşap kapıları incele",
+      "Manastır kütüphanesinin ve matbaa tarihinin anlatıldığı bölümü dinle",
+      "Avludan ovaya bakan manzarayı seyret"
+    ],
+    "tips": [
+      "Şehir merkezinden araçla yaklaşık on beş dakikadır.",
+      "Ziyaretler belirli saatlerde ve rehber eşliğinde yapılır.",
+      "Giriş ücretlidir ve ücret dönemsel olarak değişir.",
+      "Rehberlik çoğunlukla Türkçedir, din görevlilerinin birçoğu İngilizce bilir."
+    ],
+    "photoTips": [
+      "Manastırı yaklaşırken yoldan, yamaç fonuyla birlikte çek.",
+      "Avlu kemerlerini çerçeve olarak kullan.",
+      "Yeraltı odasında ışık çok azdır, sabit bir yüzeye dayanarak çekin."
+    ],
+    "safetyNotes": [
+      "Faal bir manastırdır, sessiz ve saygılı olun.",
+      "Uygun kıyafet zorunludur, omuz ve diz kapalı olmalıdır.",
+      "İbadet sırasında ve kütüphane bölümünde fotoğraf için izin isteyin.",
+      "Yeraltı odasının tavanı alçaktır, başınıza dikkat edin."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Deyrulzaferan%20P1040048%2020080501123142.JPG?width=1200",
+    "imageCredit": "Nevit Dilmen, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Deyrulzaferan_P1040048_20080501123142.JPG",
+    "latitude": 37.29944,
+    "longitude": 40.79283,
+    "approxLatitude": 37.29944,
+    "approxLongitude": 40.79283,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 90,
+    "tags": ["manastır", "süryani", "mor hananyo", "patriklik", "el yazması", "inanç", "unesco", "matbaa"],
+    "isFeatured": true,
+    "sources": [
+      { "title": "Mor Hananyo Monastery, Wikipedia", "url": "https://en.wikipedia.org/wiki/Mor_Hananyo_Monastery" },
+      { "title": "Deyrulzafaran Manastırı resmî sitesi", "url": "http://www.deyrulzafaran.org/" },
+      { "title": "Mardin Cultural Landscape, UNESCO Dünya Mirası Geçici Listesi", "url": "https://whc.unesco.org/en/tentativelists/1406/" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "dara-antik-kenti",
+    "name": "Dara Antik Kenti",
+    "slug": "dara-antik-kenti",
+    "category": "tarihi",
+    "shortDescription": "505'te Doğu Roma sınır kalesi olarak kurulan, kayaya oyulmuş dev sarnıçları ve nekropolüyle şaşırtan antik kent.",
+    "longDescription": "Dara Antik Kenti, şehir merkezinin yaklaşık yirmi dört kilometre güneydoğusunda, Oğuz Mahallesi'ndedir. Üç tepe üzerine kurulmuştur ve en yükseğinde iç kale yer alır. Ziyaretin en çarpıcı bölümü kayaya oyulmuş sarnıçlardır: yüksek tonozlu, serin ve neredeyse boş bu hacimler, bir sınır kentinin kuşatmaya nasıl hazırlandığını tek bakışta anlatır. Nekropol alanındaki kaya mezarları, su yapıları ve sur kalıntıları da gezilebilir. Kent, Nusaybin'in yaklaşık on sekiz kilometre batısındadır ve kurulduğu dönemde Pers sınırına yalnızca beş kilometre uzaklıktaydı.",
+    "history": "Kent, 502 ile 506 arasındaki Anastasios Savaşı'nda Roma ordularının zorlanması üzerine, imparator Birinci Anastasios tarafından 505 yılında bir sınır üssü olarak yeniden kuruldu ve Anastasiopolis adını aldı; Mezopotamya dukalığının merkezi oldu. Aceleyle örülen ve yetersiz kalan surlar Birinci Justinianus tarafından yeniden yapıldı ve kentin adı Iustiniana Nova oldu: iç sur bir kat yükseltilerek yaklaşık yirmi metreye, kuleler üç kata ve yaklaşık otuz beş metreye çıkarıldı, çevresine su dolu bir hendek kazıldı. Justinianus'un mühendisleri Kordes ırmağını bir kanalla kente yönlendirdi ve taşkını önlemek için bilinen en erken kemer barajlardan birini inşa etti. Kent 573 ile 574'te Birinci Hüsrev tarafından alındı, 591'de antlaşmayla geri verildi, 604 ile 605'te dokuz aylık kuşatmanın ardından İkinci Hüsrev'in eline geçti, Herakleios tarafından geri alındı ve 639'da Arap ordularınca fethedildikten sonra önemini yitirerek terk edildi. Dara, Ermeni soykırımı sırasında da katliam alanı olmuştur; 1915 ilkbahar ve yazında sarnıçların Diyarbakır, Mardin ve Erzurum'dan getirilen Ermenilerin cesetleriyle doldurulduğu bildirilmiştir. Alandaki kazılar Mardin Müzesi tarafından yürütülür.",
+    "activities": [
+      "Kayaya oyulmuş dev sarnıçların içine in",
+      "Nekropoldeki kaya mezarlarını gez",
+      "Sur ve kule kalıntılarını takip et",
+      "Su kanalı ve baraj yapılarının izini sür"
+    ],
+    "tips": [
+      "Şehir merkezinden araçla yaklaşık kırk dakikadır.",
+      "Alan geniştir, en az bir buçuk saat ayırın.",
+      "Sabah erken saatler hem serin hem ışık açısından iyidir."
+    ],
+    "photoTips": [
+      "Sarnıcın içinden, girişteki ışığa doğru bakan kareyi dene.",
+      "Ölçeği göstermek için kadraja bir insan figürü koy.",
+      "Nekropolde kaya kabartmalarını yan ışıkta çek."
+    ],
+    "safetyNotes": [
+      "Sarnıç ve nekropolde basamaklar dik ve zemin engebelidir.",
+      "Alanda gölge azdır, yazın şapka ve bol su alın.",
+      "Kazı alanlarının dışına çıkmayın ve taşların üzerine tırmanmayın."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dara%20pano%20P1030891-cr.jpg?width=1200",
+    "imageCredit": "Nevit Dilmen, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Dara_pano_P1030891-cr.jpg",
+    "latitude": 37.17899,
+    "longitude": 40.94576,
+    "approxLatitude": 37.17899,
+    "approxLongitude": 40.94576,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 90,
+    "tags": ["antik kent", "roma", "bizans", "sarnıç", "nekropol", "justinianus", "kazı", "tarih"],
+    "isFeatured": true,
+    "sources": [
+      { "title": "Dara (Mesopotamia), Wikipedia", "url": "https://en.wikipedia.org/wiki/Dara_(Mesopotamia)" },
+      { "title": "Prokopios, De Aedificiis, Kitap II", "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Procopius/Buildings/2*.html" },
+      { "title": "Mardin Müzesi, Türkiye Kültür Portalı (Dara kazıları)", "url": "https://www.kulturportali.gov.tr/portal/mardinmuzesi" }
+    ],
+    "verificationStatus": "verified"
+  },
+  {
+    "id": "kiziltepe-ulu-camii",
+    "name": "Kızıltepe Ulu Camii",
+    "slug": "kiziltepe-ulu-camii",
+    "category": "tarihi",
+    "shortDescription": "Dunaysır Ulu Camii olarak da bilinen, 1204'te tamamlanmış ve mihrap işçiliğiyle Artuklu taş sanatının doruğu sayılan cami.",
+    "longDescription": "Kızıltepe Ulu Camii, şehir merkezinin yaklaşık yirmi kilometre güneybatısındaki Kızıltepe ilçesindedir; Dunaysır ve Koçhisar Ulu Camii adlarıyla da anılır. Planı Mardin Ulu Camii'ni tekrarlar: kıble duvarına paralel üç sahın, mihrabın önünde iki sahın boyunca kesilerek 9,75 metre çapında bir kubbeyle taçlandırılır ve kubbe tromplara oturur. Yapının asıl ünü mihrabındadır; mihrap ve duvarlardaki oyma kitabe işçiliği Artuklu taş sanatının en olgun örnekleri arasında sayılır. Yerleşimin dışında kalıp uzun süre harap durumda beklediği için, bugün gördüğün bütünlük büyük ölçüde restorasyonların sonucudur.",
+    "history": "Yapıya Mardin Artuklu hükümdarı Hüsameddin Yavlak Arslan (hükümdarlığı 1184 ile 1200) döneminde başlandı. Yavlak Arslan inşaat sürerken öldü ve cami, Ebü'l Feth Artuk Arslan (hükümdarlığı 1200 ile 1239) tarafından hicri 601, yani miladi 1204 ile 1205 yıllarında tamamlandı. Yerleşimin dışında kalan yapı zamanla harap oldu ve Vakıflar Genel Müdürlüğü tarafından 1967 ile 1976 yılları arasında onarıldı. Aynı kurumun 2015'te başlattığı kapsamlı restorasyon 2019'da tamamlandı ve cami yeniden ibadete açıldı.",
+    "activities": [
+      "Mihraptaki oyma kitabe işçiliğini yakından incele",
+      "Mihrap önü kubbesini ve tromp geçişlerini gör",
+      "Planı Mardin Ulu Camii ile karşılaştır"
+    ],
+    "tips": [
+      "Ayrı bir ilçededir, günübirlik plan yapın.",
+      "Namaz vakitleri dışında ziyaret daha rahattır.",
+      "Mardin merkezden araçla yaklaşık yarım saattir."
+    ],
+    "photoTips": [
+      "Mihrabı simetrik ve tam karşıdan çek.",
+      "Kubbeyi alttan, tromp geçişleri görünecek şekilde kadraja al.",
+      "Dış cephede taş kabartmaları yan ışıkta çek."
+    ],
+    "safetyNotes": [
+      "Aktif bir camidir, namaz vakitlerinde ziyaretten kaçının.",
+      "Mütevazı kıyafet tercih edin, girişte ayakkabılarınızı çıkarın.",
+      "Kadın ziyaretçiler için başörtüsü beklenir."
+    ],
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ko%C3%A7hisar%20Ulu%20Camii.jpg?width=1200",
+    "imageCredit": "Mustafa.cay.90, Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Ko%C3%A7hisar_Ulu_Camii.jpg",
+    "latitude": 37.18972,
+    "longitude": 40.58278,
+    "approxLatitude": 37.18972,
+    "approxLongitude": 40.58278,
+    "coordinatesVerified": true,
+    "estimatedVisitMinutes": 30,
+    "tags": ["cami", "artuklu", "dunaysır", "koçhisar", "mihrap", "kubbe", "kızıltepe", "tarih"],
+    "isFeatured": false,
+    "sources": [
+      { "title": "Koçhisar Ulu Camii, Vikipedi", "url": "https://tr.wikipedia.org/wiki/Ko%C3%A7hisar_Ulu_Camii" },
+      { "title": "Kızıltepe Ulu Camii, Kültür Envanteri", "url": "https://kulturenvanteri.com/en/yer/kiziltepe-ulu-camii/" }
+    ],
+    "verificationStatus": "verified"
+  }
+]

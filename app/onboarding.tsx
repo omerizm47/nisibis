@@ -2,14 +2,16 @@ import { useState } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Animated, { FadeIn } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { OnboardingArt, PatternBackdrop, PrimaryButton } from '@/components';
-import { useLocation } from '@/hooks';
+import { useCity, useLocation } from '@/hooks';
+import { CITIES, CITY_IDS } from '@/data/cities';
 import { useOnboarding } from '@/hooks/useOnboarding';
 import { colors, gradients, radius, spacing, typography } from '@/theme';
+import { hapticSelection } from '@/utils/haptics';
 
 interface Step {
   titleKey: string;
@@ -28,6 +30,7 @@ export default function OnboardingScreen() {
   const router = useRouter();
   const { markComplete } = useOnboarding();
   const { requestPermission } = useLocation(false);
+  const { cityId, setCity } = useCity();
   const [step, setStep] = useState(0);
 
   const current = STEPS[step];
@@ -71,6 +74,32 @@ export default function OnboardingScreen() {
         <OnboardingArt step={step} size={216} style={styles.art} />
         <Text style={styles.title}>{t(current.titleKey)}</Text>
         <Text style={styles.text}>{t(current.bodyKey)}</Text>
+        {step === 0 ? (
+          <View style={styles.cityBlock}>
+            <Text style={styles.cityPrompt}>{t('city.choose')}</Text>
+            <View style={styles.cityRow}>
+              {CITY_IDS.map((id) => {
+                const selected = cityId === id;
+                return (
+                  <Pressable
+                    key={id}
+                    onPress={() => {
+                      hapticSelection();
+                      setCity(id);
+                    }}
+                    accessibilityRole="button"
+                    accessibilityState={{ selected }}
+                    style={[styles.cityChip, selected && styles.cityChipActive]}
+                  >
+                    <Text style={[styles.cityChipText, selected && styles.cityChipTextActive]}>
+                      {CITIES[id].name}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </View>
+          </View>
+        ) : null}
       </Animated.View>
 
       <View style={[styles.footer, { paddingBottom: insets.bottom + spacing.xl }]}>
@@ -140,6 +169,37 @@ const styles = StyleSheet.create({
     color: colors.mutedText,
     textAlign: 'center',
     paddingHorizontal: spacing.sm,
+  },
+  cityBlock: {
+    alignItems: 'center',
+    gap: spacing.sm,
+  },
+  cityPrompt: {
+    ...typography.label,
+    color: colors.subtleText,
+  },
+  cityRow: {
+    flexDirection: 'row',
+    gap: spacing.sm,
+  },
+  cityChip: {
+    paddingHorizontal: spacing.xl,
+    paddingVertical: spacing.sm,
+    borderRadius: radius.pill,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: colors.card,
+  },
+  cityChipActive: {
+    backgroundColor: colors.primary,
+    borderColor: colors.primary,
+  },
+  cityChipText: {
+    ...typography.bodyMedium,
+    color: colors.mutedText,
+  },
+  cityChipTextActive: {
+    color: colors.onPrimary,
   },
   footer: {
     paddingHorizontal: spacing.xl,

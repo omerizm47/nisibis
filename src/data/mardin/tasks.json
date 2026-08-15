@@ -1,0 +1,137 @@
+[
+  {
+    "id": "gorev-ulu-cami-minber",
+    "title": "Ulu Cami'nin Artuklu minberini gör",
+    "description": "Mardin Ulu Camii'ne uğra; Artuklu yapısından bugüne ulaşan oyma ahşap minberi ve kaburgalı kubbeyi incele.",
+    "relatedPoiId": "mardin-ulu-camii",
+    "points": 15,
+    "category": "inanc-kultur",
+    "icon": "mosque"
+  },
+  {
+    "id": "gorev-zinciriye-teras",
+    "title": "Zinciriye terasından ovayı seyret",
+    "description": "Zinciriye Medresesi'nin üst terasına çık ve Mezopotamya ovasının ufka kadar açıldığı manzarayı gör.",
+    "relatedPoiId": "zinciriye-medresesi",
+    "points": 15,
+    "category": "tarihi",
+    "icon": "school"
+  },
+  {
+    "id": "gorev-kasimiye-su-kanali",
+    "title": "Kasımiye'de su kanalını izle",
+    "description": "Kasımiye Medresesi avlusundaki su kanalını kaynağından havuza kadar takip et ve ömrü anlatan yerel okumayı öğren.",
+    "relatedPoiId": "kasimiye-medresesi",
+    "points": 10,
+    "category": "tarihi",
+    "icon": "water"
+  },
+  {
+    "id": "gorev-muze-surekli-definesi",
+    "title": "Mardin Müzesi'nde Sürekli Definesi'ni bul",
+    "description": "Ticaret salonundaki Sürekli Definesi'nde Abbasi, Artuklu ve Bizans sikkelerini karşılaştır.",
+    "relatedPoiId": "mardin-muzesi",
+    "points": 15,
+    "category": "tarihi",
+    "icon": "bank"
+  },
+  {
+    "id": "gorev-kirklar-sunak",
+    "title": "Kırklar Kilisesi'nin sunak perdelerini incele",
+    "description": "Kırklar Kilisesi'nde ince ince oyulmuş taş sunak perdelerini ve dört yüz yıllık ahşap sunak kapılarını gör.",
+    "relatedPoiId": "kirklar-kilisesi",
+    "points": 15,
+    "category": "inanc-kultur",
+    "icon": "church"
+  },
+  {
+    "id": "gorev-sehidiye-minare",
+    "title": "Şehidiye'nin burmalı minaresini fotoğrafla",
+    "description": "Sarkis Lole'nin 1916'da yeniden yaptığı bitkisel bezemeli minareyi 1. Cadde'nin karşı kaldırımından çek.",
+    "relatedPoiId": "sehidiye-medresesi",
+    "points": 10,
+    "category": "fotograf",
+    "icon": "camera"
+  },
+  {
+    "id": "gorev-bakirci-tezgahi",
+    "title": "Revaklı Çarşı'da bir bakırcı tezgahını izle",
+    "description": "Çarşıda elle dövme yapan bir bakırcının çalışmasını izle ve izin isteyerek bir kare çek.",
+    "relatedPoiId": "revakli-carsi",
+    "points": 15,
+    "category": "carsi",
+    "icon": "hammer"
+  },
+  {
+    "id": "gorev-telkari",
+    "title": "Telkari işçiliğini yakından gör",
+    "description": "Gümüş telkari atölyelerinden birine uğra ve telin nasıl örüldüğünü ustaya sor.",
+    "relatedPoiId": "revakli-carsi",
+    "points": 10,
+    "category": "carsi",
+    "icon": "ring"
+  },
+  {
+    "id": "gorev-abbara-gec",
+    "title": "Bir abbaranın altından geç",
+    "description": "Evlerin altından geçen tonozlu bir abbaraya gir ve ucundaki ışığa doğru yürü.",
+    "relatedPoiId": "abbaralar",
+    "points": 10,
+    "category": "yerel-deneyim",
+    "icon": "walk"
+  },
+  {
+    "id": "gorev-kale-siluet",
+    "title": "Kaleyi aşağıdan gör",
+    "description": "Mardin Kalesi askeri bölgedir ve ziyarete kapalıdır. Kaleye çıkan sokaklardan sırtın siluetini ve taş şehrin kademeli dokusunu izle.",
+    "relatedPoiId": "mardin-kalesi",
+    "points": 10,
+    "category": "fotograf",
+    "icon": "binoculars"
+  },
+  {
+    "id": "gorev-deyrulzafaran-gunes-odasi",
+    "title": "Deyrulzafaran'ın yeraltı odasını gör",
+    "description": "Manastırın ana avlusu altındaki tonozlu odayı, harçsız taş tavanını ve gün doğumuna hizalı açıklığını gör.",
+    "relatedPoiId": "deyrulzafaran-manastiri",
+    "points": 15,
+    "category": "inanc-kultur",
+    "icon": "book-open-variant"
+  },
+  {
+    "id": "gorev-dara-sarnic",
+    "title": "Dara'nın sarnıçlarına in",
+    "description": "Kayaya oyulmuş dev sarnıçların içine in ve bir sınır kentinin kuşatmaya nasıl hazırlandığını gör.",
+    "relatedPoiId": "dara-antik-kenti",
+    "points": 15,
+    "category": "tarihi",
+    "icon": "castle"
+  },
+  {
+    "id": "gorev-mirra-mardin",
+    "title": "Mırra iç",
+    "description": "Yörenin geleneksel acı kahvesi mırrayı bir esnaf önerisiyle tat.",
+    "relatedPoiId": null,
+    "points": 10,
+    "category": "yemek-icecek",
+    "icon": "coffee"
+  },
+  {
+    "id": "gorev-mardin-mutfagi",
+    "title": "Bir Mardin yemeği dene",
+    "description": "Kaburga dolması, irok ya da ikbebet gibi yöresel bir tabağı tat ve en beğendiğini not al.",
+    "relatedPoiId": null,
+    "points": 10,
+    "category": "yemek-icecek",
+    "icon": "silverware-fork-knife"
+  },
+  {
+    "id": "gorev-mardin-tarih",
+    "title": "Mardin'in hikayesini oku",
+    "description": "Asur kayıtlarındaki adından Artuklu başkentliğine uzanan çok katmanlı tarihi uygulamadan oku.",
+    "relatedPoiId": null,
+    "points": 10,
+    "category": "tarihi",
+    "icon": "book"
+  }
+]
