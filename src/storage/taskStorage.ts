@@ -36,7 +36,7 @@ export const setCompletedPlaceIds = (cityId: string, ids: string[]): Promise<voi
 
 /**
  * Tek şehirli sürümde biriken ilerlemeyi bir kez Nusaybin'e taşır.
- * Hedefte zaten veri varsa eski anahtara dokunulmadan bırakılır.
+ * Hedefte zaten veri varsa üzerine yazılmaz; eski anahtar her durumda silinir.
  */
 export async function migrateLegacyProgress(legacyCityId: string): Promise<void> {
   try {

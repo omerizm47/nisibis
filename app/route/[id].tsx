@@ -175,7 +175,14 @@ export default function RouteDetailScreen() {
         <PrimaryButton
           label={t('routes.start')}
           icon="play"
-          onPress={() => router.push({ pathname: '/', params: { route: route.id } })}
+          onPress={() =>
+            // dismissTo, acik olan harita sekmesine geri doner. push ve navigate
+            // ikisi de ikinci bir (tabs) yigini ve ikinci bir MapView aciyordu.
+            router.dismissTo({
+              pathname: '/',
+              params: { route: route.id, ts: String(Date.now()) },
+            })
+          }
         />
       </View>
     </View>

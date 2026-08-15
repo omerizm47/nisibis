@@ -302,7 +302,14 @@ export default function PlaceDetailScreen() {
           label={t('place.showOnMap')}
           icon="map-outline"
           variant="secondary"
-          onPress={() => router.push({ pathname: '/', params: { focus: place.id } })}
+          onPress={() =>
+            // dismissTo, acik olan harita sekmesine geri doner. push ve navigate
+            // ikisi de ikinci bir (tabs) yigini ve ikinci bir MapView aciyordu.
+            router.dismissTo({
+              pathname: '/',
+              params: { focus: place.id, ts: String(Date.now()) },
+            })
+          }
           style={styles.flexBtn}
         />
         <PrimaryButton

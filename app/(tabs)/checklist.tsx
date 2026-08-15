@@ -20,10 +20,14 @@ export default function ChecklistScreen() {
     resetProgress,
     percent,
     completedCount,
+    completedPlaceIds,
     totalCount,
     points,
     isTourComplete,
   } = useProgress();
+
+  // Gorevi olmayan mekanlar da ziyaret edilmis olabilir; sifirlama onlari da kapsar.
+  const ilerlemeVar = completedCount > 0 || completedPlaceIds.length > 0;
 
   const confirmReset = () => {
     Alert.alert(
@@ -79,7 +83,7 @@ export default function ChecklistScreen() {
         ListFooterComponent={
           <View style={styles.footer}>
             {isTourComplete ? <CityInviteCard variant="done" /> : null}
-            {completedCount > 0 ? (
+            {ilerlemeVar ? (
               <PrimaryButton
                 label={t('checklist.reset')}
                 icon="restore"

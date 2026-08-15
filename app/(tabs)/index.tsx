@@ -8,7 +8,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { BottomPlaceSheet, CityChip, LoadingState, ProgressRing } from '@/components';
 import { getMarkerImageSource, userMarkerImage } from '@/components/MapMarker';
-import { getPlaceById, getRouteById, getRoutePlaces, useCity, useLocation, useProgress } from '@/hooks';
+import { getPlaceById, getRouteById, getRoutePlaces, useCity, useLocation, useProgress, useRoutes } from '@/hooks';
 import type { Place, TourRoute } from '@/types';
 import { colors, radius, shadow, spacing, typography } from '@/theme';
 import { MAP_ATTRIBUTION, MAP_STYLE, MAP_TILE_URL } from '@/utils/constants';
@@ -63,11 +63,14 @@ export default function MapScreen() {
   const [selected, setSelected] = useState<Place | null>(null);
   const [mapReady, setMapReady] = useState(false);
   const [routeId, setRouteId] = useState<string | null>(null);
-  const params = useLocalSearchParams<{ focus?: string; route?: string }>();
+  const params = useLocalSearchParams<{ focus?: string; route?: string; ts?: string }>();
 
+  // routes dizisi sehre bagli: sehir degisince kimlik degisir ve rota aninda dusen
+  // sehre gore yeniden cozulur. Efektin temizlemesini beklemeye gerek kalmaz.
+  const routes = useRoutes();
   const activeRoute = useMemo<TourRoute | null>(
-    () => (routeId ? getRouteById(routeId) ?? null : null),
-    [routeId],
+    () => (routeId ? routes.find((r) => r.id === routeId) ?? null : null),
+    [routeId, routes],
   );
   const routeCoords = useMemo(
     () =>
@@ -83,6 +86,8 @@ export default function MapScreen() {
     mapRef.current?.animateToRegion(regionForCoordinate(coord, delta), 600);
   };
 
+  // ts, ayni mekan icin ikinci kez "Haritada goster"e basildiginda da efektin
+  // yeniden calismasini saglar. Harita sekmesi yeniden kullanildigi icin sart.
   useEffect(() => {
     if (!params.focus) return;
     const target = getPlaceById(params.focus);
@@ -92,7 +97,7 @@ export default function MapScreen() {
       setSelected(target);
       mapRef.current?.animateToRegion(regionForCoordinate(coord, 0.01), 600);
     }
-  }, [params.focus]);
+  }, [params.focus, params.ts]);
 
   useEffect(() => {
     if (!params.route) return;
@@ -101,15 +106,21 @@ export default function MapScreen() {
     setRouteId(params.route);
     setSelected(null);
     mapRef.current?.animateToRegion(regionForPlaces(getRoutePlaces(r)), 700);
-  }, [params.route]);
+  }, [params.route, params.ts]);
 
   useEffect(() => {
     const timer = setTimeout(() => setMapReady(true), 2500);
     return () => clearTimeout(timer);
   }, []);
 
-  // Şehir değişince seçim ve rota o şehre ait değil, haritayı yeni şehre taşı.
+  // Yalnizca gercek sehir degisiminde calisir. Mount'ta da calissaydi, ayni akista once
+  // gelen focus/route efektlerinin kurdugu secimi silerdi ve "Haritada goster" bozulurdu.
+  // Eski params temizlenmiyor: setParams odaktaki sekmeye gider, sehir baska sekmeden de
+  // degistirilebiliyor. Kalan focus/route zaten oteki sehrin kimligi, cozulmuyor.
+  const oncekiSehir = useRef(cityId);
   useEffect(() => {
+    if (oncekiSehir.current === cityId) return;
+    oncekiSehir.current = cityId;
     setSelected(null);
     setRouteId(null);
     mapRef.current?.animateToRegion(city.region, 600);
