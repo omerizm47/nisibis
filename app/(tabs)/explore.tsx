@@ -39,8 +39,23 @@ export default function ExploreScreen() {
   const [refreshing, setRefreshing] = useState(false);
   const [focused, setFocused] = useState(false);
 
-  const { location, requestPermission } = useLocation();
-  const places = usePlaces({ category: filter, query });
+  const { permission, location, requestPermission } = useLocation();
+
+  const filters = useMemo<{ key: Filter; label: string }[]>(() => {
+    const present = new Set(city.places.map((p) => p.category));
+    return [
+      { key: 'all', label: t('explore.all') },
+      ...PLACE_CATEGORIES.filter((c) => present.has(c)).map((c) => ({
+        key: c,
+        label: t(`categories.${c}`),
+      })),
+    ];
+  }, [t, city.places]);
+
+  // Sehir degisince oteki sehirde olmayan bir kategori secili kalabiliyordu: liste
+  // bosaliyor, hicbir rozet de secili gorunmuyordu. Gecerli degilse "Tumu" sayilir.
+  const seciliFilter = filters.some((f) => f.key === filter) ? filter : 'all';
+  const places = usePlaces({ category: seciliFilter, query });
 
   const lat = location?.latitude ?? null;
   const lng = location?.longitude ?? null;
@@ -61,9 +76,13 @@ export default function ExploreScreen() {
   }, [places, lat, lng, sort]);
 
   const selectSort = useCallback(
-    (next: Sort) => {
+    async (next: Sort) => {
       hapticSelection();
-      if (next === 'nearest' && lat == null) void requestPermission();
+      // Izin yoksa "En yakin" hicbir sey siralamiyordu ama dugme secili kaliyordu.
+      if (next === 'nearest' && lat == null) {
+        const izinVar = await requestPermission();
+        if (!izinVar) return;
+      }
       setSort(next);
     },
     [lat, requestPermission],
@@ -71,20 +90,11 @@ export default function ExploreScreen() {
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
-    await requestPermission();
+    // Reddedilmisse izin istenmiyor: requestPermission bu durumda sistem ayarlarini
+    // aciyor ve asagi cekmek kullaniciyi uygulamadan cikariyordu. Veri zaten pakette.
+    if (permission !== 'denied') await requestPermission();
     setRefreshing(false);
-  }, [requestPermission]);
-
-  const filters = useMemo<{ key: Filter; label: string }[]>(() => {
-    const present = new Set(city.places.map((p) => p.category));
-    return [
-      { key: 'all', label: t('explore.all') },
-      ...PLACE_CATEGORIES.filter((c) => present.has(c)).map((c) => ({
-        key: c,
-        label: t(`categories.${c}`),
-      })),
-    ];
-  }, [t, city.places]);
+  }, [permission, requestPermission]);
 
   return (
     <View style={[styles.container, { paddingTop: insets.top + spacing.sm }]}>
@@ -126,7 +136,7 @@ export default function ExploreScreen() {
           contentContainerStyle={styles.chips}
         >
           {filters.map((f) => {
-            const active = filter === f.key;
+            const active = seciliFilter === f.key;
             return (
               <Pressable
                 key={f.key}
@@ -134,6 +144,8 @@ export default function ExploreScreen() {
                   hapticSelection();
                   setFilter(f.key);
                 }}
+                accessibilityRole="button"
+                accessibilityState={{ selected: active }}
                 style={[styles.chip, active && styles.chipActive]}
               >
                 <Text style={[styles.chipText, active && styles.chipTextActive]}>{f.label}</Text>
@@ -190,12 +202,12 @@ export default function ExploreScreen() {
           />
         }
         ListHeaderComponent={
-          !query && filter === 'all' ? (
+          !query && seciliFilter === 'all' ? (
             <StoryCard onPress={() => router.push('/story')} style={styles.storyHeader} />
           ) : null
         }
         ListFooterComponent={
-          !query && filter === 'all' && completedCount > 0 && !isTourComplete ? (
+          !query && seciliFilter === 'all' && completedCount > 0 && !isTourComplete ? (
             <CityInviteCard variant="invite" style={styles.inviteFooter} />
           ) : null
         }
@@ -215,6 +227,16 @@ export default function ExploreScreen() {
             icon="map-search-outline"
             title={t('explore.emptyTitle')}
             message={t('explore.emptyBody')}
+            // Bos liste yalnizca arama veya suzgecten kaynaklanabilir; cikis yolu ver.
+            actionLabel={query || seciliFilter !== 'all' ? t('common.clear') : undefined}
+            onAction={
+              query || seciliFilter !== 'all'
+                ? () => {
+                    setQuery('');
+                    setFilter('all');
+                  }
+                : undefined
+            }
           />
         }
       />

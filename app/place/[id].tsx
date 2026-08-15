@@ -238,13 +238,22 @@ export default function PlaceDetailScreen() {
             <Section title={t('common.sources')}>
               <View style={styles.sources}>
                 {place.sources.map((s) => (
+                  // Baglantisi olmayan kaynak (orn. basili kitap) tiklanabilir gorunup
+                  // hicbir sey yapmiyordu; artik duz metin olarak duruyor.
                   <Pressable
                     key={s.title}
-                    onPress={() => (s.url ? void Linking.openURL(s.url) : undefined)}
+                    onPress={s.url ? () => void Linking.openURL(s.url as string) : undefined}
+                    disabled={!s.url}
+                    accessibilityRole={s.url ? 'link' : undefined}
+                    accessibilityLabel={s.url ? t('common.openSource') : undefined}
                     style={styles.sourceRow}
                   >
-                    <MaterialCommunityIcons name="link-variant" size={16} color={colors.primary} />
-                    <Text style={styles.sourceText}>{s.title}</Text>
+                    <MaterialCommunityIcons
+                      name={s.url ? 'link-variant' : 'book-open-variant'}
+                      size={16}
+                      color={s.url ? colors.primary : colors.subtleText}
+                    />
+                    <Text style={[styles.sourceText, !s.url && styles.sourceTextPlain]}>{s.title}</Text>
                   </Pressable>
                 ))}
               </View>
@@ -508,6 +517,9 @@ const styles = StyleSheet.create({
     ...typography.bodyMedium,
     color: colors.primary,
     flex: 1,
+  },
+  sourceTextPlain: {
+    color: colors.mutedText,
   },
   credit: {
     ...typography.caption,

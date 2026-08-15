@@ -49,8 +49,13 @@ export function useLocation(autoStart = true): UseLocationResult {
 
   const evaluate = useCallback(
     async (request: boolean): Promise<boolean> => {
-      let perm = await Location.getForegroundPermissionsAsync();
-      if (request && perm.status !== 'granted' && perm.canAskAgain) {
+      const mevcut = await Location.getForegroundPermissionsAsync();
+      // canAskAgain istekten SONRA yalnızca "kullanıcı hayır dedi" demektir. Sistemin
+      // hiç sormayacağını istekten ÖNCE bilmek gerekir, yoksa ilk ret bile kullanıcıyı
+      // sistem ayarlarına atardı.
+      const sistemSormaz = mevcut.status !== 'granted' && !mevcut.canAskAgain;
+      let perm = mevcut;
+      if (request && mevcut.status !== 'granted' && mevcut.canAskAgain) {
         perm = await Location.requestForegroundPermissionsAsync();
       }
       const status = toPermission(perm.status);
@@ -60,7 +65,7 @@ export function useLocation(autoStart = true): UseLocationResult {
         return true;
       }
       // Kalıcı olarak reddedildiyse (tekrar sorulamıyorsa) sistem ayarlarına yönlendir.
-      if (request && status === 'denied' && !perm.canAskAgain) {
+      if (request && sistemSormaz) {
         void Linking.openSettings();
       }
       return false;

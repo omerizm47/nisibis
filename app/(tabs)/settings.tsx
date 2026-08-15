@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import type React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
-import { Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { AppState, Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -66,15 +66,31 @@ export default function SettingsScreen() {
 
   const [perm, setPerm] = useState<'granted' | 'denied' | 'undetermined'>('undetermined');
 
-  useEffect(() => {
-    void Location.getForegroundPermissionsAsync().then((p) =>
-      setPerm(p.granted ? 'granted' : p.canAskAgain ? 'undetermined' : 'denied'),
-    );
+  const okuIzin = useCallback(async () => {
+    const p = await Location.getForegroundPermissionsAsync();
+    setPerm(p.granted ? 'granted' : p.canAskAgain ? 'undetermined' : 'denied');
   }, []);
 
+  useEffect(() => {
+    void okuIzin();
+    // Kullanici sistem ayarlarindan izni degistirip geri donunce satir eskimesin.
+    const sub = AppState.addEventListener('change', (s) => {
+      if (s === 'active') void okuIzin();
+    });
+    return () => sub.remove();
+  }, [okuIzin]);
+
   const requestLocation = async () => {
-    const p = await Location.requestForegroundPermissionsAsync();
-    setPerm(p.granted ? 'granted' : 'denied');
+    // canAskAgain istekten SONRA yalnizca "kullanici hayir dedi" demektir. Sistemin
+    // hic sormayacagini anlamak icin istekten ONCE okunmali, yoksa ilk ret bile
+    // kullaniciyi sistem ayarlarina atardi.
+    const onceki = await Location.getForegroundPermissionsAsync();
+    if (!onceki.granted && !onceki.canAskAgain) {
+      void Linking.openSettings();
+      return;
+    }
+    await Location.requestForegroundPermissionsAsync();
+    await okuIzin();
   };
 
   const langLabel: Record<AppLanguage, string> = {
