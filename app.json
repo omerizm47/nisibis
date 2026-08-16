@@ -9,6 +9,12 @@
     "userInterfaceStyle": "light",
     "backgroundColor": "#ECE0CD",
     "newArchEnabled": true,
+    "updates": {
+      "url": "https://u.expo.dev/a1a5e194-adad-40a3-918f-e53dc7d6e517"
+    },
+    "runtimeVersion": {
+      "policy": "fingerprint"
+    },
     "assetBundlePatterns": [
       "**/*"
     ],
