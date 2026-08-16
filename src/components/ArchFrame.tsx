@@ -23,13 +23,18 @@ export function ArchFrame({
   style,
 }: ArchFrameProps) {
   const h = archHeight;
-  const d = `M0 0 L50 0 Q0 0 0 ${h} Z M100 0 L50 0 Q100 0 100 ${h} Z`;
+  // Köşe kendi en boy oranını korur. Tek svg'yi genişliğe yaymak, eğriyi geniş
+  // ekranda 7 kat yatay geriyor ve kemer yerine sığ bir mercek çiziyordu.
+  const w = Math.round(h * 1.6);
   return (
     <View style={[styles.wrap, style]}>
       {children}
       <View style={[styles.overlay, { height: h }]}>
-        <Svg width="100%" height="100%" viewBox={`0 0 100 ${h}`} preserveAspectRatio="none">
-          <Path d={d} fill={archColor} />
+        <Svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} style={styles.left}>
+          <Path d={`M0 0 L${w} 0 Q0 0 0 ${h} Z`} fill={archColor} />
+        </Svg>
+        <Svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} style={styles.right}>
+          <Path d={`M${w} 0 L0 0 Q${w} 0 ${w} ${h} Z`} fill={archColor} />
         </Svg>
       </View>
     </View>
@@ -46,5 +51,15 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     pointerEvents: 'none',
+  },
+  left: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+  },
+  right: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
   },
 });
