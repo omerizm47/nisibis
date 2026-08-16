@@ -8,7 +8,7 @@ import { Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 import Animated, { useAnimatedScrollHandler, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { ArchFrame, CategoryBadge, CategoryIcon, EmptyState, KilimBand, PlaceGallery, PrimaryButton, SafetyNotice, StoneLattice, useCelebration } from '@/components';
+import { CategoryBadge, CategoryIcon, EmptyState, KilimBand, PlaceGallery, PrimaryButton, SafetyNotice, useCelebration } from '@/components';
 import { getPlaceImages } from '@/data/placeImages';
 import { getNearbyPlaces, getPlaceById, useCity, useProgress } from '@/hooks';
 import { colors, getCategoryMeta, gradients, radius, spacing, typography } from '@/theme';
@@ -124,10 +124,6 @@ export default function PlaceDetailScreen() {
               pointerEvents="none"
             />
           </Animated.View>
-          <View pointerEvents="none" style={StyleSheet.absoluteFill}>
-            <StoneLattice patternId="place-hero-lattice" color={colors.limestone} opacity={0.16} tile={36} />
-            <ArchFrame archColor={colors.background} archHeight={52} style={StyleSheet.absoluteFill} />
-          </View>
           <Pressable
             onPress={geriDon}
             accessibilityRole="button"
