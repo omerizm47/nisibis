@@ -183,11 +183,14 @@
       "title": "Mardin'in Hikâyesi",
       "cardTitle": "Taşın ve ovanın şehri",
       "cardBody": "Yamaca kademelenen taş evler, üç yüzyıllık bir Artuklu başkenti ve ufka kadar açılan Mezopotamya.",
-      "intro": "Mardin, Mezopotamya ovasına bakan uzun bir kayalık sırtın güney yamacına kurulmuş, neredeyse bütünüyle yerel kireç taşından örülü bir şehirdir.",
+      "intro": "Mardin, Mezopotamya ovasına bakan uzun bir kayalık sırtın güney yamacına kurulmuş, neredeyse bütünüyle yerel açık bej kireç taşından örülü bir şehirdir. Evler eğime göre kademelenir, her biri bir alttakinin damından ovayı görecek biçimde oturur; sokak zaman zaman bir evin altından, tonozlu bir geçidin içinden devam eder. Yukarıda kayanın tepesinde kale, aşağıda ufka kadar açılan ova vardır; şehir bu ikisinin arasındaki dar şeride sığmıştır.",
       "blocks": [
-        { "icon": "layers-outline", "title": "Uygarlıkların kavşağı", "body": "Asur belgelerindeki adından Osroene krallığına, Roma sınır kalesinden Artuklu başkentliğine, Akkoyunlu'dan Osmanlı'ya; her dönem bu taşa bir katman ekledi." },
-        { "icon": "stairs", "title": "Yamaca kademelenen taş", "body": "Evler eğime uyacak biçimde kademelenir, üst katlar avludan geriye çekilir ve altlarından abbaralar geçer. Şehre o basamaklı görünümünü veren, her evin ovayı görme isteğidir." },
-        { "icon": "crown-outline", "title": "Artuklu başkenti", "body": "Şehir 1103'ten itibaren Artuklu hanedanının iki ana kolundan birine başkentlik etti. Ulu Cami'den Zinciriye'ye, bugün gördüğün mimarinin çoğu bu üç yüzyılın eseridir." }
+        { "icon": "layers-outline", "title": "Uygarlıkların kavşağı", "body": "Asur belgelerindeki adından Osroene krallığına, Roma sınır kalesinden Artuklu başkentliğine, Akkoyunlu'dan Osmanlı'ya; her dönem bu taşa bir katman ekledi. Tepedeki kalede yürütülen kazılar Artuklu, Akkoyunlu ve Osmanlı katmanlarını üst üste ortaya çıkarır.", "placeId": "mardin-kalesi" },
+        { "icon": "stairs", "title": "Yamaca kademelenen taş", "body": "Evler eğime uyacak biçimde kademelenir, iç avlular çevresinde kurulur ve üst katlar avludan geriye çekilir. Aralarından geçen tonozlu abbaralar sokağı evin altından geçirir. UNESCO'nun geçici liste değerlendirmesi de tam olarak bu kademeli dokuya ve yerel taş mimarisine dayanır; şehri türünün en iyi korunmuş örneği sayar.", "placeId": "abbaralar" },
+        { "icon": "crown-outline", "title": "Üç yüzyıllık Artuklu başkenti", "body": "Şehir 1103'ten itibaren Artuklu hanedanının iki ana kolundan birine başkentlik etti. Ulu Cami'nin minare kitabesi 1176'yı, Zinciriye'nin taç kapısı 3 Şubat 1385'i güne kadar kaydeder. Bugün gördüğün mimarinin çoğu bu üç yüzyılın eseridir.", "placeId": "zinciriye-medresesi" },
+        { "icon": "church", "title": "Sekiz yüzyıllık patriklik merkezi", "body": "Şehrin beş kilometre doğusundaki Deyrulzafaran 493'te kuruldu ve yaklaşık sekiz yüzyıl boyunca Antakya Süryani Ortodoks Patrikliğine merkezlik etti. Şehrin içindeki Kırklar Kilisesi ise 1293'te patriklik kilisesi oldu. Patriklik merkezi 1924'te, patriğin sürgün edilmesiyle sona erdi.", "placeId": "deyrulzafaran-manastiri" },
+        { "icon": "hammer", "title": "Çarşının sesi", "body": "Kemer altı çarşıda bakırcı çekiçleri hâlâ duyulur. Yörede kayıtlı geleneksel zanaatlar arasında bakırcılık, telkari, taş işlemeciliği, ahşap oymacılığı ve semercilik bulunur. Osmanlı kayıtları Ulu Cami'nin kuzeyindeki Kayseriye Çarşısı'nda 1526'da 74, 1564'te 111 dükkan sayar.", "placeId": "revakli-carsi" },
+        { "icon": "domain", "title": "Son yüzyılın mimarı", "body": "Mardinli mimar Sarkis Lole, Şehidiye'nin yıkık minaresini 1916 ile 1917'de yeniden inşa etti. 1889'da Süvari Kışlası olarak yapılan ve bugün Sakıp Sabancı Mardin Kent Müzesi olan yapı da onun imzasını taşır.", "placeId": "sehidiye-medresesi" }
       ],
       "antiquityStat": "M.Ö. 1. binyıl",
       "antiquityTitle": "Asur belgelerindeki ilk iz",
@@ -196,11 +199,25 @@
         { "year": "M.Ö. 1. binyıl başı", "title": "Asur belgelerinde ilk iz", "body": "Bir Yeni Asur hukuk belgesi, bugünkü Mardin ile özdeşleştirilen Mardiane'ye giden bir yolu kaydeder." },
         { "year": "M.Ö. 150 ile M.S. 250", "title": "Osroene krallığı", "body": "Şehir, Abgar hanedanının yönettiği Osroene krallığının parçasıdır." },
         { "year": "M.S. 4. yüzyıl", "title": "Roma sınırında Marida", "body": "Mardin adı ilk kez 4. yüzyıl tarihçisi Ammianus Marcellinus'ta geçer. Roma döneminde şehir, Süryanicede kale anlamına gelen kökten Marida adıyla anılır." },
-        { "year": "M.S. 640", "title": "İslam'ın gelişi", "body": "Bizans şehri, komutan İyad bin Ganm tarafından alınır; bölgeye yoğun Arap yerleşimi başlar ve şehir el-Cezire valiliğine bağlanır." },
+        { "year": "493", "title": "Deyrulzafaran kurulur", "body": "Daha önce Roma kalesi ve Bizans istihkamı olan alan, Mor Şlemun tarafından manastıra çevrilir. 607'de Sasaniler tarafından yıkılıp terk edilecektir.", "placeId": "deyrulzafaran-manastiri" },
+        { "year": "505", "title": "Roma ovaya bir kent kurar", "body": "İmparator Birinci Anastasios, Perslere karşı sınır üssü olarak Dara'yı kurar. Justinianus'un mühendisleri sonradan Kordes ırmağını kanalla kente yöneltir ve taşkını önlemek için bilinen en erken kemer barajlardan birini inşa eder.", "placeId": "dara-antik-kenti" },
+        { "year": "6. yüzyıl ortası", "title": "Mor Behnam Kilisesi", "body": "Bugün Kırklar olarak bilinen kilise inşa edilir; Türkçe kaynaklar 569 yılını verir. 1293'te Süryani Patriklik Kilisesi olacaktır.", "placeId": "kirklar-kilisesi" },
+        { "year": "640", "title": "İslam'ın gelişi", "body": "Bizans şehri, komutan İyad bin Ganm tarafından alınır; bölgeye yoğun Arap yerleşimi başlar ve şehir el-Cezire valiliğine bağlanır." },
+        { "year": "793", "title": "Manastır yeniden doğar", "body": "Metropolit Mor Hananyo harap alanı satın alıp onarır, bir el yazması kütüphanesi kurar ve topluluğu yaklaşık seksen keşişe çıkarır. Manastır o günden beri onun adını taşır.", "placeId": "deyrulzafaran-manastiri" },
+        { "year": "10. yüzyıl", "title": "Kayanın tepesindeki kale", "body": "Kale büyük olasılıkla Hamdaniler döneminde inşa edilir; 885'te Hamdan bin Hamdun alır, 894'te Abbasi halifesi Mutazıd geri kazanır.", "placeId": "mardin-kalesi" },
         { "year": "1103", "title": "Artuklu başkenti", "body": "Şehir, Oğuz kökenli Artuklu hanedanının iki ana kolundan birinin başkenti olur ve yaklaşık üç yüzyıl süren bu dönemde mimari doruğuna ulaşır." },
-        { "year": "3 Şubat 1385", "title": "Zinciriye Medresesi", "body": "Sultan İsa Medresesi'nin taç kapı kitabesi, yapının tamamlanma tarihini güne kadar kaydeder." },
-        { "year": "1409 ile 1451", "title": "Karakoyunlu ve Akkoyunlu", "body": "Son Artuklu hükümdarı şehri 1409'da Kara Yusuf'a bırakır; kale 1432'de Akkoyunlulara teslim olur ve yüzyılın kalanı Akkoyunlu yönetiminde geçer." },
-        { "year": "1517", "title": "Osmanlı dönemi", "body": "Şehir 1515'te Osmanlılara teslim olsa da kale direnir; Bıyıklı Mehmed Paşa'nın dönüşünün ardından kale 1517'de alınır." },
+        { "year": "1176", "title": "Ulu Cami'nin kitabesi", "body": "Minare kitabesi camiyi Artuklu hükümdarı Kutbeddin İlgazi II'ye bağlar. Artuklu yapısından bugüne yalnızca kuzey duvarı ile oyma ahşap minber ulaşmıştır.", "placeId": "mardin-ulu-camii" },
+        { "year": "1204", "title": "Ovadaki mihrap", "body": "Dunaysır'da başlanan cami, Ebü'l Feth Artuk Arslan döneminde tamamlanır. Mihrap işçiliği Artuklu taş sanatının doruğu sayılır.", "placeId": "kiziltepe-ulu-camii" },
+        { "year": "1314", "title": "Latifiye Camii", "body": "Cami, Artuklu sultanları Melik Salih ve Melik Muzaffer döneminde görev yapan Abdüllatif bin Abdullah tarafından yaptırılır ve bulunduğu mahalleye adını verir.", "placeId": "latifiye-camii" },
+        { "year": "3 Şubat 1385", "title": "Zinciriye Medresesi", "body": "Sultan İsa Medresesi'nin taç kapı kitabesi, tamamlanma tarihini güne kadar kaydeder. Sultan İsa savaşta öldürüldüğü için türbe odasına hiç gömülmedi.", "placeId": "zinciriye-medresesi" },
+        { "year": "1396", "title": "Timur'un ikinci saldırısı", "body": "Timur, manastırın surlarını, hücrelerini ve kapısını tahrip eder. Ulu Cami de bu istilalarda zarar görür ve minaresi yıkılır.", "placeId": "deyrulzafaran-manastiri" },
+        { "year": "1409 ile 1451", "title": "Karakoyunlu ve Akkoyunlu", "body": "Son Artuklu hükümdarı şehri 1409'da Kara Yusuf'a bırakır; kale 1432'de Akkoyunlulara teslim olur ve yüzyılın kalanı Akkoyunlu yönetiminde geçer.", "placeId": "mardin-kalesi" },
+        { "year": "1445 ile 1469", "title": "Kasımiye tamamlanır", "body": "Sultan İsa'nın 1407'de öldürülmesiyle yarım kalan medrese, Akkoyunlu döneminde sultan Muizzeddin'in oğlu Kasım adına bitirilir. Avlusundaki su kanalı, kaynağından havuza uzanan yolculuğuyla ömrü anlatır.", "placeId": "kasimiye-medresesi" },
+        { "year": "1487 ile 1502", "title": "Çarşı kurulur", "body": "Ulu Cami'nin kuzeyindeki Kayseriye Çarşısı'nın bu yıllarda inşa edildiği tahmin edilir. Osmanlı kayıtları 1526'da 74, 1540'ta 80 ve 1564'te 111 dükkan sayar.", "placeId": "revakli-carsi" },
+        { "year": "1517", "title": "Osmanlı dönemi", "body": "Şehir 1515'te Osmanlılara teslim olsa da kale direnir; Bıyıklı Mehmed Paşa'nın dönüşünün ardından kale 1517'de alınır.", "placeId": "mardin-kalesi" },
+        { "year": "1888", "title": "Manastırdaki matbaa", "body": "1874'te İngiltere'den alınıp 1881'de manastıra kurulan matbaada ilk kitap basılır; bir nüshası Kraliçe Victoria'ya gönderilir.", "placeId": "deyrulzafaran-manastiri" },
+        { "year": "1895", "title": "Meydandaki konak", "body": "Patrik Ignatios Behnam Banni, yapıyı Süryani Katolik Patrikhanesi olarak inşa ettirir. Aynı konak 2000 yılında Mardin Müzesi olarak açılacaktır.", "placeId": "mardin-muzesi" },
+        { "year": "1916", "title": "Şehidiye'nin minaresi", "body": "Yıkık minare, Mardinli mimar Sarkis Lole tarafından yeniden inşa edilir. Bitkisel bezemesi ve güneş kabartmasıyla şehrin en çok fotoğraflanan minaresidir.", "placeId": "sehidiye-medresesi" },
         { "year": "2000", "title": "UNESCO geçici listesi", "body": "Mardin Kültürel Peyzajı, 25 Şubat 2000'de UNESCO Dünya Mirası Geçici Listesi'ne sunulur. Kayıt hem şehri hem Deyrulzafaran Manastırı'nı kapsar. Mardin geçici listededir, Dünya Mirası Listesi'nde değildir." }
       ]
     },
@@ -211,7 +228,7 @@
     "intro": "Nusaybin, antik adıyla Nisibis, Mezopotamya'nın bereketli topraklarında, İpek Yolu üzerinde binlerce yıldır yaşayan bir şehirdir.",
       "blocks": [
         { "icon": "layers-outline", "title": "Uygarlıkların kavşağı", "body": "Asur'dan Roma'ya, Pers'ten Süryani'ye, İslam'dan günümüze; her uygarlık bu topraklara bir katman, bir hikâye bıraktı." },
-        { "icon": "puzzle-outline", "title": "Yan yana bir kilise ve bir cami", "body": "Şehrin kalbinde, Mor Yakup Kilisesi ile Zeynel Abidin Camii yalnızca yüz metre arayla yükselir. Farklı inançların yüzyıllardır komşuluğu, Nusaybin'in en çarpıcı simgesidir; iki yapı 2014'te UNESCO Dünya Mirası Geçici Listesi'ne birlikte alınmıştır." },
+        { "icon": "puzzle-outline", "title": "Yan yana bir kilise ve bir cami", "body": "Şehrin kalbinde, Mor Yakup Kilisesi ile Zeynel Abidin Camii yalnızca yüz metre arayla yükselir. Farklı inançların yüzyıllardır komşuluğu, Nusaybin'in en çarpıcı simgesidir; iki yapı 2014'te UNESCO Dünya Mirası Geçici Listesi'ne birlikte alınmıştır.", "placeId": "mor-yakup-kilisesi" },
         { "icon": "school-outline", "title": "İlimlerin beşiği: Nusaybin Okulu", "body": "Antik Nisibis, teoloji ve bilime ışık tutan ünlü okuluyla ilimlerin beşiği olarak anılmıştır." }
       ],
     "antiquityStat": "~3000 yıl",
@@ -220,11 +237,11 @@
     "timeline": [
       { "year": "M.Ö. 901", "title": "Asur kaynaklarında ilk kez", "body": "Şehir, 'Naṣibīna' adıyla bir Arami kenti olarak Asur yazıtlarına geçer; kısa süre sonra Asur İmparatorluğu'na katılır." },
       { "year": "M.Ö. 332", "title": "İskender ve Helenistik çağ", "body": "Büyük İskender'in fethinin ardından şehir, Selevkoslar tarafından 'Antiokheia Mygdonia' adıyla yeniden kurulur." },
-      { "year": "M.S. 337–350", "title": "Üç büyük kuşatma", "body": "Roma–Pers sınırındaki şehri Sasani hükümdarı II. Şapur üç kez kuşatır ama surlar düşmez; Nisibis 'Doğu'nun kalkanı' olarak anılır." },
-      { "year": "M.S. 359", "title": "Mor Yakup Kilisesi", "body": "Antik kentten günümüze ulaşan en önemli yapı olan Mor Yakup (vaftizhane) bu dönemde inşa edilir." },
+      { "year": "M.S. 337–350", "title": "Üç büyük kuşatma", "body": "Roma–Pers sınırındaki şehri Sasani hükümdarı II. Şapur üç kez kuşatır ama surlar düşmez; Nisibis 'Doğu'nun kalkanı' olarak anılır.", "placeId": "cagcag-deresi" },
+      { "year": "M.S. 359", "title": "Mor Yakup Kilisesi", "body": "Antik kentten günümüze ulaşan en önemli yapı olan Mor Yakup (vaftizhane) bu dönemde inşa edilir. Orta friz üzerindeki Antik Yunanca kitabe, yapımı metropolit Volagesus dönemine tarihler.", "placeId": "mor-yakup-kilisesi" },
       { "year": "M.S. 489", "title": "Nusaybin Okulu'nun yükselişi", "body": "Şehrin ünlü okulu, çağının en önemli teoloji ve ilim merkezlerinden biri hâline gelir." },
       { "year": "M.S. 639–640", "title": "İslam'ın gelişi", "body": "Şehir, Hz. Ömer döneminde barış yoluyla İslam topraklarına katılır ve bir yönetim merkezi olur." },
-      { "year": "12. yüzyıl", "title": "Zengî dönemi", "body": "Nûreddin Zengî döneminde şehir yeniden şekillenir; Zeynel Abidin Külliyesi de bu çağın izlerini taşır." },
+      { "year": "12. yüzyıl", "title": "Zengî dönemi", "body": "Nûreddin Zengî döneminde şehir yeniden şekillenir; bir kitabeye göre külliye 1159'da, Nisibisli aziz Febronia'ya adanan kilisenin yerine inşa edilir.", "placeId": "zeynel-abidin-camii" },
       { "year": "1515", "title": "Osmanlı dönemi", "body": "Yavuz Sultan Selim döneminde Nusaybin Osmanlı topraklarına katılır." },
       { "year": "Bugün", "title": "Mardin'in köklü ilçesi", "body": "Nusaybin bugün, antik Nisibis'in mirasını ve çok kültürlü dokusunu taşıyan, Mardin'e bağlı bir ilçedir." }
       ]

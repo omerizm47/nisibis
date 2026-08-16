@@ -2,12 +2,12 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { CityEmblem, KilimBand, OrnamentDivider, PrimaryButton, ScreenHeader, StoneLattice } from '@/components';
-import { useCity } from '@/hooks';
+import { getPlaceById, useCity } from '@/hooks';
 import { colors, fontFamily, gradients, radius, spacing, typography } from '@/theme';
 import { withAlpha } from '@/utils/color';
 import type { MciName } from '@/utils/icons';
@@ -16,12 +16,35 @@ interface Block {
   icon: MciName;
   title: string;
   body: string;
+  placeId?: string;
 }
 
 interface TimelineItem {
   year: string;
   title: string;
   body: string;
+  placeId?: string;
+}
+
+/** Tarih metnini o dönemin gezilebilir durağına bağlar. Mekan aktif şehirde yoksa hiç çizilmez. */
+function PlaceLink({ placeId }: { placeId?: string }) {
+  const { t } = useTranslation();
+  const router = useRouter();
+  const place = placeId ? getPlaceById(placeId) : undefined;
+  if (!place) return null;
+  return (
+    <Pressable
+      onPress={() => router.push(`/place/${place.id}`)}
+      accessibilityRole="link"
+      accessibilityLabel={t('checklist.goToPlace', { place: place.name })}
+      style={({ pressed }) => [styles.placeLink, pressed && styles.placeLinkPressed]}
+    >
+      <MaterialCommunityIcons name="map-marker-outline" size={13} color={colors.primary} />
+      <Text style={styles.placeLinkText} numberOfLines={2}>
+        {place.name}
+      </Text>
+    </Pressable>
+  );
 }
 
 export default function StoryScreen() {
@@ -89,6 +112,7 @@ export default function StoryScreen() {
             <View style={styles.blockBody}>
               <Text style={styles.blockTitle}>{b.title}</Text>
               <Text style={styles.blockText}>{b.body}</Text>
+              <PlaceLink placeId={b.placeId} />
             </View>
           </Animated.View>
         ))}
@@ -115,6 +139,7 @@ export default function StoryScreen() {
                     </View>
                     <Text style={styles.tlTitle}>{item.title}</Text>
                     <Text style={styles.tlBody}>{item.body}</Text>
+                    <PlaceLink placeId={item.placeId} />
                   </View>
                 </Animated.View>
               ))}
@@ -238,6 +263,26 @@ const styles = StyleSheet.create({
   blockText: {
     ...typography.body,
     color: colors.mutedText,
+  },
+  placeLink: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    gap: 4,
+    minHeight: 32,
+    marginTop: spacing.xs,
+    paddingVertical: spacing.xs,
+    paddingHorizontal: spacing.sm,
+    borderRadius: radius.sm,
+    backgroundColor: withAlpha(colors.primary, 0.08),
+  },
+  placeLinkPressed: {
+    opacity: 0.85,
+  },
+  placeLinkText: {
+    ...typography.overline,
+    color: colors.primary,
+    flexShrink: 1,
   },
   cta: {
     marginTop: spacing.sm,
