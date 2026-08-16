@@ -156,6 +156,8 @@ export default function SettingsScreen() {
                   hapticSelection();
                   void setAppLanguage(code);
                 }}
+                accessibilityRole="button"
+                accessibilityState={{ selected: active }}
                 style={[styles.langChip, active && styles.langChipActive]}
               >
                 <Text style={[styles.langText, active && styles.langTextActive]}>
