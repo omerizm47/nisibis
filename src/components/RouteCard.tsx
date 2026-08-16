@@ -8,7 +8,6 @@ import { getRoutePlaces } from '@/hooks/useRoutes';
 import { colors, gradients, radius, shadow, spacing, typography } from '@/theme';
 import { withAlpha } from '@/utils/color';
 import type { MciName } from '@/utils/icons';
-import { ArchFrame } from './ArchFrame';
 import { StoneLattice } from './Patterns';
 import { PressableScale } from './PressableScale';
 import { RemoteImage } from './RemoteImage';
@@ -44,10 +43,8 @@ export function RouteCard({ route, onPress, completedStops = 0, style }: RouteCa
       <StoneLattice patternId={`route-lattice-${route.id}`} color={colors.copper} opacity={0.07} tile={32} />
       {cover ? (
         <View style={styles.cover}>
-          <ArchFrame archColor={colors.card} archHeight={26} style={StyleSheet.absoluteFill}>
-            <RemoteImage source={getPlaceImageSource(cover)} style={StyleSheet.absoluteFill} />
-            <LinearGradient colors={gradients.imageScrim} style={StyleSheet.absoluteFill} />
-          </ArchFrame>
+          <RemoteImage source={getPlaceImageSource(cover)} style={StyleSheet.absoluteFill} />
+          <LinearGradient colors={gradients.imageScrim} style={StyleSheet.absoluteFill} />
         </View>
       ) : null}
       <View style={styles.header}>

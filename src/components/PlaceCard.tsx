@@ -6,7 +6,6 @@ import type { Place } from '@/types';
 import { getPlaceImageSource } from '@/data/placeImages';
 import { colors, gradients, radius, shadow, spacing, typography } from '@/theme';
 import { placeHasMapLocation } from '@/utils/map';
-import { ArchFrame } from './ArchFrame';
 import { CategoryBadge } from './CategoryBadge';
 import { PressableScale } from './PressableScale';
 import { RemoteImage } from './RemoteImage';
@@ -20,9 +19,8 @@ interface PlaceCardProps {
   style?: StyleProp<ViewStyle>;
 }
 
-/** Kemer bandı görselin üst şerididir; rozetler onun altından başlamazsa yarı saydam
- *  zeminleri yarı kemer yarı fotoğraf üzerinde kalıp iki tonlu görünüyor. */
-const ARCH_HEIGHT = 26;
+/** Rozetler görselin üst kenarına yapışmasın diye bu kadar aşağıdan başlar. */
+const BADGE_TOP = 26;
 
 export function PlaceCard({
   place,
@@ -43,10 +41,8 @@ export function PlaceCard({
       style={[styles.card, featured ? styles.featuredCard : styles.listCard, shadow.md, style]}
     >
       <View style={featured ? styles.featuredImage : styles.listImage}>
-        <ArchFrame archColor={colors.card} archHeight={ARCH_HEIGHT} style={StyleSheet.absoluteFill}>
-          <RemoteImage source={getPlaceImageSource(place)} style={StyleSheet.absoluteFill} />
-          <LinearGradient colors={gradients.imageScrim} style={StyleSheet.absoluteFill} />
-        </ArchFrame>
+        <RemoteImage source={getPlaceImageSource(place)} style={StyleSheet.absoluteFill} />
+        <LinearGradient colors={gradients.imageScrim} style={StyleSheet.absoluteFill} />
         <View style={styles.badgeRow}>
           <CategoryBadge category={place.category} />
         </View>
@@ -127,12 +123,12 @@ const styles = StyleSheet.create({
   },
   badgeRow: {
     position: 'absolute',
-    top: ARCH_HEIGHT + spacing.xs,
+    top: BADGE_TOP + spacing.xs,
     left: spacing.md,
   },
   completedBadge: {
     position: 'absolute',
-    top: ARCH_HEIGHT + spacing.xs,
+    top: BADGE_TOP + spacing.xs,
     right: spacing.md,
     width: 26,
     height: 26,
