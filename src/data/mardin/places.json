@@ -247,17 +247,18 @@
       { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Sak%C4%B1p_Sabanc%C4%B1_Mardin_Kent_M%C3%BCzesi_in_2025_0827.jpg" },
       { "credit": "Dosseman, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Sak%C4%B1p_Sabanc%C4%B1_Mardin_Kent_M%C3%BCzesi_in_2025_0830_03.jpg" }
     ],
-    "latitude": null,
-    "longitude": null,
+    "latitude": 37.31448,
+    "longitude": 40.74601,
     "approxLatitude": 37.31448,
     "approxLongitude": 40.74601,
-    "coordinatesVerified": false,
+    "coordinatesVerified": true,
     "estimatedVisitMinutes": 60,
     "tags": ["müze", "kışla", "sarkis lole", "kent müzesi", "sanat galerisi", "osmanlı", "abbara"],
     "isFeatured": false,
     "sources": [
       { "title": "Sakıp Sabancı Mardin Kent Müzesi, Sabancı Vakfı", "url": "https://www.sabancivakfi.org/tr/kultur-sanat/sakip-sabanci-mardin-kent-muzesi" },
-      { "title": "Mardin, Wikipedia (Sarkis Lole ve Osmanlı mimarisi)", "url": "https://en.wikipedia.org/wiki/Mardin" }
+      { "title": "Mardin, Wikipedia (Sarkis Lole ve Osmanlı mimarisi)", "url": "https://en.wikipedia.org/wiki/Mardin" },
+      { "title": "Sabancı Kent Müzesi, OpenStreetMap (koordinat kaynağı)", "url": "https://www.openstreetmap.org/way/219001206" }
     ],
     "verificationStatus": "verified"
   },
@@ -298,18 +299,19 @@
       { "credit": "Azrailo498, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin_Kalesi.jpg" },
       { "credit": "MSinjari, Wikimedia Commons", "license": "CC BY-SA 4.0", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mardin,_Turkey.JPG" }
     ],
-    "latitude": null,
-    "longitude": null,
+    "latitude": 37.31544,
+    "longitude": 40.73839,
     "approxLatitude": 37.31544,
     "approxLongitude": 40.73839,
-    "coordinatesVerified": false,
+    "coordinatesVerified": true,
     "estimatedVisitMinutes": 20,
     "tags": ["kale", "manzara", "fotoğraf", "kartal yuvası", "askeri bölge", "silüet", "tarih"],
     "isFeatured": false,
     "sources": [
       { "title": "Mardin Castle, Wikipedia", "url": "https://en.wikipedia.org/wiki/Mardin_Castle" },
       { "title": "Mardin Castle may be opened to tourism, Hürriyet Daily News", "url": "https://www.hurriyetdailynews.com/mardin-castle-may-be-opened-to-tourism--114039" },
-      { "title": "Mardin, Vikipedi", "url": "https://tr.wikipedia.org/wiki/Mardin" }
+      { "title": "Mardin, Vikipedi", "url": "https://tr.wikipedia.org/wiki/Mardin" },
+      { "title": "Mardin Kalesi, OpenStreetMap (koordinat kaynağı)", "url": "https://www.openstreetmap.org/node/2479710431" }
     ],
     "verificationStatus": "verified"
   },
@@ -759,17 +761,18 @@
     "imageCredit": "Mustafa.cay.90, Wikimedia Commons",
     "imageLicense": "CC BY-SA 4.0",
     "imageSourceUrl": "https://commons.wikimedia.org/wiki/File:Ko%C3%A7hisar_Ulu_Camii.jpg",
-    "latitude": 37.18972,
-    "longitude": 40.58278,
-    "approxLatitude": 37.18972,
-    "approxLongitude": 40.58278,
+    "latitude": 37.19353,
+    "longitude": 40.58104,
+    "approxLatitude": 37.19353,
+    "approxLongitude": 40.58104,
     "coordinatesVerified": true,
     "estimatedVisitMinutes": 30,
     "tags": ["cami", "artuklu", "dunaysır", "koçhisar", "mihrap", "kubbe", "kızıltepe", "tarih"],
     "isFeatured": false,
     "sources": [
       { "title": "Koçhisar Ulu Camii, Vikipedi", "url": "https://tr.wikipedia.org/wiki/Ko%C3%A7hisar_Ulu_Camii" },
-      { "title": "Kızıltepe Ulu Camii, Kültür Envanteri", "url": "https://kulturenvanteri.com/en/yer/kiziltepe-ulu-camii/" }
+      { "title": "Kızıltepe Ulu Camii, Kültür Envanteri", "url": "https://kulturenvanteri.com/en/yer/kiziltepe-ulu-camii/" },
+      { "title": "Koçhisar Ulu Camii, OpenStreetMap (koordinat kaynağı)", "url": "https://www.openstreetmap.org/way/1374359561" }
     ],
     "verificationStatus": "verified"
   }
