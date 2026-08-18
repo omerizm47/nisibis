@@ -3,7 +3,7 @@
     "name": "Nisibis",
     "slug": "nisibis",
     "scheme": "nisibis",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "icon": "./assets/icon.png",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
@@ -13,7 +13,7 @@
       "url": "https://u.expo.dev/a1a5e194-adad-40a3-918f-e53dc7d6e517"
     },
     "runtimeVersion": {
-      "policy": "fingerprint"
+      "policy": "appVersion"
     },
     "assetBundlePatterns": [
       "**/*"
